@@ -1,3 +1,13 @@
-#summary One-sentence summary of this page.
+#summary úvod do projektu
 
-= TODO =
+==Instalace prostředí==
+
+ # nainstalovat java [http://java.sun.com/javaee/downloads/index.jsp Java EE + JDK]
+ # [http://groovy.codehaus.org/Installing+Groovy nainstalovat groovy]
+ # [http://grails.org/Installation nainstalovat grails]
+ # nainstalovat dev verzi netbeans [http://groovy.codehaus.org/NetBeans+Plugin obrázkový návod]
+
+==Znalosti==
+
+ * [http://groovy.codehaus.org/Getting+Started+Guide Dokumentace jazyka groovy]
+ * [http://grails.org/doc/1.0.x/ refrenční příručka Grails]
