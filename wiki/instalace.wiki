@@ -1,0 +1,6 @@
+#summary jak nainstalovat prostředí a grails
+
+ # nainstalovat java [http://java.sun.com/javaee/downloads/index.jsp Java EE + JDK]
+ # [http://groovy.codehaus.org/Installing+Groovy nainstalovat groovy]
+ # [http://grails.org/Installation nainstalovat grails]
+ # nainstalovat dev verzi netbeans [http://groovy.codehaus.org/NetBeans+Plugin obrázkový návod]
