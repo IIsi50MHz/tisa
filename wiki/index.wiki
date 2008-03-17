@@ -6,7 +6,7 @@
  # [http://groovy.codehaus.org/Installing+Groovy nainstalovat groovy]
  # [http://grails.org/Installation nainstalovat grails]
  # nainstalovat dev verzi netbeans [http://groovy.codehaus.org/NetBeans+Plugin obrázkový návod]
- # stáhnout a nainstalovat [http://www.mysql.com/products/connector/j/ mysql jdbc driver]
+ # stáhnout a nainstalovat [http://www.mysql.com/products/connector/j/ mysql jdbc driver] - bacha, není třeba se registrovat, dole je link na postup bez registrace
 
 ==Znalosti==
 
