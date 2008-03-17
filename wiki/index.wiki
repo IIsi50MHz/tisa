@@ -1,11 +1,12 @@
 #summary úvod do projektu
 
-==Instalace prostředí==
+==Instalace pracovího prostředí==
 
  # nainstalovat java [http://java.sun.com/javaee/downloads/index.jsp Java EE + JDK]
  # [http://groovy.codehaus.org/Installing+Groovy nainstalovat groovy]
  # [http://grails.org/Installation nainstalovat grails]
  # nainstalovat dev verzi netbeans [http://groovy.codehaus.org/NetBeans+Plugin obrázkový návod]
+ # mít doma MySQL, nejjednodušeji z [http://www.apachefriends.org/en/xampp.html xampp balíku]
 
 ===Jak do toho dosttat mysql===
 Toto v našem projektu udělám jednou já ale pokud si něco budete doma bastlit bude se to hodit.
