@@ -1,0 +1,1 @@
+-doplňit do akce atribut konec rezervací(vteřiny)
