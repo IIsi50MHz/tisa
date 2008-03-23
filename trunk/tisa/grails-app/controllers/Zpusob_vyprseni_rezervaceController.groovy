@@ -1,5 +1,5 @@
             
-class Zpusob_vyprseni_rezervaceController {
+class Zpusob_vyprseni_rezervaceController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 

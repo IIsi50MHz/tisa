@@ -1,4 +1,4 @@
-class ForntEndController {
+class FrontEndController {
 
     def index = { }
 }

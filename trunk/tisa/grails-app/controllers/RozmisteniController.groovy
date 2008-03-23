@@ -1,4 +1,4 @@
-class RozmisteniController {
+class RozmisteniController extends AdminController {
     def Scaffold = Rozmisteni
-    //def index = { }
+    def index = { redirect(action:list,params:params) }
 }

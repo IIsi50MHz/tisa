@@ -7,10 +7,8 @@
         <g:javascript library="application" />				
     </head>
     <body>
-        <div id="spinner" class="spinner" style="display:none;">
-            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
-        </div>	
-        <div class="logo"><img src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" /></div>	
+			<h1>TiSa</h1>
+				<g:link controller="admin">administrace</g:link>
         <g:layoutBody />		
     </body>	
 </html>

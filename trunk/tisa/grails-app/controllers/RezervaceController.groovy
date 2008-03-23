@@ -1,5 +1,5 @@
             
-class RezervaceController {
+class RezervaceController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 
