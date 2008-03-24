@@ -5,12 +5,23 @@ html * {
 
 /* ============= naše ========================================================*/
 
+#logo h1 {
+		font-size:3em;
+		padding-left:0.5em;		
+}
+
 #user_line {
 		position:absolute;
 		top:0;
 		right:0;
 		padding:1em;
 }
+
+
+
+
+
+
 
 
 
@@ -276,3 +287,11 @@ th.desc a {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
 }
+
+
+
+
+
+
+
+

@@ -7,8 +7,27 @@
         <g:javascript library="application" />				
     </head>
     <body>
-			<h1>TiSa</h1>
-				<g:link controller="admin">administrace</g:link>
+				<span id="user_line">
+					Nejsi přihlášen | <g:link controller="admin">administrovat</g:link>
+				</span>
+        <div id="spinner" class="spinner" style="display:none;">
+            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
+        </div>	
+        <div id="logo">
+					<a class="home" href="${createLinkTo(dir:'')}">
+						<h1>TiSa</h1>
+					</a>
+				</div>	
+				
+			<div class="nav">
+					<span class="menuButton">
+							<g:link controller="front_akce">
+									<g:message code="tisa.AkceController.name.pl"/>
+							</g:link>
+					</span>
+			</div>			
+			
+			
         <g:layoutBody />		
     </body>	
 </html>

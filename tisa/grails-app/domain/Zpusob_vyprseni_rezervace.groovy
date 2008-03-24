@@ -10,4 +10,8 @@ class Zpusob_vyprseni_rezervace {
         cas(blank:false)
         druh(inList:druhy)
     }
+		
+		String toString() {
+        return this.cas +" " +this.druh
+    }
 }
