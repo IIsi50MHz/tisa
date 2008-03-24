@@ -8,8 +8,8 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><g:link class="list" action="list">Seznam</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create" >vytvořit způsob vypršení rezervace</g:link></span>
+            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
+            <span class="menuButton"><g:link class="create" action="create">New Zpusob_vyprseni_rezervace</g:link></span>
         </div>
         <div class="body">
             <h1>Zpusob_vyprseni_rezervace List</h1>
@@ -21,8 +21,6 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
                    	        <g:sortableColumn property="cas" title="Cas" />
                         
                    	        <g:sortableColumn property="druh" title="Druh" />
@@ -33,11 +31,9 @@
                     <g:each in="${zpusob_vyprseni_rezervaceList}" status="i" var="zpusob_vyprseni_rezervace">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${zpusob_vyprseni_rezervace.id}">${zpusob_vyprseni_rezervace.id?.encodeAsHTML()}</g:link></td>
+                            <td><g:link action="show" id="${zpusob_vyprseni_rezervace.id}"><g:message code="tisa.Zpusob_vyprseni_rezervace.casy.${zpusob_vyprseni_rezervace.cas}" /></g:link></td>
                         
-                            <td>${zpusob_vyprseni_rezervace.cas?.encodeAsHTML()}</td>
-                        
-                            <td>${zpusob_vyprseni_rezervace.druh?.encodeAsHTML()}</td>
+                            <td><g:message code="tisa.Zpusob_vyprseni_rezervace.druhy.${zpusob_vyprseni_rezervace.druh}" /></td>
                         
                         </tr>
                     </g:each>

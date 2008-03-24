@@ -12,7 +12,7 @@
             <span class="menuButton"><g:link class="list" action="list">Akce List</g:link></span>
         </div>
         <div class="body">
-            <h1>Create Akce</h1>
+            <h1>Nová Akce</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -28,10 +28,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="misto">Misto:</label>
+                                    <label for="misto">Místo:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'misto','errors')}">
                                     <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${akce?.misto?.id}" ></g:select>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="misto">Způsob vypršení rezervace:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:zpusob_vyprseni_rezervace,field:'zpusob_vyprseni_rezervace','errors')}">
+                                    <g:select optionKey="id" from="${Zpusob_vyprseni_rezervace.list()}" name="zpusob_vyprseni_rezervace.id" value="${akce?.zpusob_vyprseni_rezervace?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

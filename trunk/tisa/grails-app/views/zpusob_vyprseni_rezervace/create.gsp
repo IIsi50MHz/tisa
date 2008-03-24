@@ -8,8 +8,8 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><g:link class="list" action="list">Seznam</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create" >vytvořit způsob vypršení rezervace</g:link></span>
+            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
+            <span class="menuButton"><g:link class="list" action="list">Zpusob_vyprseni_rezervace List</g:link></span>
         </div>
         <div class="body">
             <h1>Create Zpusob_vyprseni_rezervace</h1>
@@ -40,7 +40,7 @@
                                     <label for="druh">Druh:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:zpusob_vyprseni_rezervace,field:'druh','errors')}">
-                                    <input type="text" id="druh" name="druh" value="${fieldValue(bean:zpusob_vyprseni_rezervace,field:'druh')}"/>
+                                    <g:select valueMessagePrefix="tisa.Zpusob_vyprseni_rezervace.druhy" from="${zpusob_vyprseni_rezervace.druhy}" name="druh" value="${fieldValue(bean:zpusob_vyprseni_rezervace,field:'druh')}"></g:select>
                                 </td>
                             </tr> 
                         

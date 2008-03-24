@@ -5,9 +5,11 @@ class Akce {
     Integer vstupne_min
     Integer vstupne_max
     String odkaz
-    def belongsTo = [Misto, Zpusob_vyprseni_rezervace]
+    def belongsTo = [Misto, Zpusob_vyprseni_rezervace, Rozmisteni]
     Misto misto
-    Zpusob_vyprseni_rezervace zpusob_vyprseni
+		Rozmisteni rozmisteni
+    Zpusob_vyprseni_rezervace zpusob_vyprseni_rezervace
+		
     def hasMany = [rezervace:Rezervace]
         
     static constrains = {
