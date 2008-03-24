@@ -1,5 +1,3 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -7,10 +5,7 @@
         <title>Create Akce</title>         
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Akce List</g:link></span>
-        </div>
+
         <div class="body">
             <h1>Nová Akce</h1>
             <g:if test="${flash.message}">

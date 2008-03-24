@@ -35,6 +35,13 @@
 							</g:link>
 					</span>
 			</div>			
+			
+			<div class="nav">
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="tisa.admin.create"/></g:link></span>
+            <span class="menuButton"><g:link class="list" action="list"><g:message code="tisa.admin.list"/></g:link></span>
+			</div>
+			
+			
       <g:layoutBody />		
     </body>	
 </html>
