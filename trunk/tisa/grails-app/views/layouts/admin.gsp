@@ -7,6 +7,9 @@
         <g:javascript library="application" />				
     </head>
     <body>
+				<span id="user_line">
+					Nejsi přihlášen | <g:link controller="front_end">jít do front endu</g:link>
+				</span>
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>	

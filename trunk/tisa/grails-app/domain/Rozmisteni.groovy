@@ -11,4 +11,8 @@ class Rozmisteni {
         misto(blank:false)
         
     }
+		
+		String toString() {
+        return this.nazev
+    }
 }

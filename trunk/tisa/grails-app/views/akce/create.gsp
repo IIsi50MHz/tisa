@@ -37,7 +37,16 @@
                                 <td valign="top" class="value ${hasErrors(bean:zpusob_vyprseni_rezervace,field:'zpusob_vyprseni_rezervace','errors')}">
                                     <g:select optionKey="id" from="${Zpusob_vyprseni_rezervace.list()}" name="zpusob_vyprseni_rezervace.id" value="${akce?.zpusob_vyprseni_rezervace?.id}" ></g:select>
                                 </td>
-                            </tr> 
+                            </tr> 														
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="misto">Rozmístění:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'rozmisteni','errors')}">
+                                    <g:select optionKey="id" from="${Rozmisteni.list()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
+                                </td>
+                            </tr> 														
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
