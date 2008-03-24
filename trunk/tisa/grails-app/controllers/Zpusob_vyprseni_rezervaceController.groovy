@@ -1,5 +1,7 @@
             
 class Zpusob_vyprseni_rezervaceController extends AdminController {
+
+		def layout = "admin"
     
     def index = { redirect(action:list,params:params) }
 
