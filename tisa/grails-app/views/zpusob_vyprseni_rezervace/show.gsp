@@ -23,23 +23,16 @@
 
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Id:</td>
-                            
-                            <td valign="top" class="value">${zpusob_vyprseni_rezervace.id}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Cas:</td>
                             
-                            <td valign="top" class="value">${zpusob_vyprseni_rezervace.cas}</td>
+                            <td valign="top" class="value"><g:message code="tisa.Zpusob_vyprseni_rezervace.casy.${zpusob_vyprseni_rezervace.cas}" /></td>
                             
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Druh:</td>
                             
-                            <td valign="top" class="value">${zpusob_vyprseni_rezervace.druh}</td>
+                            <td valign="top" class="value"><g:message code="tisa.Zpusob_vyprseni_rezervace.druhy.${zpusob_vyprseni_rezervace.druh}" /></td>
                             
                         </tr>
                     
