@@ -1,4 +1,0 @@
-class FrontEndController {
-
-    def index = { }
-}

@@ -10,7 +10,11 @@
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>	
-        <div class="logo"><img src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" /></div>	
+        <div class="logo">
+					<a class="home" href="${createLinkTo(dir:'')}">
+					<img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
+					</a>
+				</div>	
 				
 			<div class="nav">
 					<span class="menuButton">
@@ -30,9 +34,7 @@
 									<g:message code="tisa.Zpusob_vyprseni_rezervaceController.name.pl"/>
 							</g:link>
 					</span>
-			</div>
-				
-				
-        <g:layoutBody />		
+			</div>			
+      <g:layoutBody />		
     </body>	
 </html>

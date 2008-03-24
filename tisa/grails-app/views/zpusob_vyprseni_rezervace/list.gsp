@@ -3,13 +3,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="admin" />
         <title>Zpusob_vyprseni_rezervace List</title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="create" action="create">New Zpusob_vyprseni_rezervace</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list">Seznam</g:link></span>
+            <span class="menuButton"><g:link class="create" action="create" >vytvořit způsob vypršení rezervace</g:link></span>
         </div>
         <div class="body">
             <h1>Zpusob_vyprseni_rezervace List</h1>
