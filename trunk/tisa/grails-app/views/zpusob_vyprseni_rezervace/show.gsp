@@ -7,11 +7,6 @@
         <title>Show Zpusob_vyprseni_rezervace</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Zpusob_vyprseni_rezervace List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New Zpusob_vyprseni_rezervace</g:link></span>
-        </div>
         <div class="body">
             <h1>Show Zpusob_vyprseni_rezervace</h1>
             <g:if test="${flash.message}">

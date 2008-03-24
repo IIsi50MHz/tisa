@@ -5,10 +5,6 @@
         <title>Misto List</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="create" action="create">New Misto</g:link></span>
-        </div>
         <div class="body">
             <h1>Misto List</h1>
             <g:if test="${flash.message}">
