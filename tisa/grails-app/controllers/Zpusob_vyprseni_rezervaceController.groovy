@@ -3,7 +3,7 @@ class Zpusob_vyprseni_rezervaceController extends AdminController {
 
 		def layout = "admin"
     
-    def index = { redirect(action:list,params:params) }
+    def defaultAction = "list"
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
