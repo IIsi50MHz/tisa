@@ -13,10 +13,6 @@ class UrlMappings {
 			"/admin/rozmisteni/$action?/$id?" (controller:"rozmisteni")
 			"/admin/vyprseni/$action?/$id?" (controller:"zpusob_vyprseni_rezervace")
 
-				
-      "/$controller/$action?/$id?"{
-
-	  }
       "500"(view:'/error')
         
       }
