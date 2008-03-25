@@ -17,9 +17,9 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <th>Misto</th>
-                   	    
                    	        <g:sortableColumn property="nazev" title="Nazev" />
+
+                   	        <th>Misto</th>
                         
                    	        <g:sortableColumn property="odkaz" title="Odkaz" />
                         
@@ -33,11 +33,12 @@
                     <g:each in="${akceList}" status="i" var="akce">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${akce.id}">${akce.id?.encodeAsHTML()}</g:link></td>
+                            <td>${akce.id?.encodeAsHTML()}</td>
                         
-                            <td><g:link controller="misto" action="show" id="${akce.misto.id}">${akce.misto?.encodeAsHTML()}</g:link></td>
+                            <td><g:link action="edit" id="${akce.id}">${akce.nazev?.encodeAsHTML()}</g:link></td>
+
+													 <td><g:link controller="misto" action="show" id="${akce.misto.id}">${akce.misto?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${akce.nazev?.encodeAsHTML()}</td>
                         
                             <td>${akce.odkaz?.encodeAsHTML()}</td>
                         
