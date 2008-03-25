@@ -22,19 +22,22 @@
 			<div class="nav">
 					<span class="menuButton">
 							<g:link controller="akce">
-									<g:message code="tisa.AkceController.name.pl"/>
+									<g:message code="tisa.akce.name.pl"/>
 							</g:link>
 							<g:link controller="misto">
-									<g:message code="tisa.MistoController.name.pl"/>
+									<g:message code="tisa.misto.name.pl"/>
 							</g:link>
 							<g:link controller="rezervace">
-									<g:message code="tisa.RezervaceController.name.pl"/>
+									<g:message code="tisa.rezervace.name.pl"/>
 							</g:link>
 							<g:link controller="rozmisteni">
-									<g:message code="tisa.RozmisteniController.name.pl"/>
+									<g:message code="tisa.rozmisteni.name.pl"/>
 							</g:link>
 							<g:link controller="zpusob_vyprseni_rezervace">
-									<g:message code="tisa.Zpusob_vyprseni_rezervaceController.name.pl"/>
+									<g:message code="tisa.zpusob_vyprseni_rezervace.name.pl"/>
+							</g:link>
+							<g:link controller="spravce">
+									<g:message code="tisa.spravce.name.pl"/>
 							</g:link>
 					</span>
 			</div>			

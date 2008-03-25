@@ -27,7 +27,7 @@
                                     <label for="cas">Cas:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:zpusob_vyprseni_rezervace,field:'cas','errors')}">
-                                    <input type="text" id="cas" name="cas" value="${fieldValue(bean:zpusob_vyprseni_rezervace,field:'cas')}" />
+                                    <g:select valueMessagePrefix="tisa.zpusob_vyprseni_rezervace.casy" from="${zpusob_vyprseni_rezervace.casy}" name="cas" value="${fieldValue(bean:zpusob_vyprseni_rezervace,field:'cas')}"></g:select>
                                 </td>
                             </tr> 
                         
@@ -36,7 +36,7 @@
                                     <label for="druh">Druh:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:zpusob_vyprseni_rezervace,field:'druh','errors')}">
-                                    <g:select valueMessagePrefix="tisa.Zpusob_vyprseni_rezervace.druhy" from="${zpusob_vyprseni_rezervace.druhy}" name="druh" value="${fieldValue(bean:zpusob_vyprseni_rezervace,field:'druh')}"></g:select>
+                                    <g:select valueMessagePrefix="tisa.zpusob_vyprseni_rezervace.druhy" from="${zpusob_vyprseni_rezervace.druhy}" name="druh" value="${fieldValue(bean:zpusob_vyprseni_rezervace,field:'druh')}"></g:select>
                                 </td>
                             </tr> 
                         
