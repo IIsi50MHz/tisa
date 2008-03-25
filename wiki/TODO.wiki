@@ -1,4 +1,4 @@
  * doplňit do akce atribut konec rezervací(vteřiny)
 
 ==Michal==
- # rozsekat controllery na admin a zbytek
+ # ~~~rozsekat controllery na admin a zbytek~~~
