@@ -71,7 +71,7 @@
                                     <label for="popis">Popis:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'popis','errors')}">
-                                    <input type="text" id="popis" name="popis" value="${fieldValue(bean:akce,field:'popis')}"/>
+                                    <textarea id="popis" name="popis">${fieldValue(bean:akce,field:'popis')}</textarea>
                                 </td>
                             </tr> 
                         
