@@ -2,3 +2,4 @@
 
 ==Michal==
  # ~~~rozsekat controllery na admin a zbytek~~~
+ # přihlašování nějakého uživatele
