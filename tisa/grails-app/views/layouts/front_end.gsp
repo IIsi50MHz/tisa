@@ -24,6 +24,9 @@
 							<g:link controller="front_akce">
 									<g:message code="tisa.AkceController.name.pl"/>
 							</g:link>
+							<g:link controller="front_misto">
+									<g:message code="tisa.MistoController.name.pl"/>
+							</g:link>
 					</span>
 			</div>			
 			
