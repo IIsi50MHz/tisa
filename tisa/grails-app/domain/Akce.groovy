@@ -1,13 +1,12 @@
 class Akce {
     String nazev
-    Date zacatek_akce
-    String popis
-    Integer vstupne_min
-    Integer vstupne_max
-    String odkaz
-    def belongsTo = [Misto, Zpusob_vyprseni_rezervace, Rozmisteni]
-    Misto misto
-		Rozmisteni rozmisteni
+    Date zacatek_akce = new Date()
+    String popis = ""
+    Integer vstupne_min = 0
+    Integer vstupne_max = 0
+    String odkaz = ""
+    def belongsTo = [Zpusob_vyprseni_rezervace, Rozmisteni]
+    Rozmisteni rozmisteni
     Zpusob_vyprseni_rezervace zpusob_vyprseni_rezervace
 		
     def hasMany = [rezervace:Rezervace]

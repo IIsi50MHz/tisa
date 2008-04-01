@@ -9,6 +9,7 @@ class UrlMappings {
 			"/admin/" (controller:"akce")
 			"/admin/akce/$action?/$id?" (controller:"akce")
 			"/admin/misto/$action?/$id?" (controller:"misto")
+        		"/admin/mesto/$action?/$id?" (controller:"mesto")
 			"/admin/rezervace/$action?/$id?" (controller:"rezervace")
 			"/admin/rozmisteni/$action?/$id?" (controller:"rozmisteni")
 			"/admin/vyprseni/$action?/$id?" (controller:"zpusob_vyprseni_rezervace")

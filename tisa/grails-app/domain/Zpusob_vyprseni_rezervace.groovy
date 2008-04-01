@@ -1,6 +1,8 @@
 class Zpusob_vyprseni_rezervace {
     String druh
     Integer cas
+    def belongsTo = Misto
+    Misto misto
     
 		static druhy = ["before_action_begin", "after_reservation_taken"]
 		static casy = [300, 900, 1800, 3600, 7200, 14400, 18800, 37600, 75200, //last # is week
