@@ -2,7 +2,7 @@ dataSource {
 	pooled = true
 	//driverClassName = "org.hsqldb.jdbcDriver"
         driverClassName = "com.mysql.jdbc.Driver"
-        url = "jdbc:mysql://localhost/tisa"
+        url = "jdbc:mysql://localhost/tisa?useUnicode=true&characterEncoding=UTF-8"
 	username = "root"
 	password = ""
 }

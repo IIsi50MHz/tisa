@@ -25,8 +25,9 @@
                                 <td valign="top" class="name">
                                     <label for="misto">Místo:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:akce,field:'misto','errors')}">
-                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${akce?.misto?.id}" ></g:select>
+                                <!-- TODO -->
+                                <td valign="top" class="value">
+                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="" ></g:select>
                                 </td>
                             </tr> 
                         

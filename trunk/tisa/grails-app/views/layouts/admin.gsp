@@ -8,7 +8,7 @@
     </head>
     <body>
 				<span id="user_line">
-					Nejsi přihlášen | <g:link controller="front_end">jít do front endu</g:link>
+					Nejsi přihlášen | <g:link controller="front_end"><g:message code="tisa.user.go_front_end"/> </g:link>
 				</span>
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
@@ -26,6 +26,9 @@
 							</g:link>
 							<g:link controller="misto">
 									<g:message code="tisa.misto.name.pl"/>
+							</g:link>
+                                                        <g:link controller="mesto">
+									<g:message code="tisa.mesto.name.pl"/>
 							</g:link>
 							<g:link controller="rezervace">
 									<g:message code="tisa.rezervace.name.pl"/>
