@@ -1,18 +1,12 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="admin" />
-        <title>Create Spravce</title>         
+        <meta name="layout" content="front_end" />
+        <title><g:message code="tisa.spravce.register"/></title>         
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Spravce List</g:link></span>
-        </div>
         <div class="body">
-            <h1>Create Spravce</h1>
+            <h1><g:message code="tisa.spravce.register"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -55,15 +49,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="sul">Sul:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:spravce,field:'sul','errors')}">
-                                    <input type="text" id="sul" name="sul" value="${fieldValue(bean:spravce,field:'sul')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="telefon">Telefon:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:spravce,field:'telefon','errors')}">
@@ -79,21 +64,11 @@
                                     <input type="text" id="adresa" name="adresa" value="${fieldValue(bean:spravce,field:'adresa')}"/>
                                 </td>
                             </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="vsechna_prava">Vsechnaprava:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:spravce,field:'vsechna_prava','errors')}">
-                                    <g:checkBox name="vsechna_prava" value="${spravce?.vsechna_prava}" ></g:checkBox>
-                                </td>
-                            </tr> 
-                        
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+                    <span class="button"><input class="save" type="submit" value="ok" /></span>
                 </div>
             </g:form>
         </div>
