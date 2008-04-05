@@ -21,10 +21,10 @@
 				
 			<div class="nav">
 					<span class="menuButton">
-							<g:link controller="front_akce">
+							<g:link controller="frontAkce">
 									<g:message code="tisa.akce.name.pl"/>
 							</g:link>
-							<g:link controller="front_misto">
+							<g:link controller="frontMisto">
 									<g:message code="tisa.misto.name.pl"/>
 							</g:link>
 					</span>
