@@ -1,5 +1,5 @@
-            
-class MistoController {
+class FrontMistoController {
+
     
     def index = { redirect(action:list,params:params) }
 
@@ -80,4 +80,5 @@ class MistoController {
             render(view:'create',model:[misto:misto])
         }
     }
+
 }

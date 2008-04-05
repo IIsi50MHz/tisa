@@ -1,4 +1,4 @@
-class Front_spravceController {
+class FrontSpravceController {
 
     def register = {
 		}
