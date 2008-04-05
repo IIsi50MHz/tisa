@@ -5,9 +5,9 @@ class Akce {
     Integer vstupne_min = 0
     Integer vstupne_max = 0
     String odkaz = ""
-    def belongsTo = [Zpusob_vyprseni_rezervace, Rozmisteni]
+    def belongsTo = [ZpusobVyprseniRezervace, Rozmisteni]
     Rozmisteni rozmisteni
-    Zpusob_vyprseni_rezervace zpusob_vyprseni_rezervace
+    ZpusobVyprseniRezervace zpusobVyprseniRezervace
 		
     def hasMany = [rezervace:Rezervace]
         

@@ -1,4 +1,4 @@
-class Zpusob_vyprseni_rezervace {
+class ZpusobVyprseniRezervace {
     String druh
     Integer cas
     def belongsTo = Misto
