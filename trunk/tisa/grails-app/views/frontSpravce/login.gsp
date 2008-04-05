@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="front_end" />
-        <title><g:message code="tisa.spravce.register"/></title>         
+        <title><g:message code="tisa.spravce.login"/></title>         
     </head>
     <body>
         <div class="body">
