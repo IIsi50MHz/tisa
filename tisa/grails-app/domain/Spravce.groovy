@@ -19,8 +19,13 @@ class Spravce {
 				adresa()
     }
 		
+		def authenticate(String email, String pass) {
+				Spravce.findByEmailAndHeslo(email, (String)hash(pass))
+    }
+		
 		def beforeSave  = {
-				puts "hello ------- "
+				puts "hello ------- saving..."
+				password = hash(password)
     }
 		
 		def byte[] hash(String password) {
@@ -28,25 +33,5 @@ class Spravce {
        digest.reset();
        byte[] input = digest.digest(password.getBytes("UTF-8"));
 		}
-		
-		/*
-		static final hash_password(String password) {
-				MessageDigest md = null;
-				try	{
-					md = MessageDigest.getInstance("SHA"); //step 2
-				}	catch(NoSuchAlgorithmException e)	{
-						throw e
-					//throw new SystemUnavailableException(e.getMessage());
-				}
-				try {
-					md.update(password.getBytes("UTF-8")); //step 3
-				}	catch(UnsupportedEncodingException e)	{
-						throw e
-					//throw new SystemUnavailableException(e.getMessage());
-				}
-				def raw = md.digest(); //step 4
-				String hash = (new BASE64Encoder()).encode(raw); //step 5
-				return hash; //step 6				
-    }*/
-		
+				
 }

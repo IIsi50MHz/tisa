@@ -24,17 +24,17 @@
                                 <td valign="top" class="name">
                                     <label for="misto"><g:message code="tisa.user.email" />:</label>
                                 </td>
-																<td valign="top" class="value ${hasErrors(bean:spravce,field:'email','errors')}">
-																		<input type="text" id="nazev" name="nazev" value="${fieldValue(bean:spravce,field:'email')}"/>
+																<td valign="top" class="value">
+																		<input type="text" id="nazev" name="email" value="${fieldValue(bean:spravce,field:'email')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td valign="top" class="heslo">
                                     <label for="email"><g:message code="tisa.user.password" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:spravce,field:'password','errors')}">
-																		<input type="text" id="nazev" name="nazev" value="${fieldValue(bean:spravce,field:'heslo')}"/>
+                                <td valign="top" class="value">
+																		<input type="text" id="heslo" name="heslo" value="${fieldValue(bean:spravce,field:'heslo')}"/>
                                 </td>
                             </tr>
                         </tbody>

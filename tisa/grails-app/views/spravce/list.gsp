@@ -42,7 +42,7 @@
                             <td>${spravce.telefon?.encodeAsHTML()}</td>
                         
 												
-                            <td><g:message code="tisa.spravce.allrights.${spravce.vsechna_prava}" /></td>
+                            <td><g:message code="tisa.user.allrights.${spravce.vsechna_prava}" /></td>
                         
                         </tr>
                     </g:each>

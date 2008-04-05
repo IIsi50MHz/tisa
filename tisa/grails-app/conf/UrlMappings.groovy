@@ -7,7 +7,7 @@ class UrlMappings {
 			"/spravce/$action?/$id?" (controller:"frontSpravce")
 				
 
-			"/admin/" (controller:"admin")
+			"/admin/a/$action?/$id?" (controller:"admin")
 			"/admin/akce/$action?/$id?" (controller:"akce")
 			"/admin/misto/$action?/$id?" (controller:"misto")
       "/admin/mesto/$action?/$id?" (controller:"mesto")

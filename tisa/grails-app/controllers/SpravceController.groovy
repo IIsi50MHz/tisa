@@ -46,38 +46,26 @@ class SpravceController {
         }
     }
 
-    def update = {
-        def spravce = Spravce.get( params.id )
-        if(spravce) {
-            spravce.properties = params
-            if(!spravce.hasErrors() && spravce.save()) {
-                flash.message = "Spravce ${params.id} updated"
-                redirect(action:list)
-            }
-            else {
-                render(view:'edit',model:[spravce:spravce])
-            }
-        }
-        else {
-            flash.message = "Spravce not found with id ${params.id}"
-            redirect(action:edit,id:params.id)
-        }
-    }
-
     def create = {
         def spravce = new Spravce()
         spravce.properties = params
-        return ['spravce':spravce]
+        render(view:'edit',model:[spravce:spravce])
     }
 
     def save = {
-        def spravce = new Spravce(params)
-        if(!spravce.hasErrors() && spravce.save()) {
-            flash.message = "Spravce ${spravce.id} created"
-            redirect(action:show,id:spravce.id)
+        def spravce
+				if (params.id) {
+						spravce = Spravce.get( params.id )
+						spravce.properties = params
         }
-        else {
-            render(view:'create',model:[spravce:spravce])
+        if(!spravce) {
+						spravce = new Spravce(params)
+				}
+        if(!spravce.hasErrors() && spravce.save()) {
+            flash.message = "Spravce ${spravce.id} saved"
+            redirect(action:show,id:spravce.id)
+        } else {
+            render(view:'edit',model:[spravce:spravce])
         }
     }
 }
