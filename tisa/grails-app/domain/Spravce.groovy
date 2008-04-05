@@ -1,8 +1,4 @@
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import sun.misc.BASE64Encoder;
-import sun.misc.CharacterEncoder;
 
 class Spravce {
 
@@ -26,6 +22,13 @@ class Spravce {
 		def beforeSave  = {
 				puts "hello ------- "
     }
+		
+		def byte[] hash(String password) {
+       MessageDigest digest = MessageDigest.getInstance("SHA-1");
+       digest.reset();
+       byte[] input = digest.digest(password.getBytes("UTF-8"));
+		}
+		
 		/*
 		static final hash_password(String password) {
 				MessageDigest md = null;
