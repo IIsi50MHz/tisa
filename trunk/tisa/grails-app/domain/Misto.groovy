@@ -3,8 +3,9 @@ class Misto {
   String odkaz_mapa=""
   String popis=""
   def hasMany = [akce:Akce]
-  def belongsTo = Mesto
+  def belongsTo = [Mesto, Spravce]
   Mesto mesto
+	Spravce spravce
   
     static constraints = {
         nazev(blank:false)

@@ -2,36 +2,47 @@ import java.security.MessageDigest;
 
 class Spravce {
 
-		String cele_jmeno
-		String email
-		String heslo
-		String sul
-		String telefon
-		String adresa
-		Boolean vsechna_prava = 0
+		String cele_jmeno = ""
+		String email = ""
+		String sul = ""
+		String telefon = ""
+		String adresa = ""
+		String heslo = ""
+		String hashed_heslo = ""
+		Boolean vsechna_prava = false
+		private Boolean nove_heslo = false
+		def hasMany = [mista:Misto]		
 		
 		static constraints = {
 				cele_jmeno(blank:false)
 				email(blank:false)
-				heslo(size:5..30)
-				sul(blank:false)
+				hashed_heslo(nullable:true)
+				sul(nullable:true)
 				telefon()
 				adresa()
     }
 		
 		def authenticate(String email, String pass) {
-				Spravce.findByEmailAndHeslo(email, (String)hash(pass))
+				Spravce.findByEmailAndHashedHeslo(email, hash(sul+pass))
+    }
+
+		def beforeInsert = {
+				beforeUpdate()
+    }
+
+		def beforeUpdate   = {
+				
+				if (heslo!='') {
+						this.sul = hash(this.heslo+"abcd")
+						this.hashed_heslo = hash(this.sul+this.heslo)
+						this.heslo = ''
+        }		
     }
 		
-		def beforeSave  = {
-				puts "hello ------- saving..."
-				password = hash(password)
-    }
-		
-		def byte[] hash(String password) {
+		def String hash(String password) {
        MessageDigest digest = MessageDigest.getInstance("SHA-1");
        digest.reset();
-       byte[] input = digest.digest(password.getBytes("UTF-8"));
+       (String) digest.digest(password.getBytes("UTF-8"));
 		}
 				
 }
