@@ -4,11 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="admin" />
-        <title>Show Akce</title>
+        <title>Show Poradatel</title>
     </head>
     <body>
         <div class="body">
-            <h1>Show Akce</h1>
+            <h1>Show Poradatel</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -20,63 +20,49 @@
                         <tr class="prop">
                             <td valign="top" class="name">Id:</td>
                             
-                            <td valign="top" class="value">${akce.id}</td>
+                            <td valign="top" class="value">${poradatel.id}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Misto:</td>
+                            <td valign="top" class="name">Celejmeno:</td>
                             
-                            <td valign="top" class="value"><g:link controller="misto" action="show" id="${akce?.misto?.id}">${akce?.misto}</g:link></td>
-                            
-                        </tr>
-                        
-                        <tr class="prop">
-                            <td valign="top" class="name">Poradatel:</td>
-                            
-                            <td valign="top" class="value"><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel}</g:link></td>
+                            <td valign="top" class="value">${poradatel.cele_jmeno}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Nazev:</td>
+                            <td valign="top" class="name">Email:</td>
                             
-                            <td valign="top" class="value">${akce.nazev}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Odkaz:</td>
-                            
-                            <td valign="top" class="value">${akce.odkaz}</td>
+                            <td valign="top" class="value">${poradatel.email}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Popis:</td>
+                            <td valign="top" class="name">Heslo:</td>
                             
-                            <td valign="top" class="value">${akce.popis}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Vstupnemax:</td>
-                            
-                            <td valign="top" class="value">${akce.vstupne_max}</td>
+                            <td valign="top" class="value">${poradatel.heslo}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Vstupnemin:</td>
+                            <td valign="top" class="name">Sul:</td>
                             
-                            <td valign="top" class="value">${akce.vstupne_min}</td>
+                            <td valign="top" class="value">${poradatel.sul}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Zacatekakce:</td>
+                            <td valign="top" class="name">Telefon:</td>
                             
-                            <td valign="top" class="value">${akce.zacatek_akce}</td>
+                            <td valign="top" class="value">${poradatel.telefon}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Adresa:</td>
+                            
+                            <td valign="top" class="value">${poradatel.adresa}</td>
                             
                         </tr>
                     
@@ -85,7 +71,7 @@
             </div>
             <div class="buttons">
                 <g:form>
-                    <input type="hidden" name="id" value="${akce?.id}" />
+                    <input type="hidden" name="id" value="${poradatel?.id}" />
                     <span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
                 </g:form>

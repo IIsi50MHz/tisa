@@ -39,6 +39,9 @@
 							<g:link controller="zpusobVyprseniRezervace">
 									<g:message code="tisa.zpusobVyprseniRezervace.name.pl"/>
 							</g:link>
+							<g:link controller="poradatel">
+									<g:message code="tisa.poradatel.name.pl"/>
+                                                        </g:link>
 							<g:link controller="spravce">
 									<g:message code="tisa.spravce.name.pl"/>
 							</g:link>
