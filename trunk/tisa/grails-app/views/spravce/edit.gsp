@@ -13,7 +13,7 @@
             <span class="menuButton"><g:link class="create" action="create">New Spravce</g:link></span>
         </div>
         <div class="body">
-            <h1>Edit Spravce</h1>
+            <h1>Spravce</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -22,15 +22,14 @@
                 <g:renderErrors bean="${spravce}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post" >
+            <g:form method="post" action="save">
                 <input type="hidden" name="id" value="${spravce?.id}" />
                 <div class="dialog">
                     <table>
-                        <tbody>
-                        
+                        <tbody>                       
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="cele_jmeno">Celejmeno:</label>
+                                    <label for="cele_jmeno">Cele jmeno:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:spravce,field:'cele_jmeno','errors')}">
                                     <input type="text" id="cele_jmeno" name="cele_jmeno" value="${fieldValue(bean:spravce,field:'cele_jmeno')}"/>
@@ -95,7 +94,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="Ssave" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
                 </div>
             </g:form>
