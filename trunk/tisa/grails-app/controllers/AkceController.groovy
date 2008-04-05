@@ -1,27 +1,14 @@
             
-class AkceController  {
-   
-		
+class AkceController {
+    
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
-        def list
-        if(params.id) {
-            def misto = Misto.get(params.id);
-            if (misto) {
-                list = misto.akce;
-            } else {
-                flash.message = "Takové místo neexistuje. (id ${params.id})"
-                redirect(action:this.list)
-            }
-        } else {
-            list = Akce.list( params )
-        }
-        params.max ?: 10
-        [ akceList: list ]
+        if(!params.max) params.max = 10
+        [ akceList: Akce.list( params ) ]
     }
 
     def show = {

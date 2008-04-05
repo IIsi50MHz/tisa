@@ -29,6 +29,15 @@
                                 <td valign="top" class="value">
                                     <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="" ></g:select>
                                 </td>
+                            </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="poradatel">Pořadatel:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
+                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
+                                </td>
                             </tr> 
                         
                             <tr class="prop">

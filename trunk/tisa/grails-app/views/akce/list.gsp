@@ -20,6 +20,8 @@
                    	        <g:sortableColumn property="nazev" title="Nazev" />
 
                    	        <th>Misto</th>
+                                
+                                <th>Poradatel</th>
                         
                    	        <g:sortableColumn property="odkaz" title="Odkaz" />
                         
@@ -36,10 +38,11 @@
                             <td>${akce.id?.encodeAsHTML()}</td>
                         
                             <td><g:link action="edit" id="${akce.id}">${akce.nazev?.encodeAsHTML()}</g:link></td>
-
-													 <td><g:link controller="misto" action="show" id="${akce.misto.id}">${akce.misto?.encodeAsHTML()}</g:link></td>
-                        
-                        
+                            
+                            <td><g:link controller="misto" action="show" id="${akce.misto.id}">${akce.misto?.encodeAsHTML()}</g:link></td>
+                                                                            
+                            <td>${akce.poradatel?.encodeAsHTML()}</td>
+                            
                             <td>${akce.odkaz?.encodeAsHTML()}</td>
                         
                             <td>${akce.popis?.encodeAsHTML()}</td>
