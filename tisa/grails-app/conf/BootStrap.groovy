@@ -38,7 +38,7 @@ class BootStrap {
         def saly = []
       
         for (cinestar in cinestary) {
-            def vyprseni = new Zpusob_vyprseni_rezervace(cas:1800, druh:"before_action_begin")
+            def vyprseni = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin")
             vyprseni.misto = cinestar
             vyprseni.save()
             saly[0] = new Rozmisteni(nazev:"Sál A", misto:cinestar).save()
@@ -60,15 +60,15 @@ class BootStrap {
                     j++
                   }
                   new Akce(nazev:"Matrix 4", zacatek_akce:pondeli[0], popis:"musíte vidět",
-                    vstupne_min:150, vstupne_max:150, odkaz:"", zpusob_vyprseni_rezervace:vyprseni, rozmisteni:sal).save()
+                    vstupne_min:150, vstupne_max:150, odkaz:"", ZpusobVyprseniRezervace:vyprseni, rozmisteni:sal).save()
                   new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:pondeli[1], popis:"musíte vidět",
-                    vstupne_min:50, vstupne_max:150, odkaz:"", zpusob_vyprseni_rezervace:vyprseni, rozmisteni:sal).save()
+                    vstupne_min:50, vstupne_max:150, odkaz:"", ZpusobVyprseniRezervace:vyprseni, rozmisteni:sal).save()
                   new Akce(nazev:"Shrek 8", zacatek_akce:pondeli[2], popis:"musíte vidět",
-                    vstupne_min:150, vstupne_max:150, odkaz:"", zpusob_vyprseni_rezervace:vyprseni, rozmisteni:sal).save()
+                    vstupne_min:150, vstupne_max:150, odkaz:"", ZpusobVyprseniRezervace:vyprseni, rozmisteni:sal).save()
                   new Akce(nazev:"Life of Brian", zacatek_akce:pondeli[3], popis:"musíte vidět",
-                    vstupne_min:70, vstupne_max:70, odkaz:"", zpusob_vyprseni_rezervace:vyprseni, rozmisteni:sal).save()
+                    vstupne_min:70, vstupne_max:70, odkaz:"", ZpusobVyprseniRezervace:vyprseni, rozmisteni:sal).save()
                   new Akce(nazev:"Rocky 9", zacatek_akce:pondeli[4], popis:"musíte vidět",
-                    vstupne_min:70, vstupne_max:70, odkaz:"", zpusob_vyprseni_rezervace:vyprseni, rozmisteni:sal).save()
+                    vstupne_min:70, vstupne_max:70, odkaz:"", ZpusobVyprseniRezervace:vyprseni, rozmisteni:sal).save()
                 }
                 
             }
