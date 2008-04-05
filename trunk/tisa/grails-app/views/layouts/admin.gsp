@@ -8,15 +8,15 @@
     </head>
     <body>
 				<span id="user_line">
-					Nejsi přihlášen | <g:link controller="front_end"><g:message code="tisa.user.go_front_end"/> </g:link>
+					Nejsi přihlášen | <g:link controller="front_end"><g:message code="tisa.user.go_front_end"/></g:link>
 				</span>
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>	
         <div class="logo">
-					<a class="home" href="${createLinkTo(dir:'')}">
-					<img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
-					</a>
+					<g:link controller="front_end">
+						<img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
+					</g:link>
 				</div>	
 				
 			<div class="nav">
@@ -27,7 +27,7 @@
 							<g:link controller="misto">
 									<g:message code="tisa.misto.name.pl"/>
 							</g:link>
-                                                        <g:link controller="mesto">
+              <g:link controller="mesto">
 									<g:message code="tisa.mesto.name.pl"/>
 							</g:link>
 							<g:link controller="rezervace">
@@ -36,8 +36,8 @@
 							<g:link controller="rozmisteni">
 									<g:message code="tisa.rozmisteni.name.pl"/>
 							</g:link>
-							<g:link controller="zpusob_vyprseni_rezervace">
-									<g:message code="tisa.zpusob_vyprseni_rezervace.name.pl"/>
+							<g:link controller="zpusobVyprseniRezervace">
+									<g:message code="tisa.zpusobVyprseniRezervace.name.pl"/>
 							</g:link>
 							<g:link controller="spravce">
 									<g:message code="tisa.spravce.name.pl"/>
