@@ -13,7 +13,6 @@ class SpravceController {
 
     def show = {
         def spravce = Spravce.get( params.id )
-
         if(!spravce) {
             flash.message = "Spravce not found with id ${params.id}"
             redirect(action:list)
@@ -61,11 +60,14 @@ class SpravceController {
         if(!spravce) {
 						spravce = new Spravce(params)
 				}
-        if(!spravce.hasErrors() && spravce.save()) {
-            flash.message = "Spravce ${spravce.id} saved"
-            redirect(action:show,id:spravce.id)
+				if (params.heslo != params.heslo_znova) {
+						flash.message = "Heslo a jeho potvrzení musí být stejné."
         } else {
-            render(view:'edit',model:[spravce:spravce])
+						if(!spravce.hasErrors() && spravce.save()) {
+								flash.message = "Spravce ${spravce.id} saved"
+								redirect(action:show,id:spravce.id)
+						} 
         }
+				render(view:'edit',model:[spravce:spravce])
     }
 }

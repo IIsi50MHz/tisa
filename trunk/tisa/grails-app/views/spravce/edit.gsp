@@ -47,21 +47,22 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="heslo">Heslo:</label>
+                                    <label for="heslo"><g:message code="tisa.user.password"/>:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:spravce,field:'heslo','errors')}">
-                                    <input type="text" id="heslo" name="heslo" value="${fieldValue(bean:spravce,field:'heslo')}"/>
+                                    <input type="password" id="heslo" name="heslo" value=""/>
                                 </td>
                             </tr> 
-                        
+                
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="sul">Sul:</label>
+                                    <label for="heslo"><g:message code="tisa.user.password_again"/>:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:spravce,field:'sul','errors')}">
-                                    <input type="text" id="sul" name="sul" value="${fieldValue(bean:spravce,field:'sul')}"/>
+                                <td valign="top" class="value">
+                                    <input type="password" id="heslo" name="heslo_znova" value=""/>
                                 </td>
                             </tr> 
+                
                         
                             <tr class="prop">
                                 <td valign="top" class="name">

@@ -40,12 +40,22 @@
                                     <g:select valueMessagePrefix="tisa.zpusobVyprseniRezervace.druhy" from="${zpusobVyprseniRezervace.druhy}" name="druh" value="${fieldValue(bean:zpusobVyprseniRezervace,field:'druh')}"></g:select>
                                 </td>
                             </tr> 
+														
+				                    <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="misto">Místo:</label>
+                                </td>
+				                        <td valign="top" class="value ${hasErrors(bean:zpusobVyprseniRezervace,field:'misto','errors')}">
+                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${fieldValue(bean:zpusobVyprseniRezervace?.misto)}" ></g:select>
+                                </td>
+                            </tr> 
+
                         
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="Save" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
                 </div>
             </g:form>
