@@ -10,23 +10,23 @@ class ZpusobVyprseniRezervaceController extends AdminController {
 
     def list = {
         if(!params.max) params.max = 10
-        [ ZpusobVyprseniRezervaceList: ZpusobVyprseniRezervace.list( params ) ]
+        [ zpusobVyprseniRezervaceList: ZpusobVyprseniRezervace.list( params ) ]
     }
 
     def show = {
-        def ZpusobVyprseniRezervace = ZpusobVyprseniRezervace.get( params.id )
+        def vyprseni = ZpusobVyprseniRezervace.get( params.id )
 
-        if(!ZpusobVyprseniRezervace) {
+        if(!vyprseni) {
             flash.message = "ZpusobVyprseniRezervace not found with id ${params.id}"
             redirect(action:list)
         }
-        else { return [ ZpusobVyprseniRezervace : ZpusobVyprseniRezervace ] }
+        else { return [ zpusobVyprseniRezervace : vyprseni ] }
     }
 
     def delete = {
-        def ZpusobVyprseniRezervace = ZpusobVyprseniRezervace.get( params.id )
-        if(ZpusobVyprseniRezervace) {
-            ZpusobVyprseniRezervace.delete()
+        def vyprseni = ZpusobVyprseniRezervace.get( params.id )
+        if(vyprseni) {
+            vyprseni.delete()
             flash.message = "ZpusobVyprseniRezervace ${params.id} deleted"
             redirect(action:list)
         }
@@ -37,27 +37,27 @@ class ZpusobVyprseniRezervaceController extends AdminController {
     }
 
     def edit = {
-        def ZpusobVyprseniRezervace = ZpusobVyprseniRezervace.get( params.id )
+        def vyprseni = ZpusobVyprseniRezervace.get( params.id )
 
-        if(!ZpusobVyprseniRezervace) {
+        if(!vyprseni) {
             flash.message = "ZpusobVyprseniRezervace not found with id ${params.id}"
             redirect(action:list)
         }
         else {
-            return [ ZpusobVyprseniRezervace : ZpusobVyprseniRezervace ]
+            return [ zpusobVyprseniRezervace : vyprseni ]
         }
     }
 
     def update = {
-        def ZpusobVyprseniRezervace = ZpusobVyprseniRezervace.get( params.id )
-        if(ZpusobVyprseniRezervace) {
-            ZpusobVyprseniRezervace.properties = params
-            if(!ZpusobVyprseniRezervace.hasErrors() && ZpusobVyprseniRezervace.save()) {
+        def vyprseni = ZpusobVyprseniRezervace.get( params.id )
+        if(vyprseni) {
+            vyprseni.properties = params
+            if(!vyprseni.hasErrors() && vyprseni.save()) {
                 flash.message = "ZpusobVyprseniRezervace ${params.id} updated"
-                redirect(action:show,id:ZpusobVyprseniRezervace.id)
+                redirect(action:show,id:vyprseni.id)
             }
             else {
-                render(view:'edit',model:[ZpusobVyprseniRezervace:ZpusobVyprseniRezervace])
+                render(view:'edit',model:[ZpusobVyprseniRezervace:vyprseni])
             }
         }
         else {
@@ -67,19 +67,26 @@ class ZpusobVyprseniRezervaceController extends AdminController {
     }
 
     def create = {
-        def ZpusobVyprseniRezervace = new ZpusobVyprseniRezervace()
-        ZpusobVyprseniRezervace.properties = params
-        return ['ZpusobVyprseniRezervace':ZpusobVyprseniRezervace]
+        def vyprseni = new ZpusobVyprseniRezervace()
+        vyprseni.properties = params
+        return ['zpusobVyprseniRezervace':vyprseni]
     }
 
     def save = {
-        def ZpusobVyprseniRezervace = new ZpusobVyprseniRezervace(params)
-        if(!ZpusobVyprseniRezervace.hasErrors() && ZpusobVyprseniRezervace.save()) {
-            flash.message = "ZpusobVyprseniRezervace ${ZpusobVyprseniRezervace.id} created"
-            redirect(action:show,id:ZpusobVyprseniRezervace.id)
+        def vyprseni
+				if (params.id) {
+						vyprseni = ZpusobVyprseniRezervace.get( params.id )
         }
-        else {
-            render(view:'create',model:[ZpusobVyprseniRezervace:ZpusobVyprseniRezervace])
+				if (vyprseni) {
+						vyprseni.properties = params
+				} else {
+						vyprseni = new ZpusobVyprseniRezervace(params)		
         }
-    }
+        if(!vyprseni.hasErrors() && vyprseni.save()) {
+            flash.message = "ZpusobVyprseniRezervace ${params.id} updated"
+            redirect(action:list)
+        } else {
+            render(view:'edit',model:[ZpusobVyprseniRezervace:vyprseni])
+        }
+   }
 }
