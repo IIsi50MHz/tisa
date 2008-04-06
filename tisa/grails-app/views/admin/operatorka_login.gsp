@@ -33,7 +33,7 @@
                                     <label for="email"><g:message code="tisa.user.password" /></label>
                                 </td>
                                 <td valign="top" class="value">
-																		<input type="text" id="heslo" name="heslo" value="${fieldValue(bean:operatorka,field:'heslo')}"/>
+																		<input type="password" id="heslo" name="heslo" value="${fieldValue(bean:operatorka,field:'heslo')}"/>
                                 </td>
                             </tr>
                         </tbody>
