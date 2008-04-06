@@ -1,11 +1,20 @@
 class AdminController {
 		
-		//def defaultAction = "login"
+		
+		def beforeFilter = [ execute:this.&authenticate, except:[spravce_login, operatorka_login] ]
+		
+		def authenticate = {
+        if(!session.user) {
+						redirect(action:spravce_login)
+            return false
+        }
+		}		
 		
 		//def allowedMethods = [login:'POST']
 		
 		def index = {
-				redirect(action:"spravce_login")
+				
+				//redirect(action:"spravce_login")
     }
 		
     def spravce_login = {
@@ -20,7 +29,7 @@ class AdminController {
             } else {
 								if (s.authenticate(params.heslo)) {
 										session.user = s
-										redirect(controller:"misto")
+										redirect(action:"index")
 								} else {
 										flash.message = "Email a heslo si nesouhlasí."
 								}
