@@ -6,6 +6,8 @@ class FrontMistoController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Misto"
+    
     def list = {
         if(!params.max) params.max = 10
         [ mistoList: Misto.list( params ) ]
@@ -15,7 +17,7 @@ class FrontMistoController {
         def misto = Misto.get( params.id )
 
         if(!misto) {
-            flash.message = "Misto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ misto : misto ] }
@@ -25,11 +27,11 @@ class FrontMistoController {
         def misto = Misto.get( params.id )
         if(misto) {
             misto.delete()
-            flash.message = "Misto ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Misto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +40,7 @@ class FrontMistoController {
         def misto = Misto.get( params.id )
 
         if(!misto) {
-            flash.message = "Misto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +53,7 @@ class FrontMistoController {
         if(misto) {
             misto.properties = params
             if(!misto.hasErrors() && misto.save()) {
-                flash.message = "Misto ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:misto.id)
             }
             else {
@@ -59,7 +61,7 @@ class FrontMistoController {
             }
         }
         else {
-            flash.message = "Misto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +75,7 @@ class FrontMistoController {
     def save = {
         def misto = new Misto(params)
         if(!misto.hasErrors() && misto.save()) {
-            flash.message = "Misto ${misto.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:misto.id)
         }
         else {

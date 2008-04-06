@@ -6,7 +6,10 @@ class Kategorie_mistController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Kategorie_mist"
+    
     def list = {
+
         if(!params.max) params.max = 10
         [ kategorie_mistList: Kategorie_mist.list( params ) ]
     }
@@ -15,7 +18,8 @@ class Kategorie_mistController {
         def kategorie_mist = Kategorie_mist.get( params.id )
 
         if(!kategorie_mist) {
-            flash.message = "Kategorie_mist not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
+            
             redirect(action:list)
         }
         else { return [ kategorie_mist : kategorie_mist ] }
@@ -25,11 +29,11 @@ class Kategorie_mistController {
         def kategorie_mist = Kategorie_mist.get( params.id )
         if(kategorie_mist) {
             kategorie_mist.delete()
-            flash.message = "Kategorie_mist ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Kategorie_mist not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +42,7 @@ class Kategorie_mistController {
         def kategorie_mist = Kategorie_mist.get( params.id )
 
         if(!kategorie_mist) {
-            flash.message = "Kategorie_mist not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +55,7 @@ class Kategorie_mistController {
         if(kategorie_mist) {
             kategorie_mist.properties = params
             if(!kategorie_mist.hasErrors() && kategorie_mist.save()) {
-                flash.message = "Kategorie_mist ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:kategorie_mist.id)
             }
             else {
@@ -59,7 +63,7 @@ class Kategorie_mistController {
             }
         }
         else {
-            flash.message = "Kategorie_mist not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +77,7 @@ class Kategorie_mistController {
     def save = {
         def kategorie_mist = new Kategorie_mist(params)
         if(!kategorie_mist.hasErrors() && kategorie_mist.save()) {
-            flash.message = "Kategorie_mist ${kategorie_mist.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:kategorie_mist.id)
         }
         else {

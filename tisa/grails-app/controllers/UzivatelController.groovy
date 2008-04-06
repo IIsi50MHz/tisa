@@ -6,6 +6,8 @@ class UzivatelController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Uzivatel"
+    
     def list = {
         if(!params.max) params.max = 10
         [ uzivatelList: Uzivatel.list( params ) ]
@@ -15,7 +17,7 @@ class UzivatelController {
         def uzivatel = Uzivatel.get( params.id )
 
         if(!uzivatel) {
-            flash.message = "Uzivatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ uzivatel : uzivatel ] }
@@ -25,11 +27,11 @@ class UzivatelController {
         def uzivatel = Uzivatel.get( params.id )
         if(uzivatel) {
             uzivatel.delete()
-            flash.message = "Uzivatel ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Uzivatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +40,7 @@ class UzivatelController {
         def uzivatel = Uzivatel.get( params.id )
 
         if(!uzivatel) {
-            flash.message = "Uzivatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +53,7 @@ class UzivatelController {
         if(uzivatel) {
             uzivatel.properties = params
             if(!uzivatel.hasErrors() && uzivatel.save()) {
-                flash.message = "Uzivatel ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:uzivatel.id)
             }
             else {
@@ -59,7 +61,7 @@ class UzivatelController {
             }
         }
         else {
-            flash.message = "Uzivatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +75,7 @@ class UzivatelController {
     def save = {
         def uzivatel = new Uzivatel(params)
         if(!uzivatel.hasErrors() && uzivatel.save()) {
-            flash.message = "Uzivatel ${uzivatel.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:uzivatel.id)
         }
         else {

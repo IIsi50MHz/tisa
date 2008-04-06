@@ -1,12 +1,14 @@
             
 class ZpusobVyprseniRezervaceController extends AdminController {
 
-		def layout = "admin"
+    def layout = "admin"
     
     def defaultAction = "list"
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
+    
+    def where = "ZpusobVyprseniRezervace"
 
     def list = {
         if(!params.max) params.max = 10
@@ -17,7 +19,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
         def vyprseni = ZpusobVyprseniRezervace.get( params.id )
 
         if(!vyprseni) {
-            flash.message = "ZpusobVyprseniRezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ zpusobVyprseniRezervace : vyprseni ] }
@@ -27,11 +29,11 @@ class ZpusobVyprseniRezervaceController extends AdminController {
         def vyprseni = ZpusobVyprseniRezervace.get( params.id )
         if(vyprseni) {
             vyprseni.delete()
-            flash.message = "ZpusobVyprseniRezervace ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "ZpusobVyprseniRezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -40,7 +42,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
         def vyprseni = ZpusobVyprseniRezervace.get( params.id )
 
         if(!vyprseni) {
-            flash.message = "ZpusobVyprseniRezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -53,7 +55,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
         if(vyprseni) {
             vyprseni.properties = params
             if(!vyprseni.hasErrors() && vyprseni.save()) {
-                flash.message = "ZpusobVyprseniRezervace ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:vyprseni.id)
             }
             else {
@@ -61,7 +63,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
             }
         }
         else {
-            flash.message = "ZpusobVyprseniRezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -83,7 +85,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
 						vyprseni = new ZpusobVyprseniRezervace(params)		
         }
         if(!vyprseni.hasErrors() && vyprseni.save()) {
-            flash.message = "ZpusobVyprseniRezervace ${params.id} updated"
+            flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         } else {
             render(view:'edit',model:[ZpusobVyprseniRezervace:vyprseni])

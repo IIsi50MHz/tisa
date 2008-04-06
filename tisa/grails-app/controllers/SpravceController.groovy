@@ -6,6 +6,8 @@ class SpravceController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Spravce"
+    
     def list = {
         if(!params.max) params.max = 10
         [ spravceList: Spravce.list( params ) ]
@@ -14,7 +16,7 @@ class SpravceController {
     def show = {
         def spravce = Spravce.get( params.id )
         if(!spravce) {
-            flash.message = "Spravce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ spravce : spravce ] }
@@ -24,11 +26,11 @@ class SpravceController {
         def spravce = Spravce.get( params.id )
         if(spravce) {
             spravce.delete()
-            flash.message = "Spravce ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Spravce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -37,7 +39,7 @@ class SpravceController {
         def spravce = Spravce.get( params.id )
 
         if(!spravce) {
-            flash.message = "Spravce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -61,10 +63,10 @@ class SpravceController {
 						spravce = new Spravce(params)
 				}
 				if (params.heslo != params.heslo_znova) {
-						flash.message = "Heslo a jeho potvrzení musí být stejné."
+						flash.message = message(code:"tisa.controllers.pass_must_equal")
         } else {
 						if(!spravce.hasErrors() && spravce.save()) {
-								flash.message = "Spravce ${spravce.id} saved"
+								flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
 								redirect(action:show,id:spravce.id)
 						} 
         }

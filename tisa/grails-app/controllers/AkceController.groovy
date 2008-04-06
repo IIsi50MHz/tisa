@@ -6,6 +6,8 @@ class AkceController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Akce"
+    
     def list = {
         if(!params.max) params.max = 10
         [ akceList: Akce.list( params ) ]
@@ -15,7 +17,7 @@ class AkceController {
         def akce = Akce.get( params.id )
 
         if(!akce) {
-            flash.message = "Akce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ akce : akce ] }
@@ -25,11 +27,11 @@ class AkceController {
         def akce = Akce.get( params.id )
         if(akce) {
             akce.delete()
-            flash.message = "Akce ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Akce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +40,7 @@ class AkceController {
         def akce = Akce.get( params.id )
 
         if(!akce) {
-            flash.message = "Akce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +53,7 @@ class AkceController {
         if(akce) {
             akce.properties = params
             if(!akce.hasErrors() && akce.save()) {
-                flash.message = "Akce ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:akce.id)
             }
             else {
@@ -59,7 +61,7 @@ class AkceController {
             }
         }
         else {
-            flash.message = "Akce not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +75,7 @@ class AkceController {
     def save = {
         def akce = new Akce(params)
         if(!akce.hasErrors() && akce.save()) {
-            flash.message = "Akce ${akce.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:akce.id)
         }
         else {
