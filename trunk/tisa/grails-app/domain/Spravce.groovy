@@ -23,7 +23,7 @@ class Spravce {
     }
 		
 		def authenticate(String pass) {
-				println email+" "+hashed_heslo+" and "+hash(sul+pass)
+				//println email+" "+hashed_heslo+" and "+hash(sul+pass)
 				(hashed_heslo == hash(sul+pass))
     }
 
@@ -32,7 +32,6 @@ class Spravce {
 						//sul = hash(hashed_heslo+"abcd")
 						hashed_heslo = hash(heslo)
 						heslo = ''
-						println "before update "+hashed_heslo
         }			
     }
 
@@ -41,7 +40,6 @@ class Spravce {
 						//sul = hash(hashed_heslo+"abcd")
 						hashed_heslo = hash(heslo)
 						heslo = ''
-						println "before update "+hashed_heslo
         }			
     }
 		
