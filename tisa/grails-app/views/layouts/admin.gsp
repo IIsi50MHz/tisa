@@ -45,6 +45,12 @@
 							<g:link controller="spravce">
 									<g:message code="tisa.spravce.name.pl"/>
 							</g:link>
+                                                        <g:link controller="uzivatel">
+									<g:message code="tisa.uzivatel.name.pl"/>
+							</g:link>
+                                                        <g:link controller="operatorka">
+									<g:message code="tisa.operatorka.name.pl"/>
+							</g:link>
 					</span>
 			</div>			
 			
