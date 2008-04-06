@@ -51,6 +51,12 @@
                                                         <g:link controller="operatorka">
 									<g:message code="tisa.operatorka.name.pl"/>
 							</g:link>
+                                                        <g:link controller="kategorie_mist">
+									<g:message code="tisa.kategorie_mist.name.pl"/>
+							</g:link>
+                                                        <g:link controller="kategorie_akci">
+									<g:message code="tisa.kategorie_akci.name.pl"/>
+							</g:link>
 					</span>
 			</div>			
 			
