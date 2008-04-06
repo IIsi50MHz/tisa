@@ -18,6 +18,17 @@
 						<img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
 					</g:link>
 				</div>	
+
+			<div class="nav">
+					<span class="menuButton">
+							<g:link action="spravce_login">
+									<g:message code="tisa.spravce.login"/>
+							</g:link>
+							<g:link action="operatorka_login">
+									<g:message code="tisa.operatorka.login"/>
+							</g:link>
+					</span>
+			</div>
 				
       <g:layoutBody />		
     </body>	
