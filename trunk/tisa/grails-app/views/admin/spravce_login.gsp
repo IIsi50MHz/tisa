@@ -1,13 +1,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="admin_plain" />
-        <title><g:message code="tisa.admin.login" /></title>         
+        <meta name="layout" content="admin_login" />
+        <title><g:message code="tisa.spravce.login"/></title>         
     </head>
     <body>
 
         <div class="body">
-            <h1><g:message code="tisa.admin.login" /></h1>
+            <h1><g:message code="tisa.spravce.login"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -16,7 +16,7 @@
                 <g:renderErrors bean="${akce}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="login" method="post" >
+            <g:form action="spravce_login" method="post" >
                 <div class="dialog">
                     <table>
                         <tbody>                        
