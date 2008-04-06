@@ -22,27 +22,42 @@ class Spravce {
 				adresa()
     }
 		
-		def authenticate(String email, String pass) {
-				Spravce.findByEmailAndHashedHeslo(email, hash(sul+pass))
+		def authenticate(String pass) {
+				println email+" "+hashed_heslo+" and "+hash(sul+pass)
+				(hashed_heslo == hash(sul+pass))
     }
 
 		def beforeInsert = {
-				beforeUpdate()
+				if (heslo!='') {
+						//sul = hash(hashed_heslo+"abcd")
+						hashed_heslo = hash(heslo)
+						heslo = ''
+						println "before update "+hashed_heslo
+        }			
     }
 
-		def beforeUpdate   = {
-				
+		def beforeUpdate = {				
 				if (heslo!='') {
-						this.sul = hash(this.heslo+"abcd")
-						this.hashed_heslo = hash(this.sul+this.heslo)
-						this.heslo = ''
-        }		
+						//sul = hash(hashed_heslo+"abcd")
+						hashed_heslo = hash(heslo)
+						heslo = ''
+						println "before update "+hashed_heslo
+        }			
     }
 		
 		def String hash(String password) {
-       MessageDigest digest = MessageDigest.getInstance("SHA-1");
-       digest.reset();
-       (String) digest.digest(password.getBytes("UTF-8"));
+				MessageDigest digest = MessageDigest.getInstance("SHA-1");
+				digest.reset();
+				digest.update(password.getBytes("UTF-8"))
+				def byte[] messageDigest = digest.digest();
+				StringBuffer hexString = new StringBuffer();
+				for (int i=0;i<messageDigest.length;i++) {
+						String hex = Integer.toHexString(0xFF & messageDigest[i]); 
+						if(hex.length()==1)
+						hexString.append('0');						
+						hexString.append(hex);
+				}
+				return hexString.toString();
 		}
 				
 }
