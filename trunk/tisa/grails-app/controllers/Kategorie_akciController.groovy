@@ -6,6 +6,8 @@ class Kategorie_akciController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Kategorie_akci"
+      
     def list = {
         if(!params.max) params.max = 10
         [ kategorie_akciList: Kategorie_akci.list( params ) ]
@@ -15,7 +17,7 @@ class Kategorie_akciController {
         def kategorie_akci = Kategorie_akci.get( params.id )
 
         if(!kategorie_akci) {
-            flash.message = "Kategorie_akci not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ kategorie_akci : kategorie_akci ] }
@@ -25,11 +27,11 @@ class Kategorie_akciController {
         def kategorie_akci = Kategorie_akci.get( params.id )
         if(kategorie_akci) {
             kategorie_akci.delete()
-            flash.message = "Kategorie_akci ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Kategorie_akci not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +40,7 @@ class Kategorie_akciController {
         def kategorie_akci = Kategorie_akci.get( params.id )
 
         if(!kategorie_akci) {
-            flash.message = "Kategorie_akci not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +53,7 @@ class Kategorie_akciController {
         if(kategorie_akci) {
             kategorie_akci.properties = params
             if(!kategorie_akci.hasErrors() && kategorie_akci.save()) {
-                flash.message = "Kategorie_akci ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:kategorie_akci.id)
             }
             else {
@@ -59,7 +61,7 @@ class Kategorie_akciController {
             }
         }
         else {
-            flash.message = "Kategorie_akci not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +75,7 @@ class Kategorie_akciController {
     def save = {
         def kategorie_akci = new Kategorie_akci(params)
         if(!kategorie_akci.hasErrors() && kategorie_akci.save()) {
-            flash.message = "Kategorie_akci ${kategorie_akci.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:kategorie_akci.id)
         }
         else {

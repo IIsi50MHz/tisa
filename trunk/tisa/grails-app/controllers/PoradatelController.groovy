@@ -6,6 +6,8 @@ class PoradatelController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Poradatel"
+    
     def list = {
         if(!params.max) params.max = 10
         [ poradatelList: Poradatel.list( params ) ]
@@ -15,7 +17,7 @@ class PoradatelController {
         def poradatel = Poradatel.get( params.id )
 
         if(!poradatel) {
-            flash.message = "Poradatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ poradatel : poradatel ] }
@@ -25,11 +27,11 @@ class PoradatelController {
         def poradatel = Poradatel.get( params.id )
         if(poradatel) {
             poradatel.delete()
-            flash.message = "Poradatel ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Poradatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +40,7 @@ class PoradatelController {
         def poradatel = Poradatel.get( params.id )
 
         if(!poradatel) {
-            flash.message = "Poradatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +53,7 @@ class PoradatelController {
         if(poradatel) {
             poradatel.properties = params
             if(!poradatel.hasErrors() && poradatel.save()) {
-                flash.message = "Poradatel ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:poradatel.id)
             }
             else {
@@ -59,7 +61,7 @@ class PoradatelController {
             }
         }
         else {
-            flash.message = "Poradatel not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +75,7 @@ class PoradatelController {
     def save = {
         def poradatel = new Poradatel(params)
         if(!poradatel.hasErrors() && poradatel.save()) {
-            flash.message = "Poradatel ${poradatel.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:poradatel.id)
         }
         else {

@@ -20,18 +20,18 @@ class AdminController {
     def spravce_login = {
 				def s = new Spravce()
 				if (params.email=='' || params.heslo=='') {
-						flash.message = "vyplňte prosím email i heslo"
+						flash.message = message(code:"tisa.controllers.insert_email_and_pass")
         }
 				if (params.email!=null) {
 						s = Spravce.findByEmail(params.email)
 						if (!s) {
-								flash.message = "Email nesouhlasí."
+								flash.message = message(code:"tisa.controllers.incorrect_email")
             } else {
 								if (s.authenticate(params.heslo)) {
 										session.user = s
 										redirect(action:"index")
 								} else {
-										flash.message = "Email a heslo si nesouhlasí."
+										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
 								}
 						}
         }
@@ -42,18 +42,18 @@ class AdminController {
 		def operatorka_login = {
 				def s = new Spravce()
 				if (params.email=='' || params.heslo=='') {
-						flash.message = "vyplňte prosím email i heslo"
+						flash.message = message(code:"tisa.controllers.insert_email_and_pass")
         }
 				if (params.email!=null) {
 						s = Spravce.findByEmail(params.email)
 						if (!s) {
-								flash.message = "Email nesouhlasí."
+								flash.message = message(code:"tisa.controllers.incorrect_email")
             } else {
 								if (s.authenticate(params.heslo)) {
 										session.user = s
 										redirect(controller:"misto")
 								} else {
-										flash.message = "Email a heslo si nesouhlasí."
+										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
 								}
 						}
         }

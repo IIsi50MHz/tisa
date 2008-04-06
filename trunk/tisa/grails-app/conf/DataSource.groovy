@@ -2,9 +2,9 @@ dataSource {
 	pooled = true
 	//driverClassName = "org.hsqldb.jdbcDriver"
         driverClassName = "com.mysql.jdbc.Driver"
-        url = "jdbc:mysql://localhost/tisa?characterEncoding=UTF-8"
+        url = "jdbc:mysql://localhost/tisa?useUnicode=true&characterEncoding=UTF-8"
 	username = "root"
-	password = "kokolada"
+	password = ""
 }
 hibernate {
     cache.use_second_level_cache=true
@@ -15,7 +15,7 @@ hibernate {
 environments {
 	development {
 		dataSource {
-			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+			dbCreate = "update" // one of 'create', 'create-drop','update'
 		}
 	}
 	test {

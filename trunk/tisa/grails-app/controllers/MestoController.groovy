@@ -6,6 +6,8 @@ class MestoController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Mesto"
+    
     def list = {
         if(!params.max) params.max = 10
         [ mestoList: Mesto.list( params ) ]
@@ -15,7 +17,7 @@ class MestoController {
         def mesto = Mesto.get( params.id )
 
         if(!mesto) {
-            flash.message = "Mesto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ mesto : mesto ] }
@@ -25,11 +27,11 @@ class MestoController {
         def mesto = Mesto.get( params.id )
         if(mesto) {
             mesto.delete()
-            flash.message = "Mesto ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Mesto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -38,7 +40,7 @@ class MestoController {
         def mesto = Mesto.get( params.id )
 
         if(!mesto) {
-            flash.message = "Mesto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -51,7 +53,7 @@ class MestoController {
         if(mesto) {
             mesto.properties = params
             if(!mesto.hasErrors() && mesto.save()) {
-                flash.message = "Mesto ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:mesto.id)
             }
             else {
@@ -59,7 +61,7 @@ class MestoController {
             }
         }
         else {
-            flash.message = "Mesto not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -73,7 +75,7 @@ class MestoController {
     def save = {
         def mesto = new Mesto(params)
         if(!mesto.hasErrors() && mesto.save()) {
-            flash.message = "Mesto ${mesto.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:mesto.id)
         }
         else {

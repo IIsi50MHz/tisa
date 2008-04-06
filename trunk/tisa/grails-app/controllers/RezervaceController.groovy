@@ -8,6 +8,8 @@ class RezervaceController extends AdminController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
+    def where = "Rezervace"
+    
     def list = {
         if(!params.max) params.max = 10
         [ rezervaceList: Rezervace.list( params ) ]
@@ -17,7 +19,7 @@ class RezervaceController extends AdminController {
         def rezervace = Rezervace.get( params.id )
 
         if(!rezervace) {
-            flash.message = "Rezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else { return [ rezervace : rezervace ] }
@@ -27,11 +29,11 @@ class RezervaceController extends AdminController {
         def rezervace = Rezervace.get( params.id )
         if(rezervace) {
             rezervace.delete()
-            flash.message = "Rezervace ${params.id} deleted"
+            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
-            flash.message = "Rezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
     }
@@ -40,7 +42,7 @@ class RezervaceController extends AdminController {
         def rezervace = Rezervace.get( params.id )
 
         if(!rezervace) {
-            flash.message = "Rezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:list)
         }
         else {
@@ -53,7 +55,7 @@ class RezervaceController extends AdminController {
         if(rezervace) {
             rezervace.properties = params
             if(!rezervace.hasErrors() && rezervace.save()) {
-                flash.message = "Rezervace ${params.id} updated"
+                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
                 redirect(action:show,id:rezervace.id)
             }
             else {
@@ -61,7 +63,7 @@ class RezervaceController extends AdminController {
             }
         }
         else {
-            flash.message = "Rezervace not found with id ${params.id}"
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
             redirect(action:edit,id:params.id)
         }
     }
@@ -75,7 +77,7 @@ class RezervaceController extends AdminController {
     def save = {
         def rezervace = new Rezervace(params)
         if(!rezervace.hasErrors() && rezervace.save()) {
-            flash.message = "Rezervace ${rezervace.id} created"
+            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
             redirect(action:show,id:rezervace.id)
         }
         else {
