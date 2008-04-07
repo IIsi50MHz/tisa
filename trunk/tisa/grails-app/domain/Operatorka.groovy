@@ -7,6 +7,7 @@ class Operatorka {
     String telefon
     String adresa
     def belongsTo = Misto
+    Misto misto
     
     
     static constraints = {
@@ -17,5 +18,6 @@ class Operatorka {
 	sul(blank:false)
 	telefon()
 	adresa()
+        misto()
     }
 }
