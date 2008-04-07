@@ -22,6 +22,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="misto">Misto:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:misto,field:'misto','errors')}">
+                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${operatorka?.misto?.id}" ></g:select>
+                                </td>
+                            </tr> 												
+												
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="vsechny_mista">Vsechnymista:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:operatorka,field:'vsechny_mista','errors')}">
