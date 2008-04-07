@@ -1,14 +1,12 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="admin" />
-        <title>Rozmisteni List</title>
+        <title><g:message code="tisa.rozmisteni.list"/></title>
     </head>
     <body>
         <div class="body">
-            <h1>Rozmisteni List</h1>
+            <h1><g:message code="tisa.rozmisteni.list"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>

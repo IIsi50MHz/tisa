@@ -1,10 +1,8 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="admin" />
-        <title>Edit Spravce</title>
+        <title><g:message code="tisa.spravce.show"/></title>
     </head>
     <body>
         <div class="body">

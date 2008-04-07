@@ -78,8 +78,8 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
-                    <span class="button"><g:link class="save" action="create"><g:message code="tisa.admin.create"/></g:link></span> //TODO počeštění imputu
+                    <span class="button"><input class="save" type="submit" value="<g:message code="tisa.create"/>" /></span>
+                    
                 </div>
             </g:form>
         </div>

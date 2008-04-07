@@ -1,14 +1,12 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="admin" />
-        <title>Create Rozmisteni</title>         
+        <title><g:message code="tisa.rozmisteni.create"/></title>         
     </head>
     <body>
         <div class="body">
-            <h1>Create Rozmisteni</h1>
+            <h1><g:message code="tisa.rozmisteni.create"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -53,7 +51,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+                    <span class="button"><input class="save" type="submit" value="<g:message code="tisa.create"/>" /></span>
                 </div>
             </g:form>
         </div>
