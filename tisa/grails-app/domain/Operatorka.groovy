@@ -1,5 +1,5 @@
 class Operatorka {
-    String vsechny_mista //TODO Bool
+    Boolean vsechny_mista 
     String cele_jmeno
     String email
     String heslo
