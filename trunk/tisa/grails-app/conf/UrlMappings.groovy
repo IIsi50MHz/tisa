@@ -18,8 +18,8 @@ class UrlMappings {
                         "/admin/poradatel/$action?/$id?" (controller:"poradatel")
                         "/admin/uzivatel/$action?/$id?" (controller:"uzivatel")
                         "/admin/operatorka/$action?/$id?" (controller:"operatorka")
-                        "/admin/kategorie_mist/$action?/$id?" (controller:"kategorie_mist")
-                        "/admin/kategorie_akci/$action?/$id?" (controller:"kategorie_akci")
+                        "/admin/kategorie_mist/$action?/$id?" (controller:"kategorieMist")
+                        "/admin/kategorie_akci/$action?/$id?" (controller:"kategorieAkci")
 
       "500"(view:'/error')
         

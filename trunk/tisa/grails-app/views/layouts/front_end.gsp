@@ -14,7 +14,6 @@
 						<g:else>
 								<g:message code="tisa.user.not_logged" />,
 						</g:else>
-					<g:link controller="front_end"></g:link>	
 					<g:link controller="admin"><g:message code="tisa.user.go_admin"/></g:link>
 				</span>
         <div id="spinner" class="spinner" style="display:none;">
