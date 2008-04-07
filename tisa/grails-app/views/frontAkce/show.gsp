@@ -15,15 +15,7 @@
             <div class="dialog">
                 <table>
                     <tbody>
-
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Id:</td>
-                            
-                            <td valign="top" class="value">${akce.id}</td>
-                            
-                        </tr>
-                    
+            
                         <tr class="prop">
                             <td valign="top" class="name">Misto:</td>
                             

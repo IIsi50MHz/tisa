@@ -2,11 +2,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="front_end" />
+
         <title><g:message code="tisa.frakce.list"/></title>
+
     </head>
     <body>
         <div class="body">
+
             <h1><g:message code="tisa.frakce.list"/></h1>
+
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -15,19 +19,19 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
+                   	        <g:sortableColumn property="nazev" title="Název" />
+
+                                <g:sortableColumn property="kategorie" title="Kategorie" />
                         
-                   	        <th>Misto</th>
+                   	        <th>Místo konání</th>
+
+                                <g:sortableColumn property="zacatek_akce" title="Začátek akce" />
                                 
-                                <th>Poradatel</th>
-                   	    
-                   	        <g:sortableColumn property="nazev" title="Nazev" />
-                        
-                   	        <g:sortableColumn property="odkaz" title="Odkaz" />
-                        
-                   	        <g:sortableColumn property="popis" title="Popis" />
-                        
-                   	        <g:sortableColumn property="vstupne_max" title="Vstupnemax" />
+                                <g:sortableColumn property="vstupne_max" title="Max. vstupné" />
+
+                                <g:sortableColumn property="vstupne_min" title="Min. vstupné" />
+
+                                <th> </th>
                         
                         </tr>
                     </thead>
@@ -35,19 +39,19 @@
                     <g:each in="${akceList}" status="i" var="akce">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${akce.id}">${akce.id?.encodeAsHTML()}</g:link></td>
+                            <td><g:link action="show" id="${akce.id}">${akce.nazev?.encodeAsHTML()}</g:link></td>
+
+                            <td>${akce.kategorie?.encodeAsHTML()}</td>
                         
                             <td><g:link controller="misto" action="show" id="${akce.misto.id}">${akce.misto?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${akce.poradatel?.encodeAsHTML()}</td>
-                        
-                            <td>${akce.nazev?.encodeAsHTML()}</td>
-                        
-                            <td>${akce.odkaz?.encodeAsHTML()}</td>
-                        
-                            <td>${akce.popis?.encodeAsHTML()}</td>
-                        
+                            
+                            <td>${akce.zacatek_akce?.encodeAsHTML()}</td>
+                       
                             <td>${akce.vstupne_max?.encodeAsHTML()}</td>
+
+                            <td>${akce.vstupne_minx?.encodeAsHTML()}</td>
+                            
+                            <td><g:link action="show" id="${akce.id}">detaily &raquo;</g:link></td>
                             
                         </tr>
                     </g:each>
