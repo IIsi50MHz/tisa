@@ -5,6 +5,6 @@
         <title><g:message code="tisa.operatorka.login"/></title>         
     </head>
     <body>
-			<h1>Ahoj${ "aaa" + session.user}</h1>
+			<h1>Ahoj</h1>
     </body>
 </html>
