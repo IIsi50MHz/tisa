@@ -87,7 +87,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+                    <span class="button"><input class="save" type="submit" value="<g:message code="tisa.create"/>" /></span>
                 </div>
             </g:form>
         </div>
