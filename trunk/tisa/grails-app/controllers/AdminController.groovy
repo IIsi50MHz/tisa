@@ -5,9 +5,14 @@ class AdminController {
 		
 		def authenticate = {
         if(!session.user) {
-						redirect(action:spravce_login)
+						redirect(controller:"admin", action:spravce_login)
             return false
         }
+		}		
+		
+		def logout = {
+        session.user = null
+				redirect(controller:"admin", action:spravce_login)
 		}		
 		
 		//def allowedMethods = [login:'POST']
@@ -29,7 +34,7 @@ class AdminController {
             } else {
 								if (s.authenticate(params.heslo)) {
 										session.user = s
-										redirect(action:"index")
+										redirect(controller:"misto", action:"index")
 								} else {
 										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
 								}
@@ -51,7 +56,7 @@ class AdminController {
             } else {
 								if (s.authenticate(params.heslo)) {
 										session.user = s
-										redirect(controller:"misto")
+										redirect(controller:"akce", action:"index")
 								} else {
 										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
 								}

@@ -8,7 +8,13 @@
     </head>
     <body>
 				<span id="user_line">
-					Nejsi přihlášen | <g:link controller="front_end"><g:message code="tisa.user.go_front_end"/></g:link>
+						<g:if test="${session.user}">
+								${ session.user.cele_jmeno }, <g:link controller="admin" action="${message(code=tisa.user.logout)}">odhlásit</g:link> | 
+						</g:if>
+						<g:else>
+								<g:message code="tisa.user.not_logged" />,
+						</g:else>
+					<g:link controller="front_end"><g:message code="tisa.user.go_front_end"/></g:link>					
 				</span>
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
