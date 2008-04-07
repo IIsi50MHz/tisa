@@ -57,7 +57,7 @@ class AdminController {
         }
 				if (params.email!=null) {
 						//u = u.invokeMethod(u, "findByEmail", [params.email]) //.metaClass.methods.find{it.name.startsWith("findByEmail")}.invoke(params.email)
-						u.findByEmail(params.email)
+						u = u.class.findByEmail(params.email)
 						if (!u) {
 								flash.message = message(code:"tisa.controllers.incorrect_email")
             } else {
