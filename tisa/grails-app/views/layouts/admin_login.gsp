@@ -9,7 +9,7 @@
     <body>
 				<span id="user_line">
 						<g:if test="${session.user}">
-								${ session.user.cele_jmeno }, <g:link controller="admin" action="${message(code=tisa.user.logout)}">odhlásit</g:link> | 
+								${ session.user.cele_jmeno }, <g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
 						</g:if>
 						<g:else>
 								<g:message code="tisa.user.not_logged" />,
