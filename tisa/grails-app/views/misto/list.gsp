@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -14,27 +16,45 @@
                 <table>
                     <thead>
                         <tr>
+                        
+                   	        <g:sortableColumn property="id" title="Id" />
+                        
                    	        <g:sortableColumn property="nazev" title="Nazev" />
                         
                    	        <g:sortableColumn property="popis" title="Popis" />
+                        
+                   	        <g:sortableColumn property="odkaz_mapa" title="Odkazmapa" />
+                        
+                   	        <th>Mesto</th>
+                   	    
+                   	        <th>Kategorie</th>
 
-                                <th>akce</th>
+                                <th>Akce</th>
+                   	    
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${mistoList}" status="i" var="misto">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${misto.id}">${misto.nazev?.encodeAsHTML()}</g:link></td>
+                            <td><g:link action="show" id="${misto.id}">${misto.id?.encodeAsHTML()}</g:link></td>
+                        
+                            <td>${misto.nazev?.encodeAsHTML()}</td>
                         
                             <td>${misto.popis?.encodeAsHTML()}</td>
                         
+                            <td>${misto.odkaz_mapa?.encodeAsHTML()}</td>
+                        
+                            <td>${misto.mesto?.encodeAsHTML()}</td>
+                        
+                            <td>${misto.kategorie?.encodeAsHTML()}</td>
+
                             <td>
                                   <g:link action="list" controller="akce" id="${misto.id}" >
                                     ukázat akce &raquo;
                                    </g:link>
                             </td>
-
+                        
                         </tr>
                     </g:each>
                     </tbody>

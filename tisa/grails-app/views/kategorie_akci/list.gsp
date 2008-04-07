@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -5,7 +7,7 @@
         <title>Kategorie_akci List</title>
     </head>
     <body>
-        <div class="body">
+       <div class="body">
             <h1>Kategorie_akci List</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -15,9 +17,7 @@
                     <thead>
                         <tr>
                         
-                   	        <th>Akce</th>
-                   	    
-                   	        <g:sortableColumn property="nazev" title="Nazev" />
+                   	      <g:sortableColumn property="nazev" title="Nazev" />
                         
                         </tr>
                     </thead>
@@ -26,9 +26,7 @@
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
                             <td><g:link action="show" id="${kategorie_akci.id}">${kategorie_akci.nazev?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${kategorie_akci.akce?.encodeAsHTML()}</td>
-                        
+                                                                           
                         </tr>
                     </g:each>
                     </tbody>

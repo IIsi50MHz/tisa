@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -25,7 +27,13 @@
                         <tr class="prop">
                             <td valign="top" class="name">Akce:</td>
                             
-                            <td valign="top" class="value"><g:link controller="akce" action="show" id="${kategorie_akci?.akce?.id}">${kategorie_akci?.akce}</g:link></td>
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="a" in="${kategorie_akci.akce}">
+                                    <li><g:link controller="akce" action="show" id="${a.id}">${a}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     

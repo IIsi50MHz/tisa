@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -26,7 +28,14 @@
                                     <label for="akce">Akce:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:kategorie_akci,field:'akce','errors')}">
-                                    <g:select optionKey="id" from="${Akce.list()}" name="akce.id" value="${kategorie_akci?.akce?.id}" ></g:select>
+                                    
+<ul>
+<g:each var="a" in="${kategorie_akci?.akce?}">
+    <li><g:link controller="akce" action="show" id="${a.id}">${a}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="akce" params="["kategorie_akci.id":kategorie_akci?.id]" action="create">Add Akce</g:link>
+
                                 </td>
                             </tr> 
                         
