@@ -45,6 +45,40 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                            <td valign="top" class="name">Mesto:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="mesto" action="show" id="${misto?.mesto?.id}">${misto?.mesto}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Kategorie:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="kategorie_mist" action="show" id="${misto?.kategorie?.id}">${misto?.kategorie}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Akce:</td>
+                            
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="a" in="${misto.akce}">
+                                    <li><g:link controller="akce" action="show" id="${a.id}">${a}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Spravce:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="spravce" action="show" id="${misto?.spravce?.id}">${misto?.spravce}</g:link></td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>

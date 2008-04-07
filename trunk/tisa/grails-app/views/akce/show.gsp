@@ -25,16 +25,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Misto:</td>
+                            <td valign="top" class="name">Kategorie:</td>
                             
-                            <td valign="top" class="value"><g:link controller="misto" action="show" id="${akce?.misto?.id}">${akce?.misto}</g:link></td>
-                            
-                        </tr>
-                        
-                        <tr class="prop">
-                            <td valign="top" class="name">Poradatel:</td>
-                            
-                            <td valign="top" class="value"><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="kategorie_akci" action="show" id="${akce?.kategorie?.id}">${akce?.kategorie}</g:link></td>
                             
                         </tr>
                     
@@ -60,6 +53,33 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name">Poradatel:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Rezervace:</td>
+                            
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="r" in="${akce.rezervace}">
+                                    <li><g:link controller="rezervace" action="show" id="${r.id}">${r}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Rozmisteni:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="rozmisteni" action="show" id="${akce?.rozmisteni?.id}">${akce?.rozmisteni}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name">Vstupnemax:</td>
                             
                             <td valign="top" class="value">${akce.vstupne_max}</td>
@@ -77,6 +97,13 @@
                             <td valign="top" class="name">Zacatekakce:</td>
                             
                             <td valign="top" class="value">${akce.zacatek_akce}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Zpusob Vyprseni Rezervace:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="zpusobVyprseniRezervace" action="show" id="${akce?.zpusobVyprseniRezervace?.id}">${akce?.zpusobVyprseniRezervace}</g:link></td>
                             
                         </tr>
                     

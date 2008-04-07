@@ -1,7 +1,6 @@
 class Kategorie_akci {
     String nazev
-    def belongsTo = Akce
-    Akce akce
+    def hasMany = [akce:Akce]
     
     static constrains = {
         nazev(blank:false)

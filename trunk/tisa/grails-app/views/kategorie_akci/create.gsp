@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -19,15 +21,6 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="akce">Akce:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:kategorie_akci,field:'akce','errors')}">
-                                    <g:select optionKey="id" from="${Akce.list()}" name="akce.id" value="${kategorie_akci?.akce?.id}" ></g:select>
-                                </td>
-                            </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">

@@ -25,19 +25,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="misto">Misto:</label>
+                                    <label for="kategorie">Kategorie:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:akce,field:'misto','errors')}">
-                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${akce?.misto}" ></g:select>
-                                </td>
-                            </tr> 
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="poradatel">Poradatel:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
-                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'kategorie','errors')}">
+                                    <g:select optionKey="id" from="${Kategorie_akci.list()}" name="kategorie.id" value="${akce?.kategorie?.id}" ></g:select>
                                 </td>
                             </tr> 
                         
@@ -64,7 +55,41 @@
                                     <label for="popis">Popis:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'popis','errors')}">
-                                    <textarea id="popis" name="popis">${fieldValue(bean:akce,field:'popis')}</textarea>
+                                    <input type="text" id="popis" name="popis" value="${fieldValue(bean:akce,field:'popis')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="poradatel">Poradatel:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
+                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="rezervace">Rezervace:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'rezervace','errors')}">
+                                    
+<ul>
+<g:each var="r" in="${akce?.rezervace?}">
+    <li><g:link controller="rezervace" action="show" id="${r.id}">${r}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="rezervace" params="["akce.id":akce?.id]" action="create">Add Rezervace</g:link>
+
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="rozmisteni">Rozmisteni:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'rozmisteni','errors')}">
+                                    <g:select optionKey="id" from="${Rozmisteni.list()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
                                 </td>
                             </tr> 
                         
@@ -92,6 +117,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'zacatek_akce','errors')}">
                                     <g:datePicker name="zacatek_akce" value="${akce?.zacatek_akce}" ></g:datePicker>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="zpusobVyprseniRezervace">Zpusob Vyprseni Rezervace:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'zpusobVyprseniRezervace','errors')}">
+                                    <g:select optionKey="id" from="${ZpusobVyprseniRezervace.list()}" name="zpusobVyprseniRezervace.id" value="${akce?.zpusobVyprseniRezervace?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

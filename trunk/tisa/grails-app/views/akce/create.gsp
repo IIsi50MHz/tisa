@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -5,9 +7,8 @@
         <title>Create Akce</title>         
     </head>
     <body>
-
         <div class="body">
-            <h1>Nová Akce</h1>
+            <h1>Create Akce</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -23,40 +24,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="misto">Místo:</label>
+                                    <label for="kategorie">Kategorie:</label>
                                 </td>
-                                <!-- TODO -->
-                                <td valign="top" class="value">
-                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="" ></g:select>
-                                </td>
-                            </tr>
-                            
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="poradatel">Pořadatel:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
-                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'kategorie','errors')}">
+                                    <g:select optionKey="id" from="${Kategorie_akci.list()}" name="kategorie.id" value="${akce?.kategorie?.id}" ></g:select>
                                 </td>
                             </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="misto">Způsob vypršení rezervace:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:zpusob_vyprseni_rezervace,field:'zpusob_vyprseni_rezervace','errors')}">
-                                    <g:select optionKey="id" from="${Zpusob_vyprseni_rezervace.list()}" name="zpusob_vyprseni_rezervace.id" value="${akce?.zpusob_vyprseni_rezervace?.id}" ></g:select>
-                                </td>
-                            </tr> 														
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="misto">Rozmístění:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'rozmisteni','errors')}">
-                                    <g:select optionKey="id" from="${Rozmisteni.list()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
-                                </td>
-                            </tr> 														
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -81,7 +54,25 @@
                                     <label for="popis">Popis:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'popis','errors')}">
-                                    <textarea id="popis" name="popis">${fieldValue(bean:akce,field:'popis')}</textarea>
+                                    <input type="text" id="popis" name="popis" value="${fieldValue(bean:akce,field:'popis')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="poradatel">Poradatel:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
+                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="rozmisteni">Rozmisteni:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'rozmisteni','errors')}">
+                                    <g:select optionKey="id" from="${Rozmisteni.list()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
                                 </td>
                             </tr> 
                         
@@ -109,6 +100,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'zacatek_akce','errors')}">
                                     <g:datePicker name="zacatek_akce" value="${akce?.zacatek_akce}" ></g:datePicker>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="zpusobVyprseniRezervace">Zpusob Vyprseni Rezervace:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:akce,field:'zpusobVyprseniRezervace','errors')}">
+                                    <g:select optionKey="id" from="${ZpusobVyprseniRezervace.list()}" name="zpusobVyprseniRezervace.id" value="${akce?.zpusobVyprseniRezervace?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

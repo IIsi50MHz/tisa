@@ -5,10 +5,11 @@ class Akce {
     Integer vstupne_min = 0
     Integer vstupne_max = 0
     String odkaz = ""
-    def belongsTo = [ZpusobVyprseniRezervace, Rozmisteni, Poradatel]
+    def belongsTo = [ZpusobVyprseniRezervace, Rozmisteni, Poradatel, Kategorie_akci]
     Rozmisteni rozmisteni
     ZpusobVyprseniRezervace zpusobVyprseniRezervace
     Poradatel poradatel
+    Kategorie_akci kategorie
 		
     def hasMany = [rezervace:Rezervace]
         
@@ -22,5 +23,6 @@ class Akce {
         misto(blank:false)
         zpusob_vyprseni(blank:false)
         poradatel()
+        kategorie()
     }
 }

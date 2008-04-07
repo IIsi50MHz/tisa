@@ -81,6 +81,10 @@ class BootStrap {
                 
             }
         }
+        
+        
+        new Kategorie_akci(nazev: "ples").save()
+        new Kategorie_mist(nazev: "kulturní dům").save()
                  
      }
      def destroy = {
