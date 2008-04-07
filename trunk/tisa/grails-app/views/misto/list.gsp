@@ -29,7 +29,7 @@
                    	    
                    	        <th>Kategorie</th>
 
-                                <th>Akce</th>
+                                <th> </th>
                    	    
                         </tr>
                     </thead>

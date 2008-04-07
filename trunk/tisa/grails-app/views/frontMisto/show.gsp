@@ -13,19 +13,25 @@
             <div class="dialog">
                 <table>
                     <tbody>
-
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Id:</td>
-                            
-                            <td valign="top" class="value">${misto.id}</td>
-                            
-                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Nazev:</td>
                             
                             <td valign="top" class="value">${misto.nazev}</td>
+                            
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">Kategorie</td>
+                            
+                            <td valign="top" class="value">${misto.kategorie}</td>
+                            
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">Město:</td>
+                            
+                            <td valign="top" class="value">${misto.mesto}</td>
                             
                         </tr>
                     
@@ -42,10 +48,22 @@
                             <td valign="top" class="value">${misto.odkaz_mapa}</td>
                             
                         </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">Správce</td>
+                            
+                            <td valign="top" class="value">${misto.spravce}</td>
+                            
+                        </tr>
+
+                        <tr class="prop">
+                          <td><g:link action="list" controller="frontMisto">zpět na seznam míst</g:link></td>
+                        </tr>
                     
                     </tbody>
                 </table>
             </div>
+
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${misto?.id}" />
@@ -53,6 +71,7 @@
 <span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
                 </g:form>
             </div>
+
         </div>
     </body>
 </html>
