@@ -43,7 +43,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Odkazmapa:</td>
+                            <td valign="top" class="name">Odkaz na mapu:</td>
                             
                             <td valign="top" class="value">${misto.odkaz_mapa}</td>
                             
