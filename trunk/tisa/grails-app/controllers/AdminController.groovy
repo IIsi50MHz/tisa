@@ -24,23 +24,6 @@ class AdminController {
     def spravce_login = {
 				def s = new Spravce()
 				login(s)
-				/*
-				if (params.email=='' || params.heslo=='') {
-						flash.message = message(code:"tisa.controllers.insert_email_and_pass")
-        }
-				if (params.email!=null) {
-						s = Spravce.findByEmail(params.email)
-						if (!s) {
-								flash.message = message(code:"tisa.controllers.incorrect_email")
-            } else {
-								if (s.authenticate(params.heslo)) {
-										session.user = s
-										redirect(controller:"misto", action:"index")
-								} else {
-										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
-								}
-						}
-        }*/
 				[spravce:s]
     }
 		
