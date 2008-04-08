@@ -17,8 +17,10 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <th>Akce</th>
-                   	    
+                   	        <g:sortableColumn property="akce" title="Akce" />
+
+                                <g:sortableColumn property="uzivatel" title="Uzivatel" />
+                            
                    	        <g:sortableColumn property="mista" title="Mista" />
                         
                    	        <g:sortableColumn property="rezervovano" title="Rezervovano" />
@@ -33,7 +35,9 @@
                         
                             <td><g:link action="show" id="${rezervace.id}">${rezervace.id?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${rezervace.akce?.encodeAsHTML()}</td>
+                            <td>${rezervace.akce.nazev?.encodeAsHTML()}</td>
+                            
+                            <td>${rezervace.uzivatel.cele_jmeno?.encodeAsHTML()}</td>
                         
                             <td>${rezervace.mista?.encodeAsHTML()}</td>
                         

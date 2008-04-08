@@ -1,6 +1,6 @@
 class Rezervace {
     String mista
-    Date rezervovano
+    String rezervovano //Date
     Boolean prodano
     def belongsTo = [Akce, Uzivatel]
     Akce akce
