@@ -29,6 +29,13 @@
                             <td valign="top" class="value">${akce.nazev}</td>
                             
                         </tr>
+                        
+                        <tr class="prop">
+                            <td valign="top" class="name">Kategorie:</td>
+                            
+                            <td valign="top" class="value">${akce.kategorie}</td>
+                            
+                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Odkaz:</td>
