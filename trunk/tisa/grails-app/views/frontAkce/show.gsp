@@ -64,17 +64,15 @@
                             <td valign="top" class="value">${akce.zacatek_akce}</td>
                             
                         </tr>
+                        
+                        <tr class="prop">
+                          <td><g:link action="list" controller="frontAkce">zpět na seznam akcí</g:link></td>
+                        </tr>
                     
                     </tbody>
                 </table>
             </div>
-            <div class="buttons">
-                <g:form>
-                    <input type="hidden" name="id" value="${akce?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="${message(code:'tisa.edit')}" /></span>
-<span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
-                </g:form>
-            </div>
+            
         </div>
     </body>
 </html>
