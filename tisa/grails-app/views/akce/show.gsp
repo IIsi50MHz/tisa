@@ -55,7 +55,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Poradatel:</td>
                             
-                            <td valign="top" class="value"><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel?.cele_jmeno}</g:link></td>
                             
                         </tr>
                     

@@ -41,24 +41,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="heslo">Heslo:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:poradatel,field:'heslo','errors')}">
-                                    <input type="text" maxlength="30" id="heslo" name="heslo" value="${fieldValue(bean:poradatel,field:'heslo')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="sul">Sul:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:poradatel,field:'sul','errors')}">
-                                    <input type="text" id="sul" name="sul" value="${fieldValue(bean:poradatel,field:'sul')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="telefon">Telefon:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:poradatel,field:'telefon','errors')}">
