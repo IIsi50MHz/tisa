@@ -17,14 +17,14 @@
                     <tbody>
             
                         <tr class="prop">
-                            <td valign="top" class="name">Misto:</td>
+                            <td valign="top" class="name">Místo:</td>
                             
-                            <td valign="top" class="value"><g:link controller="misto" action="show" id="${akce?.misto?.id}">${akce?.misto}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="frontMisto" action="show" id="${akce?.misto?.id}">${akce?.misto}</g:link></td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Nazev:</td>
+                            <td valign="top" class="name">Název:</td>
                             
                             <td valign="top" class="value">${akce.nazev}</td>
                             
@@ -45,21 +45,21 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Vstupnemax:</td>
+                            <td valign="top" class="name">Maximální vstupné</td>
                             
                             <td valign="top" class="value">${akce.vstupne_max}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Vstupnemin:</td>
+                            <td valign="top" class="name">Minimální vstupné</td>
                             
                             <td valign="top" class="value">${akce.vstupne_min}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Zacatekakce:</td>
+                            <td valign="top" class="name">Začátek akce</td>
                             
                             <td valign="top" class="value">${akce.zacatek_akce}</td>
                             
