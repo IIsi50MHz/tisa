@@ -17,7 +17,6 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
                         
                    	        <g:sortableColumn property="nazev" title="Nazev" />
                         
@@ -25,9 +24,11 @@
                         
                    	        <g:sortableColumn property="odkaz_mapa" title="Odkazmapa" />
                         
-                   	        <th>Mesto</th>
+                   	        <g:sortableColumn property="mesto" title="Mesto" />
+
+                                <g:sortableColumn property="spravce" title="Spravce" />
                    	    
-                   	        <th>Kategorie</th>
+                   	        <g:sortableColumn property="kategorie" title="Kategorie" />
 
                                 <th> </th>
                    	    
@@ -37,15 +38,16 @@
                     <g:each in="${mistoList}" status="i" var="misto">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${misto.id}">${misto.id?.encodeAsHTML()}</g:link></td>
+                            <td><g:link action="show" id="${misto.id}">${misto.nazev?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${misto.nazev?.encodeAsHTML()}</td>
                         
                             <td>${misto.popis?.encodeAsHTML()}</td>
                         
                             <td>${misto.odkaz_mapa?.encodeAsHTML()}</td>
                         
-                            <td>${misto.mesto?.encodeAsHTML()}</td>
+                            <td><g:link controller="mesto" action="show" id="${misto?.mesto?.id}">${misto?.mesto?.jmeno}</g:link></td>
+                        
+                            <td><g:link controller="spravce" action="show" id="${misto?.spravce?.id}">${misto?.spravce?.cele_jmeno}</g:link></td>
                         
                             <td>${misto.kategorie?.encodeAsHTML()}</td>
 

@@ -15,14 +15,12 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
+                   	        <g:sortableColumn property="mista" title="Mista" />
                         
                    	        <g:sortableColumn property="akce" title="Akce" />
 
                                 <g:sortableColumn property="uzivatel" title="Uzivatel" />
                             
-                   	        <g:sortableColumn property="mista" title="Mista" />
-                        
                    	        <g:sortableColumn property="rezervovano" title="Rezervovano" />
                         
                    	        <g:sortableColumn property="prodano" title="Prodano" />
@@ -33,13 +31,11 @@
                     <g:each in="${rezervaceList}" status="i" var="rezervace">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${rezervace.id}">${rezervace.id?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${rezervace.akce.nazev?.encodeAsHTML()}</td>
+                            <td><g:link action="show" id="${rezervace.id}">${rezervace.mista?.encodeAsHTML()}</g:link></td>
                             
-                            <td>${rezervace.uzivatel.cele_jmeno?.encodeAsHTML()}</td>
-                        
-                            <td>${rezervace.mista?.encodeAsHTML()}</td>
+                            <td><g:link controller="akce" action="show" id="${rezervace?.akce?.id}">${rezervace?.akce?.nazev}</g:link></td>
+
+                            <td><g:link controller="uzivatel" action="show" id="${rezervace?.uzivatel?.id}">${rezervace?.uzivatel?.cele_jmeno}</g:link></td>
                         
                             <td>${rezervace.rezervovano?.encodeAsHTML()}</td>
                         

@@ -21,9 +21,6 @@
                         
                    	        <g:sortableColumn property="email" title="Email" />
                         
-                   	        <g:sortableColumn property="heslo" title="Heslo" />
-                        
-                   	        <g:sortableColumn property="sul" title="Sul" />
                         
                         </tr>
                     </thead>
@@ -37,10 +34,7 @@
                         
                             <td>${operatorka.email?.encodeAsHTML()}</td>
                         
-                            <td>${operatorka.heslo?.encodeAsHTML()}</td>
-                        
-                            <td>${operatorka.sul?.encodeAsHTML()}</td>
-                        
+
                         </tr>
                     </g:each>
                     </tbody>
