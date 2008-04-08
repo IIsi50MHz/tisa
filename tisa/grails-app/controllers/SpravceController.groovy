@@ -1,5 +1,5 @@
             
-class SpravceController {
+class SpravceController extends AdminController {
     
     def defaultAction = "list"
 

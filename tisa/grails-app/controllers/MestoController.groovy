@@ -1,5 +1,5 @@
             
-class MestoController {
+class MestoController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 

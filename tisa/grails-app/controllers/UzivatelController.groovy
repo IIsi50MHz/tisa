@@ -1,5 +1,5 @@
             
-class UzivatelController {
+class UzivatelController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 

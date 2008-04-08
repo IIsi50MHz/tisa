@@ -8,8 +8,10 @@
     </head>
     <body>
 				<span id="user_line">
-						<g:if test="${session.user}">
-								${ session.user.cele_jmeno }, <g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
+						<g:if test="${session.user}">								
+								${ session.user.cele_jmeno } 
+								(<g:message code="tisa.${ session.user.class.getName().toLowerCase() }.name.sg" />),
+								<g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
 						</g:if>
 						<g:else>
 								<g:message code="tisa.user.not_logged" />,
@@ -25,44 +27,13 @@
 					</g:link>
 				</div>	
 				
-			<div class="nav">
-					<span class="menuButton">
-							<g:link controller="akce">
-									<g:message code="tisa.akce.name.pl"/>
-							</g:link>
-							<g:link controller="misto">
-									<g:message code="tisa.misto.name.pl"/>
-							</g:link>
-              <g:link controller="mesto">
-									<g:message code="tisa.mesto.name.pl"/>
-							</g:link>
-							<g:link controller="rezervace">
-									<g:message code="tisa.rezervace.name.pl"/>
-							</g:link>
-							<g:link controller="rozmisteni">
-									<g:message code="tisa.rozmisteni.name.pl"/>
-							</g:link>
-							<g:link controller="zpusobVyprseniRezervace">
-									<g:message code="tisa.zpusobVyprseniRezervace.name.pl"/>
-							</g:link>
-							<g:link controller="poradatel">
-									<g:message code="tisa.poradatel.name.pl"/>
-                                                        </g:link>
-							<g:link controller="spravce">
-									<g:message code="tisa.spravce.name.pl"/>
-							</g:link>
-                                                        <g:link controller="uzivatel">
-									<g:message code="tisa.uzivatel.name.pl"/>
-							</g:link>
-                                                        <g:link controller="operatorka">
-									<g:message code="tisa.operatorka.name.pl"/>
-							</g:link>
-                                                        <g:link controller="kategorie_mist">
-									<g:message code="tisa.kategorie_mist.name.pl"/>
-							</g:link>
-                                                        <g:link controller="kategorie_akci">
-									<g:message code="tisa.kategorie_akci.name.pl"/>
-							</g:link>
+				<div class="nav">
+						<span class="menuButton">
+								<g:each var="c" in="${session.controllers}">
+										<g:link controller="${c}">
+												<g:message code="tisa.${c}.name.pl"/>
+										</g:link>
+								</g:each>
 					</span>
 			</div>			
 			

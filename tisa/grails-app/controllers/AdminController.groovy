@@ -1,12 +1,14 @@
 class AdminController {
 		
 		
-		def beforeFilter = [ execute:this.&authenticate, except:[spravce_login, operatorka_login] ]
+		def beforeInterceptor = [action:this.&authenticate, except:['spravce_login', 'operatorka_login']]
 		
 		def authenticate = {
-        if(!session.user ) {
+        if(session?.user && session.user.class != Spravce && session.user.class != Operatorka) {
 						redirect(controller:"admin", action:spravce_login)
             return false
+        } else {
+						session.controllers = ['akce', 'kategorieAkci', 'kategorieMist', 'mesto', 'misto', 'operatorka', 'poradatel', 'rezervace', 'rozmisteni', 'spravce', 'uzivatel', 'zpusobVyprseniRezervace']
         }
 		}		
 		

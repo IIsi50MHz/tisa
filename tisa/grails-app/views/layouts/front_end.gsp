@@ -8,13 +8,15 @@
     </head>
     <body>
 				<span id="user_line">
-						<g:if test="${session.user}">
-								${ session.user.cele_jmeno }, <g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
+						<g:if test="${session.user}">								
+								${ session.user.cele_jmeno } 
+								(<g:message code="tisa.${ session.user.class.getName().toLowerCase() }.name.sg" />),
+								<g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
 						</g:if>
 						<g:else>
 								<g:message code="tisa.user.not_logged" />,
 						</g:else>
-					<g:link controller="admin"><g:message code="tisa.user.go_admin"/></g:link>
+					<g:link controller="front_end"><g:message code="tisa.user.go_front_end"/></g:link>					
 				</span>
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
