@@ -1,3 +1,12 @@
+class Poradatel extends UserStub {
+
+		def hasMany = [akce:Akce]		
+
+
+}
+
+
+/*
 class Poradatel {
 
     String cele_jmeno
@@ -17,3 +26,4 @@ class Poradatel {
 }
 
 }
+*/
