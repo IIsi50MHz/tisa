@@ -14,7 +14,9 @@
 								<g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
 						</g:if>
 						<g:else>
-								<g:message code="tisa.user.not_logged" />,
+								<g:message code="tisa.user.not_logged" />, 
+                                                                <g:link action="create" controller="frontUzivatel"><g:message code="tisa.user.go_registration"/></g:link>
+                                                                 nebo
 						</g:else>
 					<g:link controller="admin"><g:message code="tisa.user.go_admin"/></g:link>					
 				</span>
