@@ -3,8 +3,7 @@ class BootStrap {
   def init = { servletContext ->
 				try {
 			//mesta
-				 println "mesta"
-			
+                        println "mesta"
 						
 				 def Ostrava = new Mesto(jmeno: "Ostrava").save()
 				 def Opava = new Mesto(jmeno: "Opava").save()
@@ -18,25 +17,28 @@ class BootStrap {
 				 def Liptakov = new Mesto(jmeno: "Liptákov").save()
 				 def Bilovec= new Mesto(jmeno: "Bílovec").save()
 
-				 println "spravci"
-
-		 //správci
+            
+                        //správci
+                        println "spravci"
+                        
 				def cinestarSpravce = new Spravce(cele_jmeno:"Franta Cinestar", email:"cinestar@cinestar.cz", heslo:"cinestar").save()
 				def ostravaSpravce = new Spravce(cele_jmeno:"Franta Ostrava", email:"ostrava@ostrava.cz", heslo:"cinestar").save()
 				def tisaSpravce = new Spravce(cele_jmeno:"Franta Admin", email:"admin@tisa.cz", heslo:"admin", vsechna_prava:true).save()
 				def prahaSpravce = new Spravce(cele_jmeno:"Franta Praha", email:"praha@praha.cz", heslo:"praha").save()
 
 
-			println "kategorie mist"
-			//kategorie míst
+                	//kategorie míst
+                        println "kategorie mist"
 				def kult_dum = new KategorieMist(nazev: "kulturní dům").save()
 				def kino = new KategorieMist(nazev: "kino").save()
 				def sportovni_zarizeni = new KategorieMist(nazev: "sportovní zařízení").save()
 				def arena = new KategorieMist(nazev: "aréna").save()				
 				def divadlo = new KategorieMist(nazev: "divadlo").save()				
-				
-			println "mista"
+                                def skolniprostory =new KategorieMist(nazev: "školní prostory").save()
+                                def nocniklub =new KategorieMist(nazev: "noční klub").save()
+		
 			//místa				
+                        println "mista"
 				def cezarena = new Misto(spravce: ostravaSpravce, nazev: "ČEZ arena", popis: "sportovní akce", mesto: Ostrava, kategorie:arena).save()			
 				def dkvitkovic = new Misto(spravce: ostravaSpravce, nazev: "DK Vitkovic", popis: "společenské akce, výstavy", mesto: Ostrava, kategorie:kult_dum).save() 
 				def kinoluna = new Misto(spravce: ostravaSpravce, nazev: "Kino Luna", popis: "kino u Běláku", mesto: Ostrava, kategorie:kino).save()
@@ -65,8 +67,8 @@ class BootStrap {
 				new Misto(spravce: tisaSpravce, nazev: "Hospoda Na Mýtince", popis: "taneční sál", mesto: Liptakov, kategorie:kult_dum).save()
 
 
-			println "operatorky"
 			//operátorky
+                        println "operatorky"
 				new Operatorka(vsechny_mista:true, cele_jmeno:"Magda Magdonovna", email:"magda@tisa.cz", heslo:"magda", misto: cezarena).save()
 				new Operatorka(vsechny_mista:false, cele_jmeno:"Eliška Záhorovská", email:"eliska@tisa.cz", heslo:"eliska", misto: dkvitkovic).save()
 				new Operatorka(vsechny_mista:false, cele_jmeno:"Žofie Šumáková", email:"zofie@tisa.cz", heslo:"zofie", misto: dkvitkovic).save()
@@ -76,15 +78,55 @@ class BootStrap {
 				new Operatorka(vsechny_mista:false, cele_jmeno:"Božena Němcová", email:"bozena@tisa.cz", heslo:"bozena", misto: stadionskslezka).save()
 
 						
-						
-						
-			println "kategorie akci"
+			//uzivatele			
+                        println "uzivatele"
+
+				new Uzivatel(cele_jmeno:"Pepa Novák", email:"pepa@tisa.cz", heslo:"pepa").save()
+    				new Uzivatel(cele_jmeno:"Honza Hloupý", email:"honza@tisa.cz", heslo:"honza").save()
+    				new Uzivatel(cele_jmeno:"Karkulka Červená", email:"karkulka@tisa.cz", heslo:"karkulka").save()
+    				new Uzivatel(cele_jmeno:"Čestmír Létající", email:"cestmir@tisa.cz", heslo:"cestmir").save()
+    				new Uzivatel(cele_jmeno:"Karel Gott", email:"karel@tisa.cz", heslo:"karel").save()
+    				new Uzivatel(cele_jmeno:"Vladimír Čech", email:"vladimir@tisa.cz", heslo:"vladimir").save()
+    				new Uzivatel(cele_jmeno:"Ignác Neslaný", email:"ignac@tisa.cz", heslo:"ignac").save()
+    				new Uzivatel(cele_jmeno:"Ferdinand Nemastný", email:"ferdinand@tisa.cz", heslo:"ferdinand").save()
+    				new Uzivatel(cele_jmeno:"Iva Fruelingova", email:"iva@tisa.cz", heslo:"iva").save()
+    				new Uzivatel(cele_jmeno:"Kate Ryan", email:"kate@tisa.cz", heslo:"kate").save()
+    				new Uzivatel(cele_jmeno:"Alice Springs", email:"alice@tisa.cz", heslo:"alice").save()
+    				new Uzivatel(cele_jmeno:"Ted Mosby", email:"ted@tisa.cz", heslo:"mosby").save()
+    				new Uzivatel(cele_jmeno:"Lily Aldrin", email:"aldrin@tisa.cz", heslo:"aldrin").save()
+    				new Uzivatel(cele_jmeno:"Barney Stinson", email:"barney@tisa.cz", heslo:"barney").save()
+    				new Uzivatel(cele_jmeno:"Robin Sherbatsky", email:"robin@tisa.cz", heslo:"robin").save()
+    				new Uzivatel(cele_jmeno:"Marshall Eriksen", email:"marshall@tisa.cz", heslo:"marshall").save()			
+            
+            
+            
+                        //poradatele			
+                        println "poradatele"
+            
+                                new Poradatel(cele_jmeno:"Karel Veliký", email:"karel@tisa.cz", heslo:"karel").save()
+                                new Poradatel(cele_jmeno:"Julius Caesar", email:"caesar@tisa.cz", heslo:"caesar").save()
+                                new Poradatel(cele_jmeno:"John Locke", email:"john@tisa.cz", heslo:"locke").save()
+                                new Poradatel(cele_jmeno:"Jack Shephard", email:"shephard@tisa.cz", heslo:"shephard").save()
+                                new Poradatel(cele_jmeno:"James Sawyer Ford", email:"james@tisa.cz", heslo:"james").save()
+                                new Poradatel(cele_jmeno:"Jin-Soo Kwon", email:"jinsoo@tisa.cz", heslo:"jinsoo").save()
+                                new Poradatel(cele_jmeno:"Kate Austen", email:"austen@tisa.cz", heslo:"austen").save()
+                                new Poradatel(cele_jmeno:"Sayid Jarrah", email:"sayid@tisa.cz", heslo:"sayid").save()
+            
+            
 			//kategorie akcí 
+                        println "kategorie akci"
 				def ples = new KategorieAkci(nazev: "ples").save()
 				def promitani = new KategorieAkci(nazev: "promítání").save()
-				
+				def besidka =new KategorieAkci(nazev: "školní besídka").save()
+    				def divadelnihra =new KategorieAkci(nazev: "divadelní hra").save()
+    				def koncert =new KategorieAkci(nazev: "koncert").save()
+    				def festival =new KategorieAkci(nazev: "filmový festival").save()
+    				def maskarnibal =new KategorieAkci(nazev: "maškarní bál").save()
+    
+            
+                        //akce            
 			println "akce"
-			//akce
+	
 				 def pondeli = [0..4]
 				 def saly = []
 
