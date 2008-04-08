@@ -4,11 +4,18 @@ class AdminController {
 		def beforeInterceptor = [action:this.&authenticate, except:['spravce_login', 'operatorka_login']]
 		
 		def authenticate = {
-        if(session?.user && session.user.class != Spravce && session.user.class != Operatorka) {
+				session.controllers =[]
+        if(session.user == null || session.user.class != Spravce && session.user.class != Operatorka) {
 						redirect(controller:"admin", action:spravce_login)
             return false
         } else {
-						session.controllers = ['akce', 'kategorieAkci', 'kategorieMist', 'mesto', 'misto', 'operatorka', 'poradatel', 'rezervace', 'rozmisteni', 'spravce', 'uzivatel', 'zpusobVyprseniRezervace']
+						session.controllers = ['akce', 'poradatel', 'rezervace']
+						if (session.user.class.getName() == 'Spravce') {
+								session.controllers += ['misto', 'mesto', 'operatorka', 'rozmisteni', 'zpusobVyprseniRezervace']
+								if (session.user.vsechna_prava) {
+										session.controllers += ['spravce', 'uzivatel', 'kategorieAkci', 'kategorieMist' ]
+								}
+            }
         }
 		}		
 		
@@ -20,7 +27,7 @@ class AdminController {
 		//def allowedMethods = [login:'POST']
 		
 		def index = {				
-				//redirect(action:"spravce_login")
+				redirect(controller:"akce")
     }
 		
     def spravce_login = {
