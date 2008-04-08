@@ -51,7 +51,7 @@
 
                             <td>${akce.vstupne_min?.encodeAsHTML()}</td>
                             
-                            <td><g:link action="show" controller="frontMisto" id="${akce.id}">detaily &raquo;</g:link></td>
+                            <td><g:link action="show" controller="frontAkce" id="${akce.id}">detaily &raquo;</g:link></td>
                             
                         </tr>
                     </g:each>
