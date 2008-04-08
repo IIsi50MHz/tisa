@@ -5,4 +5,8 @@ class KategorieAkci {
     static constrains = {
         nazev(blank:false)
     }
+		
+		String toString() {
+        return this.nazev
+    }
 }

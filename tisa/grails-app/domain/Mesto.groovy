@@ -1,6 +1,6 @@
 class Mesto {
   
-    String jmeno;
+    String jmeno = "";
     String mapa="";
     String popis="";
     
@@ -9,5 +9,8 @@ class Mesto {
        mapa()
        popis()
     }
-    
+		
+    String toString() {
+        return this.jmeno
+    }    
 }
