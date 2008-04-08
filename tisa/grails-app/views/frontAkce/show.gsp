@@ -66,7 +66,7 @@
                         </tr>
                         
                         <tr class="prop">
-                          <td><g:link action="list" controller="frontAkce">zpět na seznam akcí</g:link></td>
+                          <td><g:link action="list" controller="frontAkce">zpět na Seznam akcí</g:link></td>
                         </tr>
                     
                     </tbody>

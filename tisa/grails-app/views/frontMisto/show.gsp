@@ -57,7 +57,7 @@
                         </tr>
 
                         <tr class="prop">
-                          <td><g:link action="list" controller="frontMisto">zpět na seznam míst</g:link></td>
+                          <td><g:link action="list" controller="frontMisto">zpět na Seznam míst</g:link></td>
                         </tr>
                     
                     </tbody>
