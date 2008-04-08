@@ -38,13 +38,13 @@ class BootStrap {
                                 def nocniklub =new KategorieMist(nazev: "noční klub").save()
 		
 			//místa				
-                        println "mista"
+      println "mista"
 				def cezarena = new Misto(spravce: ostravaSpravce, nazev: "ČEZ arena", popis: "sportovní akce", mesto: Ostrava, kategorie:arena).save()			
 				def dkvitkovic = new Misto(spravce: ostravaSpravce, nazev: "DK Vitkovic", popis: "společenské akce, výstavy", mesto: Ostrava, kategorie:kult_dum).save() 
 				def kinoluna = new Misto(spravce: ostravaSpravce, nazev: "Kino Luna", popis: "kino u Běláku", mesto: Ostrava, kategorie:kino).save()
 				def sazkaarena = new Misto(spravce: ostravaSpravce, nazev: "Sazka Aréna", popis: "multifunkční hala", mesto: Ostrava, kategorie:arena).save()
 				def stadionskslezka = new Misto(spravce: ostravaSpravce, nazev: "Stadión SK Slezská", popis: "sportovní stadión", mesto: Ostrava, kategorie:sportovni_zarizeni).save()
-
+				
 			println "cinestary"
 				def cinestary = []
 				cinestary[0] = new Misto(spravce: cinestarSpravce, nazev: "Cinestar", popis: "kino, filmové akce", mesto: Brno, kategorie:kino).save() 
@@ -141,6 +141,9 @@ class BootStrap {
 					//	def vyprseni = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin")
 					//	vyprseni.misto = cinestar
 					//	vyprseni.save()
+					new ZpusobVyprseniRezervace(cas = 1800, druh="before_action_begin", misto:cinestar).save()
+					
+
 						saly[0] = new Rozmisteni(nazev:"Sál A", misto:cinestar).save()
 						saly[1] = new Rozmisteni(nazev:"Sál B", misto:cinestar).save()
 						saly[2] = new Rozmisteni(nazev:"Sál C", misto:cinestar).save()
