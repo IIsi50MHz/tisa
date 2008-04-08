@@ -5,6 +5,8 @@ class Poradatel {
     String telefon
     String adresa
     		
+    def hasMany = [akce:Akce]
+    
 		static constraints = {
 				cele_jmeno(blank:false)
 				email(blank:false)

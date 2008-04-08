@@ -52,6 +52,19 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                            <td valign="top" class="name">Akce:</td>
+                            
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="a" in="${poradatel.akce}">
+                                    <li><g:link controller="akce" action="show" id="${a.id}">${a.nazev}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>

@@ -15,13 +15,13 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
                    	        <g:sortableColumn property="cele_jmeno" title="Celejmeno" />
                         
                    	        <g:sortableColumn property="email" title="Email" />
                         
                    	        <g:sortableColumn property="telefon" title="Telefon" />
+
+                                <g:sortableColumn property="adresa" title="Adresa" />
                         
                    	        <g:sortableColumn property="vsechna_prava" title="Všechna práva" />
                         
@@ -31,7 +31,6 @@
                     <g:each in="${spravceList}" status="i" var="spravce">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td>${spravce.id?.encodeAsHTML()}</td>
                         
                             <td><g:link action="edit" id="${spravce.id}">${spravce.cele_jmeno?.encodeAsHTML()}</g:link></td>
                         
@@ -39,7 +38,8 @@
                         
                             <td>${spravce.telefon?.encodeAsHTML()}</td>
                         
-												
+                            <td>${spravce.adresa?.encodeAsHTML()}</td>
+                                                                        
                             <td><g:message code="tisa.user.allrights.${spravce.vsechna_prava}" /></td>
                         
                         </tr>

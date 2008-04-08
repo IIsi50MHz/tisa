@@ -17,8 +17,6 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
                    	        <g:sortableColumn property="jmeno" title="Jmeno" />
                         
                    	        <g:sortableColumn property="mapa" title="Mapa" />
@@ -31,9 +29,7 @@
                     <g:each in="${mestoList}" status="i" var="mesto">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${mesto.id}">${mesto.id?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${mesto.jmeno?.encodeAsHTML()}</td>
+                            <td><g:link action="show" id="${mesto.id}">${mesto.jmeno?.encodeAsHTML()}</g:link></td>
                         
                             <td>${mesto.mapa?.encodeAsHTML()}</td>
                         

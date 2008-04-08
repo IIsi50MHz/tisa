@@ -17,17 +17,23 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
-                   	        <th>Kategorie</th>
-                   	    
                    	        <g:sortableColumn property="nazev" title="Nazev" />
                         
+                   	        <g:sortableColumn property="kategorie" title="Kategorie" />
+
+                                <g:sortableColumn property="zacatek_akce" title="Zacatek akce" />
+
+                                <g:sortableColumn property="vstupne_min" title="Vstupne min" />
+
+                                <g:sortableColumn property="vstupne_max" title="Vstupne max" />
+                   	    
                    	        <g:sortableColumn property="odkaz" title="Odkaz" />
                         
                    	        <g:sortableColumn property="popis" title="Popis" />
                         
-                   	        <th>Poradatel</th>
+                   	        <g:sortableColumn property="poradatel" title="Poradatel" />
+
+                                <g:sortableColumn property="misto" title="Misto" />
                    	    
                         </tr>
                     </thead>
@@ -35,17 +41,23 @@
                     <g:each in="${akceList}" status="i" var="akce">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${akce.id}">${akce.id?.encodeAsHTML()}</g:link></td>
+                            <td><g:link action="show" id="${akce.id}">${akce.nazev?.encodeAsHTML()}</g:link></td>
                         
                             <td>${akce.kategorie?.encodeAsHTML()}</td>
                         
-                            <td>${akce.nazev?.encodeAsHTML()}</td>
+                            <td>${akce.zacatek_akce?.encodeAsHTML()}</td>
                         
+                            <td>${akce.vstupne_min?.encodeAsHTML()}</td>
+                            
+                            <td>${akce.vstupne_max?.encodeAsHTML()}</td>
+                            
                             <td>${akce.odkaz?.encodeAsHTML()}</td>
                         
                             <td>${akce.popis?.encodeAsHTML()}</td>
                         
-                            <td><g:link action="show" id="${akce?.poradatel?.id}">${akce?.poradatel?.cele_jmeno}</g:link></td>
+                            <td><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel?.cele_jmeno}</g:link></td>
+                            
+                            <td><g:link controller="misto" action="show" id="${akce?.misto?.id}">${akce?.misto?.nazev}</g:link></td>
                         
                         </tr>
                     </g:each>

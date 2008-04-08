@@ -15,13 +15,11 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
                    	        <g:sortableColumn property="nazev" title="Nazev" />
                         
                    	        <g:sortableColumn property="plan_salu" title="Plansalu" />
                         
-                   	        <th>Misto</th>
+                   	        <g:sortableColumn property="misto" title="Misto" />
                    	    
                         </tr>
                     </thead>
@@ -29,13 +27,11 @@
                     <g:each in="${rozmisteniList}" status="i" var="rozmisteni">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${rozmisteni.id}">${rozmisteni.id?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${rozmisteni.nazev?.encodeAsHTML()}</td>
+                            <td><g:link action="show" id="${rozmisteni.id}">${rozmisteni.nazev?.encodeAsHTML()}</g:link></td>
                         
                             <td>${rozmisteni.plan_salu?.encodeAsHTML()}</td>
                         
-                            <td>${rozmisteni.misto?.encodeAsHTML()}</td>
+                            <td><g:link controller="misto" action="show" id="${rozmisteni?.misto?.id}">${rozmisteni?.misto?.nazev}</g:link></td>
                         
                         </tr>
                     </g:each>

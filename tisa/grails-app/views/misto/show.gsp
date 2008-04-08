@@ -65,7 +65,20 @@
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
                                 <g:each var="a" in="${misto.akce}">
-                                    <li><g:link controller="akce" action="show" id="${a.id}">${a}</g:link></li>
+                                    <li><g:link controller="akce" action="show" id="${a.id}">${a.nazev}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Rozmisteni:</td>
+                            
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="r" in="${misto.rozmisteni}">
+                                    <li><g:link controller="rozmisteni" action="show" id="${r.id}">${r.nazev}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>
@@ -75,7 +88,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Spravce:</td>
                             
-                            <td valign="top" class="value"><g:link controller="spravce" action="show" id="${misto?.spravce?.id}">${misto?.spravce}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="spravce" action="show" id="${misto?.spravce?.id}">${misto?.spravce.cele_jmeno}</g:link></td>
                             
                         </tr>
                     

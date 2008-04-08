@@ -20,6 +20,8 @@
                    	        <g:sortableColumn property="email" title="Email" />
                         
                    	        <g:sortableColumn property="telefon" title="Telefon" />
+
+                                <g:sortableColumn property="adresa" title="Adresa" />
                         
                         </tr>
                     </thead>
@@ -32,6 +34,8 @@
                             <td>${poradatel.email?.encodeAsHTML()}</td>
                         
                             <td>${poradatel.telefon?.encodeAsHTML()}</td>
+                            
+                            <td>${poradatel.adresa?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>

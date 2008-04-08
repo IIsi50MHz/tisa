@@ -37,20 +37,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Heslo:</td>
-                            
-                            <td valign="top" class="value">${uzivatel.heslo}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Sul:</td>
-                            
-                            <td valign="top" class="value">${uzivatel.sul}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Telefon:</td>
                             
                             <td valign="top" class="value">${uzivatel.telefon}</td>
@@ -70,7 +56,7 @@
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
                                 <g:each var="r" in="${uzivatel.rezervace}">
-                                    <li><g:link controller="rezervace" action="show" id="${r.id}">${r}</g:link></li>
+                                    <li><g:link controller="rezervace" action="show" id="${r.id}">${r.mista}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>

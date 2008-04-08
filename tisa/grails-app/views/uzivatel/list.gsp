@@ -19,9 +19,7 @@
                         
                    	        <g:sortableColumn property="email" title="Email" />
                         
-                   	        <g:sortableColumn property="heslo" title="Heslo" />
-                        
-                   	        <g:sortableColumn property="sul" title="Sul" />
+                   	        <g:sortableColumn property="adresa" title="Adresa" />
                         
                    	        <g:sortableColumn property="telefon" title="Telefon" />
                         
@@ -35,9 +33,7 @@
                         
                             <td>${uzivatel.email?.encodeAsHTML()}</td>
                         
-                            <td>${uzivatel.heslo?.encodeAsHTML()}</td>
-                        
-                            <td>${uzivatel.sul?.encodeAsHTML()}</td>
+                            <td>${uzivatel.adresa?.encodeAsHTML()}</td>
                         
                             <td>${uzivatel.telefon?.encodeAsHTML()}</td>
                         

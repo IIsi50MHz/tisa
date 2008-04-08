@@ -2,7 +2,7 @@ class Misto {
   String nazev=""
   String odkaz_mapa=""
   String popis=""
-  def hasMany = [akce:Akce]
+  def hasMany = [akce:Akce, rozmisteni:Rozmisteni]
   def belongsTo = [Mesto, Spravce, KategorieMist]
   Mesto mesto
   Spravce spravce
