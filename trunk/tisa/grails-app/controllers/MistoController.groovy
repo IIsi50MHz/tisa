@@ -1,5 +1,5 @@
             
-class MistoController {
+class MistoController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 

@@ -1,5 +1,5 @@
             
-class PoradatelController {
+class PoradatelController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 

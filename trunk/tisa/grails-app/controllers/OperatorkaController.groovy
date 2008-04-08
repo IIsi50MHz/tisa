@@ -1,5 +1,5 @@
             
-class OperatorkaController {
+class OperatorkaController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 

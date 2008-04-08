@@ -1,5 +1,5 @@
             
-class AkceController {
+class AkceController extends AdminController {
     
     def index = { redirect(action:list,params:params) }
 
