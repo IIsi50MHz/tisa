@@ -43,7 +43,7 @@
                                     <label for="heslo">Heslo:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:uzivatel,field:'heslo','errors')}">
-                                    <input type="text" maxlength="30" id="heslo" name="heslo" value="${fieldValue(bean:uzivatel,field:'heslo')}"/>
+                                    <input type="password" maxlength="30" id="heslo" name="heslo" value="${fieldValue(bean:uzivatel,field:'heslo')}"/>
                                 </td>
                             </tr> 
                                                
