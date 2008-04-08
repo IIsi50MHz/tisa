@@ -102,14 +102,14 @@ class BootStrap {
                         //poradatele			
                         println "poradatele"
             
-                                def karel = new Poradatel(cele_jmeno:"Karel Veliký", email:"karel@tisa.cz", heslo:"karel").save()
-                                def caesar = new Poradatel(cele_jmeno:"Julius Caesar", email:"caesar@tisa.cz", heslo:"caesar").save()
-                                def john = new Poradatel(cele_jmeno:"John Locke", email:"john@tisa.cz", heslo:"locke").save()
-                                def jack = new Poradatel(cele_jmeno:"Jack Shephard", email:"shephard@tisa.cz", heslo:"shephard").save()
-                                def james = new Poradatel(cele_jmeno:"James Sawyer Ford", email:"james@tisa.cz", heslo:"james").save()
-                                def kwon = new Poradatel(cele_jmeno:"Jin-Soo Kwon", email:"jinsoo@tisa.cz", heslo:"jinsoo").save()
-                                def kate = new Poradatel(cele_jmeno:"Kate Austen", email:"austen@tisa.cz", heslo:"austen").save()
-                                def sayid =new Poradatel(cele_jmeno:"Sayid Jarrah", email:"sayid@tisa.cz", heslo:"sayid").save()
+                                def karel = new Poradatel(cele_jmeno:"Karel Veliký", email:"karel@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def caesar = new Poradatel(cele_jmeno:"Julius Caesar", email:"caesar@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def john = new Poradatel(cele_jmeno:"John Locke", email:"john@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def jack = new Poradatel(cele_jmeno:"Jack Shephard", email:"shephard@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def james = new Poradatel(cele_jmeno:"James Sawyer Ford", email:"james@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def kwon = new Poradatel(cele_jmeno:"Jin-Soo Kwon", email:"jinsoo@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def kate = new Poradatel(cele_jmeno:"Kate Austen", email:"austen@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
+                                def sayid =new Poradatel(cele_jmeno:"Sayid Jarrah", email:"sayid@tisa.cz", telefon:"1234567", adresa:"tramtárie").save()
             
             
 			//kategorie akcí 
@@ -131,6 +131,13 @@ class BootStrap {
                                 def vyprseni4 = new ZpusobVyprseniRezervace(cas:37600, druh:"after_reservation_taken", misto: stadionskslezka).save()
                                 def vyprseni5 = new ZpusobVyprseniRezervace(cas:1800, druh:"after_reservation_taken", misto: sazkaarena).save()
             
+                      def pokusne = new Rozmisteni(nazev:"Pokusne A", misto:cezarena, plan_salu:"plan A").save()
+                      def pokusne2 = new Rozmisteni(nazev:"Pokusne B", misto:cezarena, plan_salu:"plan B").save()
+                      
+                      new Akce(nazev:"Spiderman 1", zacatek_akce: "2008-04-08 14:50:00", popis:"přepere spiderman batmana? vidět", vstupne_min:70, vstupne_max:150, odkaz:"www.spidy.cz", zpusobVyprseniRezervace:vyprseni5, rozmisteni:pokusne, kategorie:promitani, poradatel:karel).save()
+                      new Akce(nazev:"Superman 2", zacatek_akce: "2008-04-08 15:54:00", popis:"přepere superman spidermana?", vstupne_min:170, vstupne_max:270, odkaz:"www.super.cz", zpusobVyprseniRezervace:vyprseni3, rozmisteni:pokusne2, kategorie:besidka, poradatel:caesar).save()
+                      new Akce(nazev:"Batman 3", zacatek_akce: "2008-04-08 16:55:00", popis:"přepere batman supermana?", vstupne_min:250, vstupne_max:350, odkaz:"www.bat.cz", zpusobVyprseniRezervace:vyprseni1, rozmisteni:pokusne, kategorie:divadelnihra, poradatel:john).save()
+            
                         //akce            
 			println "akce"
 	
@@ -141,37 +148,34 @@ class BootStrap {
 					//	def vyprseni = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin")
 					//	vyprseni.misto = cinestar
 					//	vyprseni.save()
-					new ZpusobVyprseniRezervace(cas = 1800, druh="before_action_begin", misto:cinestar).save()
-					
+						saly[0] = new Rozmisteni(nazev:"Sál A", misto:cinestar, plan_salu:"plan A").save()
+						saly[1] = new Rozmisteni(nazev:"Sál B", misto:cinestar, plan_salu:"plan A").save()
+						saly[2] = new Rozmisteni(nazev:"Sál C", misto:cinestar, plan_salu:"plan A").save()
+						saly[3] = new Rozmisteni(nazev:"Sál D", misto:cinestar, plan_salu:"plan A").save()
+						saly[4] = new Rozmisteni(nazev:"Sál E", misto:cinestar, plan_salu:"plan A").save()
+						saly[5] = new Rozmisteni(nazev:"Sál F", misto:cinestar, plan_salu:"plan A").save()
 
-						saly[0] = new Rozmisteni(nazev:"Sál A", misto:cinestar).save()
-						saly[1] = new Rozmisteni(nazev:"Sál B", misto:cinestar).save()
-						saly[2] = new Rozmisteni(nazev:"Sál C", misto:cinestar).save()
-						saly[3] = new Rozmisteni(nazev:"Sál D", misto:cinestar).save()
-						saly[4] = new Rozmisteni(nazev:"Sál E", misto:cinestar).save()
-						saly[5] = new Rozmisteni(nazev:"Sál F", misto:cinestar).save()
-
-						for (sal in saly) {
+						//for (sal in saly) {
 							 def i = 0
 
-							 for ( i=0; i<7; i++) {
+							 for ( i=0; i<1; i++) {
 									def j = 0
 									for (p in pondeli) {
 										 p = Calendar.getInstance()
-										 p.set(2008, 4, 7+i, 10+j*3, 0, 0)
+										 p.set(2008, 4, 7+i, 10+i, 0, 0)
 										 p = p.getTime()
                                                                                  pondeli[j]=p 
-                                                                                 println pondeli[j] 
+                                                                                 println p 
 										 j++
 									}
-									new Akce(nazev:"Matrix 4", zacatek_akce:pondeli[0], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", ZpusobVyprseniRezervace:vyprseni1, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()
-									new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:pondeli[1], popis:"musíte vidět", vstupne_min:50, vstupne_max:150, odkaz:"", ZpusobVyprseniRezervace:vyprseni2, rozmisteni:sal, kategorie:promitani, poradatel:sayid).save()
-									new Akce(nazev:"Shrek 8", zacatek_akce:pondeli[2], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", ZpusobVyprseniRezervace:vyprseni3, rozmisteni:sal, kategorie:promitani, poradatel:john).save()
-									new Akce(nazev:"Life of Brian", zacatek_akce:pondeli[3], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", ZpusobVyprseniRezervace:vyprseni4, rozmisteni:sal, kategorie:promitani, poradatel:caesar).save()
-									new Akce(nazev:"Rocky 9", zacatek_akce:pondeli[4], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", ZpusobVyprseniRezervace:vyprseni5, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()
+									new Akce(nazev:"Matrix 4", zacatek_akce:"2008-04-08 14:50:00", popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"wewewe.tečka", zpusobVyprseniRezervace:vyprseni1, rozmisteni:pokusne, kategorie:promitani, poradatel:karel).save()
+									new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:"2008-04-08 14:50:00", popis:"musíte vidět", vstupne_min:50, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:pokusne, kategorie:promitani, poradatel:sayid).save()
+									new Akce(nazev:"Shrek 8", zacatek_akce:"2008-04-08 14:50:00", popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni3, rozmisteni:pokusne2, kategorie:promitani, poradatel:john).save()
+									new Akce(nazev:"Life of Brian", zacatek_akce:"2008-04-08 14:50:00", popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:pokusne, kategorie:promitani, poradatel:caesar).save()
+									new Akce(nazev:"Rocky 9", zacatek_akce:"2008-04-08 14:50:00", popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:pokusne2, kategorie:promitani, poradatel:karel).save()
 							 }
 
-						}
+						//}
 				 }
         } catch (Exception e) {
 						print "aaa, probleeem: " + e.toString()

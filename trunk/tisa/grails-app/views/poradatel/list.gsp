@@ -15,15 +15,9 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
                    	        <g:sortableColumn property="cele_jmeno" title="Celejmeno" />
                         
                    	        <g:sortableColumn property="email" title="Email" />
-                        
-                   	        <g:sortableColumn property="heslo" title="Heslo" />
-                        
-                   	        <g:sortableColumn property="sul" title="Sul" />
                         
                    	        <g:sortableColumn property="telefon" title="Telefon" />
                         
@@ -33,15 +27,9 @@
                     <g:each in="${poradatelList}" status="i" var="poradatel">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${poradatel.id}">${poradatel.id?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${poradatel.cele_jmeno?.encodeAsHTML()}</td>
+                            <td><g:link action="show" id="${poradatel.id}">${poradatel.cele_jmeno?.encodeAsHTML()}</g:link></td>
                         
                             <td>${poradatel.email?.encodeAsHTML()}</td>
-                        
-                            <td>${poradatel.heslo?.encodeAsHTML()}</td>
-                        
-                            <td>${poradatel.sul?.encodeAsHTML()}</td>
                         
                             <td>${poradatel.telefon?.encodeAsHTML()}</td>
                         

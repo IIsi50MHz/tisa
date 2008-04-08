@@ -1,12 +1,22 @@
-class Poradatel extends UserStub {
+class Poradatel {
 
-		def hasMany = [akce:Akce]		
-
-
+    String cele_jmeno
+    String email
+    String telefon
+    String adresa
+    		
+		static constraints = {
+				cele_jmeno(blank:false)
+				email(blank:false)
+				telefon()
+				adresa()
 }
+}
+    
 
 
 /*
+
 class Poradatel {
 
     String cele_jmeno
@@ -26,4 +36,5 @@ class Poradatel {
 }
 
 }
+
 */

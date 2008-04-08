@@ -45,7 +45,7 @@
                         
                             <td>${akce.popis?.encodeAsHTML()}</td>
                         
-                            <td>${akce.poradatel?.encodeAsHTML()}</td>
+                            <td><g:link action="show" id="${akce?.poradatel?.id}">${akce?.poradatel?.cele_jmeno}</g:link></td>
                         
                         </tr>
                     </g:each>
