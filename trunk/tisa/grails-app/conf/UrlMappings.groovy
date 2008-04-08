@@ -5,7 +5,7 @@ class UrlMappings {
 			"/mista/$action?/$id?" (controller:"frontMisto")
 			"/rezervace/$action?/$id?" (controller:"frontRezervace")
 			"/spravce/$action?/$id?" (controller:"frontSpravce")
-				
+			"/uzivatel/$action?/$id?" (controller:"frontUzivatel")
 
 			"/admin/a/$action?/$id?" (controller:"admin")
 			"/admin/akce/$action?/$id?" (controller:"akce")
