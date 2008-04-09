@@ -43,7 +43,7 @@
 
                             <td>${akce.kategorie?.encodeAsHTML()}</td>
                         
-                            <td><g:link controller="frontMisto" action="show" id="${akce.misto.id}">${akce.misto?.encodeAsHTML()}</g:link></td>
+                            <td><g:link controller="frontMisto" action="show" id="${akce.rozmisteni.misto.id}">${akce.rozmisteni.misto?.encodeAsHTML()}</g:link></td>
                             
                             <td>${akce.zacatek_akce?.encodeAsHTML()}</td>
                        

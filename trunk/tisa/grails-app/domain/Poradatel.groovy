@@ -2,8 +2,8 @@ class Poradatel {
 
     String cele_jmeno
     String email
-    String telefon
-    String adresa
+    String telefon = ""
+    String adresa = ""
     		
     def hasMany = [akce:Akce]
     
@@ -12,5 +12,5 @@ class Poradatel {
 				email(blank:false)
 				telefon()
 				adresa()
-}
+		}
 }
