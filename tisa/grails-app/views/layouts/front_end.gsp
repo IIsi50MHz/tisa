@@ -32,6 +32,7 @@
                         
 			<div class="nav">
 					<span class="menuButton">
+                                          (starý panel, co půjde už brzo pryč)
 							<g:link controller="frontAkce">
 									<g:message code="tisa.akce.name.pl"/>
 							</g:link>
@@ -57,6 +58,10 @@
                                                  ${kategorieAkci.nazev.encodeAsHTML()}
                                             </g:link>
                                           </g:each>
+
+                                          <g:link action="list" controller="frontAkce">
+					  (zobrazit všechny akce)				
+                                          </g:link>
                                      
                                         </span>
 			</div>
@@ -66,14 +71,18 @@
                                           Akce ve městech: 
                                                                                    
                                           <g:each in="${Mesto.list()}" status="i" var="mesto">
-                                            <g:link controller="frontAkce" action="list">
+                                            <g:link controller="frontAkce" action="ukaz_mesto" id="${mesto.id}">
                                                  ${mesto.jmeno.encodeAsHTML()}
                                             </g:link>
                                           </g:each>
+
+                                          <g:link action="list" controller="frontMisto">
+					  (zobrazit všechna místa)				
+					  </g:link>
                                      
                                         </span>
 			</div>
-			
+                                              
 			
         <g:layoutBody />		
     </body>	

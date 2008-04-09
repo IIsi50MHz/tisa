@@ -42,11 +42,27 @@ class FrontAkceController {
         } else {
             list = Akce.list( params )
         }
-        //params.max ?: 10
-        //[ akceList: list ]
-        
+                
         if(!params.max) params.max = 10
-        //[ akceList: list.list( params ) ]
+        [ akceList: list ]
+    }
+    
+    def ukaz_mesto = {
+        def list
+        if(params.id) {
+            def mesto = Mesto.get(params.id);
+            def misto = mesto.misto;
+            if (misto) {
+                list = misto.akce;
+            } else {
+                flash.message = message(code:"tisa.controllers.notfound", args:["Misto", "${params.id}"]) 
+                redirect(action:this.list)
+            }
+        } else {
+            list = Akce.list( params )
+        }
+                
+        if(!params.max) params.max = 10
         [ akceList: list ]
     }
 

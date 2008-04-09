@@ -1,7 +1,8 @@
 class UrlMappings {
     static mappings = {
 			"/" (controller:"front_end", view:"index")
-			"/akce/kategorie/$id?" (controller:"frontAkce") 
+			"/akce/kategorie/$id?" (controller:"frontAkce")
+                        "/akce/mesto/$id?" (controller:"frontAkce") 
                         "/akce/$action?/$id?" (controller:"frontAkce")
 			//"/mista/kategorie/$id?" (controller:"frontMisto", action:"uka_kategorii")
 			"/mista/$action?/$id?" (controller:"frontMisto")
