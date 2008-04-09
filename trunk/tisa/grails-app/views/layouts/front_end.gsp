@@ -23,32 +23,14 @@
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>	
-       <div class="logo">
-					<g:link controller="front_end">
-						<img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
-					</g:link>
-				</div>	
+        
+        <div class="logo">
+            <g:link controller="front_end">
+            <img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
+            </g:link>
+	</div>	
 			
-                        
-			<div class="nav">
-					<span class="menuButton">
-                                          (starý panel, co půjde už brzo pryč)
-							<g:link controller="frontAkce">
-									<g:message code="tisa.akce.name.pl"/>
-							</g:link>
-							<g:link controller="frontMisto">
-									<g:message code="tisa.misto.name.pl"/>
-							</g:link>
-                                                        <g:link controller="frontKategorieAkci">
-									<g:message code="tisa.kategorieAkci.name.pl"/>
-							</g:link>
-							<g:link controller="frontKategorieMist">
-									<g:message code="tisa.kategorieMist.name.pl"/>
-							</g:link>
-					</span>
-			</div>
-                        
-                        
+              
                         <div class="nav"> 
                                         <span class="menuButton">
                                           Hledat kulturní akce: 
