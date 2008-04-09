@@ -10,7 +10,6 @@ class Akce {
     ZpusobVyprseniRezervace zpusobVyprseniRezervace
     Poradatel poradatel
     KategorieAkci kategorie
-    Misto misto
 	
     def hasMany = [rezervace:Rezervace]
         
@@ -20,8 +19,7 @@ class Akce {
         popis(widget:"textarea",blank:false)
         vstupne_min()
         vstupne_max()
-        odkaz(blank:false)
-        misto(blank:false)
+        odkaz()
         zpusob_vyprseni(blank:false)
         poradatel()
         kategorie()
