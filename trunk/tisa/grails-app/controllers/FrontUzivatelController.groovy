@@ -2,6 +2,33 @@
 class FrontUzivatelController {
     
     def index = { redirect(action:list,params:params) }
+       
+    
+    def uzivatel_login = {
+				def u = new Uzivatel()
+				login(u)
+				[uzivatel:u]
+    }
+		
+    def login(UserStub u) {
+				if (params.email=='' || params.heslo=='') {
+						flash.message = message(code:"tisa.controllers.insert_email_and_pass")
+        }
+				if (params.email!=null) {
+						//u = u.invokeMethod(u, "findByEmail", [params.email]) //.metaClass.methods.find{it.name.startsWith("findByEmail")}.invoke(params.email)
+						u = u.class.findByEmail(params.email)
+						if (!u) {
+								flash.message = message(code:"tisa.controllers.incorrect_email")
+            } else {
+								if (u.authenticate(params.heslo)) {
+										session.user = u
+										redirect(controller:"FrontAkce", action:"list")
+								} else {
+										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
+								}
+						}
+        }
+    }
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']

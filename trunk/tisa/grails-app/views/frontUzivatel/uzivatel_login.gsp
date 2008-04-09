@@ -10,12 +10,12 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <g:hasErrors bean="${uzivatel}">
+            <g:hasErrors bean="${front_end}">
             <div class="errors">
-                <g:renderErrors bean="${uzivatel}" as="list" />
+                <g:renderErrors bean="${front_end}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="save" method="post" >
+            <g:form action="uzivatel_login" method="post" >
                 <div class="dialog">
                     <table>
                         <tbody>
