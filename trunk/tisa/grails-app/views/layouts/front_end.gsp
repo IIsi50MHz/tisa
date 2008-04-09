@@ -28,7 +28,8 @@
 						<h1>TiSa</h1>
 					</a>
 				</div>	
-				
+			
+                        
 			<div class="nav">
 					<span class="menuButton">
 							<g:link controller="frontAkce">
@@ -44,7 +45,34 @@
 									<g:message code="tisa.kategorieMist.name.pl"/>
 							</g:link>
 					</span>
-			</div>			
+			</div>
+                        
+                        
+                        <div class="nav"> 
+                                        <span class="menuButton">
+                                          Hledat kulturní akce: 
+                                                                                   
+                                          <g:each in="${KategorieAkci.list()}" status="i" var="kategorieAkci">
+                                            <g:link controller="frontAkce" action="ukaz_kategorii" id="${kategorieAkci.id}">
+                                                 ${kategorieAkci.nazev.encodeAsHTML()}
+                                            </g:link>
+                                          </g:each>
+                                     
+                                        </span>
+			</div>
+                        
+                        <div class="nav"> 
+                                        <span class="menuButton">
+                                          Akce ve městech: 
+                                                                                   
+                                          <g:each in="${Mesto.list()}" status="i" var="mesto">
+                                            <g:link controller="frontAkce" action="list">
+                                                 ${mesto.jmeno.encodeAsHTML()}
+                                            </g:link>
+                                          </g:each>
+                                     
+                                        </span>
+			</div>
 			
 			
         <g:layoutBody />		

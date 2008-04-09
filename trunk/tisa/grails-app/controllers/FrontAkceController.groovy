@@ -22,7 +22,31 @@ class FrontAkceController {
         } else {
             list = Akce.list( params )
         }
-        params.max ?: 10
+        //params.max ?: 10
+        //[ akceList: list ]
+        
+        if(!params.max) params.max = 10
+        [ akceList: Akce.list( params ) ]
+    }
+    
+    def ukaz_kategorii = {
+        def list
+        if(params.id) {
+            def kategorie = KategorieAkci.get(params.id);
+            if (kategorie) {
+                list = kategorie.akce;
+            } else {
+                flash.message = message(code:"tisa.controllers.notfound", args:["Kategorie", "${params.id}"]) 
+                redirect(action:this.list)
+            }
+        } else {
+            list = Akce.list( params )
+        }
+        //params.max ?: 10
+        //[ akceList: list ]
+        
+        if(!params.max) params.max = 10
+        //[ akceList: list.list( params ) ]
         [ akceList: list ]
     }
 
@@ -95,4 +119,6 @@ class FrontAkceController {
             render(view:'create',model:[akce:akce])
         }
     }
+    
+    
 }
