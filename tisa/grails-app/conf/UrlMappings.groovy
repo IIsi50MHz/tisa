@@ -3,6 +3,8 @@ class UrlMappings {
 			"/" (controller:"front_end", view:"index")
 			"/akce/$action?/$id?" (controller:"frontAkce")
 			"/mista/$action?/$id?" (controller:"frontMisto")
+                        "/kategorieakci/$action?/$id?" (controller:"frontKategorieAkci")
+			"/kategoriemist/$action?/$id?" (controller:"frontKategorieMist")
 			"/rezervace/$action?/$id?" (controller:"frontRezervace")
 			"/spravce/$action?/$id?" (controller:"frontSpravce")
 			"/uzivatel/$action?/$id?" (controller:"frontUzivatel")

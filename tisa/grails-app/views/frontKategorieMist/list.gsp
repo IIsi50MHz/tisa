@@ -1,14 +1,12 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="admin" />
-        <title><g:message code="tisa.kategorieAkci.list"/></title>
+        <meta name="layout" content="front_end" />
+        <title><g:message code="tisa.kategorieMist.list"/></title>
     </head>
     <body>
-       <div class="body">
-            <h1><g:message code="tisa.kategorieAkci.list"/></h1>
+        <div class="body">
+            <h1><g:message code="tisa.kategorieMist.list"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -17,23 +15,23 @@
                     <thead>
                         <tr>
                         
-                   	      <g:sortableColumn property="nazev" title="Nazev" />
+                   	        <g:sortableColumn property="nazev" title="Nazev" />
                         
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${kategorieAkciList}" status="i" var="kategorieAkci">
+                    <g:each in="${kategorieMistList}" status="i" var="kategorieMist">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${kategorieAkci.id}">${kategorieAkci.nazev?.encodeAsHTML()}</g:link></td>
-                                                                           
+                            <td><g:link action="show" id="${kategorieMist.id}">${kategorieMist.nazev?.encodeAsHTML()}</g:link></td>
+                        
                         </tr>
                     </g:each>
                     </tbody>
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${KategorieAkci.count()}" />
+                <g:paginate total="${KategorieMist.count()}" />
             </div>
         </div>
     </body>

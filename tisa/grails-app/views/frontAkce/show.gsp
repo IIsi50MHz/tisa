@@ -17,13 +17,6 @@
                     <tbody>
             
                         <tr class="prop">
-                            <td valign="top" class="name">Místo:</td>
-                            
-                            <td valign="top" class="value"><g:link controller="frontMisto" action="show" id="${akce?.misto?.id}">${akce?.misto}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Název:</td>
                             
                             <td valign="top" class="value">${akce.nazev}</td>

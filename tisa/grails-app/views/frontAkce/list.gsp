@@ -41,7 +41,7 @@
                         
                             <td><g:link action="show" id="${akce.id}">${akce.nazev?.encodeAsHTML()}</g:link></td>
 
-                            <td>${akce.kategorie?.encodeAsHTML()}</td>
+                            <td><g:link controller="frontKategorieAkci" action="show" id="${akce?.kategorie?.id}">${akce.kategorie?.encodeAsHTML()}</g:link></td>
                         
                             <td><g:link controller="frontMisto" action="show" id="${akce.rozmisteni.misto.id}">${akce.rozmisteni.misto?.encodeAsHTML()}</g:link></td>
                             
