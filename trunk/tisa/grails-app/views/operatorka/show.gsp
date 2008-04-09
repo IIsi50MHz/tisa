@@ -25,7 +25,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Vsechnymista:</td>
                             
-                            <td valign="top" class="value">${operatorka.vsechny_mista}</td>
+                            <td valign="top" class="value"><g:message code="tisa.user.allrights.${operatorka.vsechny_mista}" /></td>
                             
                         </tr>
                     

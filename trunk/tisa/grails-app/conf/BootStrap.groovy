@@ -38,7 +38,7 @@ class BootStrap {
                                 def nocniklub =new KategorieMist(nazev: "noční klub").save()
 		
 			//místa				
-      println "mista"
+                        println "mista"
 				def cezarena = new Misto(spravce: ostravaSpravce, nazev: "ČEZ arena", popis: "sportovní akce", mesto: Ostrava, kategorie:arena).save()			
 				def dkvitkovic = new Misto(spravce: ostravaSpravce, nazev: "DK Vitkovic", popis: "společenské akce, výstavy", mesto: Ostrava, kategorie:kult_dum).save() 
 				def kinoluna = new Misto(spravce: ostravaSpravce, nazev: "Kino Luna", popis: "kino u Běláku", mesto: Ostrava, kategorie:kino).save()
@@ -99,41 +99,41 @@ class BootStrap {
             
             
             
-           //poradatele			
-           println "poradatele"
+                      //poradatele			
+                      println "poradatele"
             
-            def karel = new Poradatel(cele_jmeno:"Karel Veliký", email:"karel@tisa.cz").save()
-						def caesar = new Poradatel(cele_jmeno:"Julius Caesar", email:"caesar@tisa.cz").save()
-						def john = new Poradatel(cele_jmeno:"John Locke", email:"john@tisa.cz").save()
-						def jack = new Poradatel(cele_jmeno:"Jack Shephard", email:"shephard@tisa.cz").save()
-						def james = new Poradatel(cele_jmeno:"James Sawyer Ford", email:"james@tisa.cz").save()
-						def kwon = new Poradatel(cele_jmeno:"Jin-Soo Kwon", email:"jinsoo@tisa.cz").save()
-						def kate = new Poradatel(cele_jmeno:"Kate Austen", email:"austen@tisa.cz").save()
-						def sayid =new Poradatel(cele_jmeno:"Sayid Jarrah", email:"sayid@tisa.cz").save()
+                                def karel = new Poradatel(cele_jmeno:"Karel Veliký", email:"karel@tisa.cz").save()
+				def caesar = new Poradatel(cele_jmeno:"Julius Caesar", email:"caesar@tisa.cz").save()
+				def john = new Poradatel(cele_jmeno:"John Locke", email:"john@tisa.cz").save()
+				def jack = new Poradatel(cele_jmeno:"Jack Shephard", email:"shephard@tisa.cz").save()
+				def james = new Poradatel(cele_jmeno:"James Sawyer Ford", email:"james@tisa.cz").save()
+				def kwon = new Poradatel(cele_jmeno:"Jin-Soo Kwon", email:"jinsoo@tisa.cz").save()
+				def kate = new Poradatel(cele_jmeno:"Kate Austen", email:"austen@tisa.cz").save()
+				def sayid =new Poradatel(cele_jmeno:"Sayid Jarrah", email:"sayid@tisa.cz").save()
             
             
-			//kategorie akcí 
-			println "kategorie akci"
+                      //kategorie akcí 
+                      println "kategorie akci"
 			
 				def ples = new KategorieAkci(nazev: "ples").save()
 				def promitani = new KategorieAkci(nazev: "promítání").save()
 				def besidka =new KategorieAkci(nazev: "školní besídka").save()
-    		def divadelnihra =new KategorieAkci(nazev: "divadelní hra").save()
-    		def koncert =new KategorieAkci(nazev: "koncert").save()
-    		def festival =new KategorieAkci(nazev: "filmový festival").save()
-    		def maskarnibal =new KategorieAkci(nazev: "maškarní bál").save()
+                                def divadelnihra =new KategorieAkci(nazev: "divadelní hra").save()
+                                def koncert =new KategorieAkci(nazev: "koncert").save()
+                                def festival =new KategorieAkci(nazev: "filmový festival").save()
+                                def maskarnibal =new KategorieAkci(nazev: "maškarní bál").save()
     
-      //ZpusobVyprseniRezervace 
-			println "ZpusobVyprseniRezervace"
+                      //ZpusobVyprseniRezervace 
+                      println "ZpusobVyprseniRezervace"
                         
-        def vyprseni1 = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin", misto: cezarena).save()
+                                def vyprseni1 = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin", misto: cezarena).save()
 				def vyprseni2 = new ZpusobVyprseniRezervace(cas:14400, druh:"before_action_begin", misto: dkvitkovic).save()
-        def vyprseni3 = new ZpusobVyprseniRezervace(cas:2105600, druh:"before_action_begin", misto: kinoluna).save()
-        def vyprseni4 = new ZpusobVyprseniRezervace(cas:37600, druh:"after_reservation_taken", misto: stadionskslezka).save()
+                                def vyprseni3 = new ZpusobVyprseniRezervace(cas:2105600, druh:"before_action_begin", misto: kinoluna).save()
+                                def vyprseni4 = new ZpusobVyprseniRezervace(cas:37600, druh:"after_reservation_taken", misto: stadionskslezka).save()
 				def vyprseni5 = new ZpusobVyprseniRezervace(cas:1800, druh:"after_reservation_taken", misto: sazkaarena).save()
             
-                        //akce            
-			println "akce"
+                      //akce            
+                      println "akce"
 	
 				 def pondeli = [0..4]
 				 def saly = []
@@ -154,15 +154,18 @@ class BootStrap {
 
 						for (sal in saly) {
 							 def i = 0
-
+                                                         def j = 0
+                                                         def h = 0
 							 for ( i=0; i<7; i++) {
-									def j = 0
+									j = 0
+                                                                        h++
 									for (p in pondeli) {
+                                                                            
 										 p = Calendar.getInstance()
-										 p.set(2008, 4, 7+i, 10+j*3, 0, 0)
+										 p.set(2008, 4, 7+i, 10+h*2, 0, 0)
 										 p = p.getTime()
-                     pondeli[j]=p 
-                     pondeli[j] 
+                                                                                 pondeli[j]=p 
+                                                                                 pondeli[j] 
 										 j++
 									}
 									new Akce(nazev:"Matrix 4", zacatek_akce:pondeli[0], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()

@@ -43,7 +43,7 @@
                         
                             <td><g:link action="show" id="${akce.id}">${akce.nazev?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${akce.kategorie?.encodeAsHTML()}</td>
+                            <td><g:link controller="kategorieAkci" action="show" id="${akce?.kategorie?.id}">${akce?.kategorie}</g:link></td>
                         
                             <td>${akce.zacatek_akce?.encodeAsHTML()}</td>
                         

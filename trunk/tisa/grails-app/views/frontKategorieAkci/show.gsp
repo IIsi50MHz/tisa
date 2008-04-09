@@ -30,7 +30,7 @@
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
                                 <g:each var="a" in="${kategorieAkci.akce}">
-                                    <li><g:link controller="akce" action="show" id="${a.id}">${a.nazev}</g:link></li>
+                                    <li><g:link controller="frontAkce" action="show" id="${a.id}">${a.nazev}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>
