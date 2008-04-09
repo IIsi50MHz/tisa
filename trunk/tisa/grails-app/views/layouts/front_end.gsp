@@ -23,10 +23,10 @@
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>	
-        <div id="logo">
-					<a class="home" href="${createLinkTo(dir:'')}">
-						<h1>TiSa</h1>
-					</a>
+       <div class="logo">
+					<g:link controller="front_end">
+						<img style="border:0" src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" />
+					</g:link>
 				</div>	
 			
                         
