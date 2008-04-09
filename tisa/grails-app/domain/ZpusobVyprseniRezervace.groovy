@@ -14,6 +14,12 @@ class ZpusobVyprseniRezervace {
     }
 		
 		String toString() {
-        return this.cas +" " +this.druh
+				/*
+				def messageSource = grailsAttributes.getApplicationContext().getBean("messageSource")
+		    def t_cas = messageSource.getMessage( "tisa.zpusobVyprseniRezervace.cas."+this.cas, 'cs' )
+		    def t_druh = messageSource.getMessage( "tisa.zpusobVyprseniRezervace.druh."+this.druh, 'cs' )
+				return t_cas + " " + t_druh
+				*/
+			 return cas + " " + druh
     }
 }

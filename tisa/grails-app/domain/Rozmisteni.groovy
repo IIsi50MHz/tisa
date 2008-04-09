@@ -1,6 +1,6 @@
 class Rozmisteni {
     String nazev
-    String plan_salu
+    String plan_salu = ""
     def belongsTo = Misto
     Misto misto
     

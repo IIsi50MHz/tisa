@@ -5,4 +5,16 @@ class Spravce extends UserStub {
 		def hasMany = [mista:Misto]		
 
 
+				
+		def listMisto() {
+				return Misto.findBySpravce(this)
+    }
+				
+		def listVyprseni(UserStub user) {
+				vyprseni = []
+				for (misto in listMisto()) {
+						vyprseni += misto.zpusobyVyprseniRezervaci
+        }
+				return vyprseni
+    }
 }

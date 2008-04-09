@@ -1,6 +1,6 @@
 class Akce {
     String nazev
-    String zacatek_akce = new Date()
+    Date zacatek_akce = new Date()
     String popis = ""
     Integer vstupne_min = 0
     Integer vstupne_max = 0
