@@ -22,7 +22,7 @@ class FrontUzivatelController {
             } else {
 								if (u.authenticate(params.heslo)) {
 										session.user = u
-										redirect(controller:"FrontAkce", action:"list")
+										redirect(controller:"frontAkce", action:"list")
 								} else {
 										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")
 								}
