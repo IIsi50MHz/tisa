@@ -52,7 +52,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Správce</td>
                             
-                            <td valign="top" class="value">${misto.spravce}</td>
+                            <td valign="top" class="value">${misto?.spravce?.cele_jmeno}</td>
                             
                         </tr>
 

@@ -33,7 +33,7 @@
                         
                    	        <g:sortableColumn property="poradatel" title="Poradatel" />
 
-                                <g:sortableColumn property="misto" title="Misto" />
+                                
                    	    
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@
                         
                             <td><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel?.cele_jmeno}</g:link></td>
                             
-                            <td><g:link controller="misto" action="show" id="${akce?.misto?.id}">${akce?.misto?.nazev}</g:link></td>
+                           
                         
                         </tr>
                     </g:each>

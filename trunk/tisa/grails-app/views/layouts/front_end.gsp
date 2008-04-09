@@ -37,6 +37,12 @@
 							<g:link controller="frontMisto">
 									<g:message code="tisa.misto.name.pl"/>
 							</g:link>
+                                                        <g:link controller="frontKategorieAkci">
+									<g:message code="tisa.kategorieAkci.name.pl"/>
+							</g:link>
+							<g:link controller="frontKategorieMist">
+									<g:message code="tisa.kategorieMist.name.pl"/>
+							</g:link>
 					</span>
 			</div>			
 			

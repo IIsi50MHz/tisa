@@ -60,13 +60,6 @@
                         </tr>
                         
                         <tr class="prop">
-                            <td valign="top" class="name">Misto:</td>
-                            
-                            <td valign="top" class="value"><g:link controller="misto" action="show" id="${akce?.misto?.id}">${akce?.misto?.nazev}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Rezervace:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">

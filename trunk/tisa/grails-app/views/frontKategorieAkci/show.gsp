@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="admin" />
+        <meta name="layout" content="front_end" />
         <title><g:message code="tisa.kategorieAkci.show"/></title>
     </head>
     <body>
@@ -44,16 +44,11 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                          <td><g:link action="list" controller="frontKategorieAkci">zpět na Kategorie akcí</g:link></td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class="buttons">
-                <g:form>
-                    <input type="hidden" name="id" value="${kategorieAkci?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="${message(code:'tisa.edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
-
-                </g:form>
             </div>
         </div>
     </body>

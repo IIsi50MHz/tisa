@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="admin" />
+        <meta name="layout" content="front_end" />
         <title><g:message code="tisa.kategorieAkci.list"/></title>
     </head>
     <body>
