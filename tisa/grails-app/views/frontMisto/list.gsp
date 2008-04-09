@@ -33,7 +33,7 @@
                         
                             <td><g:link action="show" id="${misto.id}">${misto.nazev?.encodeAsHTML()}</g:link></td>
 
-                            <td>${misto.kategorie?.encodeAsHTML()}</td>
+                            <td><g:link action="show" controller="frontKategorieMist" id="${misto?.kategorie?.id}">${misto.kategorie.nazev?.encodeAsHTML()}</g:link></td>
 
                             <td>${misto.mesto?.encodeAsHTML()}</td>
                                                

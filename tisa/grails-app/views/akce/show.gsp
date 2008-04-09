@@ -27,7 +27,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Kategorie:</td>
                             
-                            <td valign="top" class="value"><g:link controller="kategorie_akci" action="show" id="${akce?.kategorie?.id}">${akce?.kategorie}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="kategorieAkci" action="show" id="${akce?.kategorie?.id}">${akce?.kategorie}</g:link></td>
                             
                         </tr>
                     
