@@ -44,28 +44,27 @@ class BootStrap {
 				def kinoluna = new Misto(spravce: ostravaSpravce, nazev: "Kino Luna", popis: "kino u Běláku", mesto: Ostrava, kategorie:kino).save()
 				def sazkaarena = new Misto(spravce: ostravaSpravce, nazev: "Sazka Aréna", popis: "multifunkční hala", mesto: Ostrava, kategorie:arena).save()
 				def stadionskslezka = new Misto(spravce: ostravaSpravce, nazev: "Stadión SK Slezská", popis: "sportovní stadión", mesto: Ostrava, kategorie:sportovni_zarizeni).save()
-				
+                                def kinohvezda = new Misto(spravce: tisaSpravce, nazev: "Kino Hvězda", popis: "kino z Vratimova", mesto: Vratimov, kategorie:kino).save()
+				def krasenka = new Misto(spravce: tisaSpravce, nazev: "Krasenka", popis: "Hasičské plesy, hospoda", mesto: As, kategorie:kult_dum).save()
+				def divadloopona = new Misto(spravce: tisaSpravce, nazev: "Divadlo Opona", popis: "nezávislá scéna", mesto: Bilovec, kategorie:divadlo).save()
+				def dkchlebovice = new Misto(spravce: tisaSpravce, nazev: "DK Chlebovice", popis: "dům kultury", mesto: Chlebovice, kategorie:kult_dum).save()
+				def divadlonaopratce = new Misto(spravce: tisaSpravce, nazev: "Divadlo Na Oprátce", popis: "divadelní scéna", mesto: Jablunkov, kategorie:divadlo).save()
+				def salamadeus = new Misto(spravce: tisaSpravce, nazev: "Sál Amadeus", popis: "koncertní sál", mesto: Zlin, kategorie:kult_dum).save()
+				def zamek = new Misto(spravce: tisaSpravce, nazev: "Zámek Shorazboř", popis: "divadelní scéna, výstavy", mesto: Opava, kategorie:divadlo).save()
+				def prokop = new Misto(spravce: tisaSpravce, nazev: "Výstaviště Prokop a.s.", popis: "výstaviště", mesto: Brno, kategorie:kult_dum).save()
+				def hnmytince = new Misto(spravce: tisaSpravce, nazev: "Hospoda Na Mýtince", popis: "taneční sál", mesto: Liptakov, kategorie:kult_dum).save()
+                                
+            
 			println "cinestary"
 				def cinestary = []
-				cinestary[0] = new Misto(spravce: cinestarSpravce, nazev: "Cinestar", popis: "kino, filmové akce", mesto: Brno, kategorie:kino).save() 
-				cinestary[1] = new Misto(spravce: cinestarSpravce,nazev: "Cinestar", popis: "kino, filmové akce", mesto: Ostrava, kategorie:kino).save() 
-				cinestary[2] = new Misto(spravce: cinestarSpravce,nazev: "Cinestar", popis: "kino, filmové akce", mesto: Praha, kategorie:kino).save() 
+				cinestary[0] = new Misto(spravce: cinestarSpravce, nazev: "Cinestar - Brno", popis: "kino, filmové akce", mesto: Brno, kategorie:kino).save() 
+				cinestary[1] = new Misto(spravce: cinestarSpravce,nazev: "Cinestar - Ostrava", popis: "kino, filmové akce", mesto: Ostrava, kategorie:kino).save() 
+				cinestary[2] = new Misto(spravce: cinestarSpravce,nazev: "Cinestar - Praha", popis: "kino, filmové akce", mesto: Praha, kategorie:kino).save() 
 				
 			println "dalsi mista"
 				new Misto(spravce: prahaSpravce, nazev: "Divadlo Járy Cimrmana", popis: "divadlo", mesto: Praha, kategorie:divadlo).save()
 				new Misto(spravce: prahaSpravce, nazev: "Cinemax", popis: "multiplex", mesto: Praha, kategorie:kino).save()
-
-				new Misto(spravce: tisaSpravce, nazev: "Kino Hvězda", popis: "kino z Vratimova", mesto: Vratimov, kategorie:kino).save()
-				new Misto(spravce: tisaSpravce, nazev: "Krasenka", popis: "Hasičské plesy, hospoda", mesto: As, kategorie:kult_dum).save()
-				new Misto(spravce: tisaSpravce, nazev: "Divadlo Opona", popis: "nezávislá scéna", mesto: Bilovec, kategorie:divadlo).save()
-				new Misto(spravce: tisaSpravce, nazev: "DK Chlebovice", popis: "dům kultury", mesto: Chlebovice, kategorie:kult_dum).save()
-				new Misto(spravce: tisaSpravce, nazev: "Divadlo Na Oprátce", popis: "divadelní scéna", mesto: Jablunkov, kategorie:divadlo).save()
-				new Misto(spravce: tisaSpravce, nazev: "Sál Amadeus", popis: "koncertní sál", mesto: Zlin, kategorie:kult_dum).save()
-				new Misto(spravce: tisaSpravce, nazev: "Zámek Shorazboř", popis: "divadelní scéna, výstavy", mesto: Opava, kategorie:divadlo).save()
-				new Misto(spravce: tisaSpravce, nazev: "Výstaviště Prokop a.s.", popis: "výstaviště", mesto: Brno, kategorie:kult_dum).save()
-				new Misto(spravce: tisaSpravce, nazev: "Hospoda Na Mýtince", popis: "taneční sál", mesto: Liptakov, kategorie:kult_dum).save()
-
-
+                                
 			//operátorky
                         println "operatorky"
 				new Operatorka(vsechny_mista:true, cele_jmeno:"Magda Magdonovna", email:"magda@tisa.cz", heslo:"magda", misto: cezarena).save()
@@ -122,20 +121,82 @@ class BootStrap {
                                 def koncert =new KategorieAkci(nazev: "koncert").save()
                                 def festival =new KategorieAkci(nazev: "filmový festival").save()
                                 def maskarnibal =new KategorieAkci(nazev: "maškarní bál").save()
+                                def vystava =new KategorieAkci(nazev: "výstava").save()
+                                def sport =new KategorieAkci(nazev: "sportovní akce").save()
     
                       //ZpusobVyprseniRezervace 
                       println "ZpusobVyprseniRezervace"
-                        
+                                def vyprseni0 = new ZpusobVyprseniRezervace(cas:3600, druh:"before_action_begin", misto: cezarena).save()
                                 def vyprseni1 = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin", misto: cezarena).save()
 				def vyprseni2 = new ZpusobVyprseniRezervace(cas:14400, druh:"before_action_begin", misto: dkvitkovic).save()
                                 def vyprseni3 = new ZpusobVyprseniRezervace(cas:2105600, druh:"before_action_begin", misto: kinoluna).save()
                                 def vyprseni4 = new ZpusobVyprseniRezervace(cas:37600, druh:"after_reservation_taken", misto: stadionskslezka).save()
 				def vyprseni5 = new ZpusobVyprseniRezervace(cas:1800, druh:"after_reservation_taken", misto: sazkaarena).save()
             
+            
+                    //rozmisteni
+                    def saly = []
+                    saly[0] = new Rozmisteni(nazev:"Sál A", plan_salu: "{\"0\":{\"1\":\"stage\",\"2\":\"stage\",\"3\":\"stage\",\"4\":\"stage\",\"5\":\"stage\",\"6\":\"stage\",\"7\":\"stage\",\"8\":\"stage\",\"9\":\"stage\",\"10\":\"stage\",\"11\":\"stage\",\"12\":\"stage\",\"13\":\"stage\",\"14\":\"stage\",\"15\":\"stage\",\"16\":\"stage\",\"17\":\"stage\",\"18\":\"stage\"},\"1\":{},\"2\":{},\"3\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\"},\"4\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\"},\"5\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\"},\"6\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\"},\"7\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\"},\"8\":{},\"9\":{\"1\":\"door\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"18\":\"door\",\"19\":\"door\"},\"10\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\"},\"11\":{\"1\":\"seat\",\"2\":\"seat\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"17\":\"seat\",\"18\":\"seat\",\"19\":\"seat\"},\"12\":{\"1\":\"seat\",\"2\":\"seat\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"17\":\"seat\",\"18\":\"seat\",\"19\":\"seat\"},\"13\":{},\"14\":{\"1\":\"seat\",\"2\":\"seat\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"17\":\"seat\",\"18\":\"seat\",\"19\":\"seat\"},\"15\":{\"1\":\"seat\",\"2\":\"seat\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"17\":\"seat\",\"18\":\"seat\",\"19\":\"seat\"},\"16\":{\"1\":\"seat\",\"2\":\"seat\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"17\":\"seat\",\"18\":\"seat\",\"19\":\"seat\"},\"17\":{\"1\":\"seat\",\"2\":\"seat\",\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"17\":\"seat\",\"18\":\"seat\",\"19\":\"seat\"},\"18\":{},\"19\":{\"4\":\"seat\",\"5\":\"seat\",\"6\":\"seat\",\"7\":\"seat\",\"8\":\"seat\",\"9\":\"seat\",\"10\":\"seat\",\"11\":\"seat\",\"12\":\"seat\",\"13\":\"seat\",\"14\":\"seat\",\"15\":\"seat\",\"16\":\"seat\"}}"  , misto:cinestary[0]).save()
+                  
+                    saly[1] = new Rozmisteni(nazev:"Sál B", misto:cinestary[1]).save()
+                    saly[2] = new Rozmisteni(nazev:"Sál C", misto:cinestary[2]).save()
+                    saly[3] = new Rozmisteni(nazev:"Sál D", misto:cinestary[0]).save()
+                    saly[4] = new Rozmisteni(nazev:"Sál E", misto:cinestary[1]).save()
+                    saly[5] = new Rozmisteni(nazev:"Sál F", misto:cinestary[2]).save()
+                    
+                    saly[6] = new Rozmisteni(nazev:"Koncert", misto:cezarena).save()
+                    saly[7] = new Rozmisteni(nazev:"Vystava", misto:dkvitkovic).save()
+                    saly[8] = new Rozmisteni(nazev:"Gladiatorské zápasy", misto:sazkaarena).save()
+                    saly[9] = new Rozmisteni(nazev:"Fotbal", misto:stadionskslezka).save()
+                   saly[10] = new Rozmisteni(nazev:"Ples", misto:cinestary[2]).save()
+                  //  saly[11] = new Rozmisteni(nazev:"Sál F", misto:cinestary[2]).save()
+                  //  saly[12] = new Rozmisteni(nazev:"Sál F", misto:cinestary[2]).save()
+                  //  saly[13] = new Rozmisteni(nazev:"Sál F", misto:cinestary[2]).save()
+                  //  saly[14] = new Rozmisteni(nazev:"Sál F", misto:cinestary[2]).save()
+            
+                      //casy+akce cinestar
+                      def den = [10]
+                      def d = 0
+                      for ( def i=0; i<5; i++) {
+                            for ( def j=0; j<2; j++) {                                           
+					 def p = Calendar.getInstance()
+                                         p.set(2008, 4, 7+i, 12+j*4, 0, 0)
+					 p = p.getTime()
+                                         den[d]=p 
+                                        // println den[d]
+                                         d++
+                            }
+                            new Akce(nazev:"Matrix 4          ", zacatek_akce:den[i+2], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[0], kategorie:promitani, poradatel:karel).save()
+                            new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:den[i+3], popis:"musíte vidět", vstupne_min:50, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[1], kategorie:promitani, poradatel:sayid).save()
+                            new Akce(nazev:"Shrek 8           ", zacatek_akce:den[i*2], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni3, rozmisteni:saly[2], kategorie:promitani, poradatel:john).save()
+                            new Akce(nazev:"Life of Brian     ", zacatek_akce:den[i+1], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[3], kategorie:promitani, poradatel:caesar).save()
+                            new Akce(nazev:"Rocky 9           ", zacatek_akce:den[i], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[4], kategorie:promitani, poradatel:karel).save()
+                      }
+                    
+                      new Akce(nazev:"Kabát", zacatek_akce:den[3], popis:"to bude jízda!", vstupne_min:300, vstupne_max:350, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
+                      new Akce(nazev:"Kabát", zacatek_akce:den[6], popis:"to bude jízda!", vstupne_min:300, vstupne_max:350, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
+                      new Akce(nazev:"Horkýže slíže", zacatek_akce:den[5], popis:"to su naši hoši zo Slovenska", vstupne_min:200, vstupne_max:250, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
+                      new Akce(nazev:"Horkýže slíže", zacatek_akce:den[7], popis:"to su naši hoši zo Slovenska", vstupne_min:200, vstupne_max:250, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
+                      
+                      new Akce(nazev:"Výstava exotických zvířat", zacatek_akce:den[0], popis:"pavouk kam se podíváš", vstupne_min:20, vstupne_max:50, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
+                      new Akce(nazev:"Výstava okrasných rostlin", zacatek_akce:den[2], popis:"květina kam se podíváš", vstupne_min:20, vstupne_max:50, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
+                      new Akce(nazev:"Výstava okrasných rostlin", zacatek_akce:den[4], popis:"květina kam se podíváš", vstupne_min:30, vstupne_max:60, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
+                      new Akce(nazev:"Výstava psů", zacatek_akce:den[6], popis:"Pes - nejlepší přítel člověka", vstupne_min:50, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:jack).save()
+                      new Akce(nazev:"Výstava koček", zacatek_akce:den[8], popis:"Pro upřesnění - čtyřnohých koček", vstupne_min:50, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:james).save()
+                      new Akce(nazev:"Gladiatorské zápasy", zacatek_akce:den[8], popis:"buuude booolet", vstupne_min:2000, vstupne_max:5000, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[8], kategorie:sport, poradatel:caesar).save()
+                      new Akce(nazev:"Gladiatorské zápasy", zacatek_akce:den[9], popis:"buuude booolet - finále", vstupne_min:3000, vstupne_max:6000, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[8], kategorie:sport, poradatel:caesar).save()
+                      
+                      new Akce(nazev:"Banik-Sparta", zacatek_akce:den[1], popis:"naši hoši ukaží pražským Pepíkům, zač je toho loket", vstupne_min:200, vstupne_max:500, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[9], kategorie:sport, poradatel:sayid).save()
+                      new Akce(nazev:"Banik-Slavia", zacatek_akce:den[9], popis:"naši hoši ukaží pražským Pepíkům, zač je toho loket", vstupne_min:200, vstupne_max:500, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[9], kategorie:sport, poradatel:sayid).save()
+                    
+            
+            
+                    
+            
                       //akce            
                       println "akce"
-	
-				 def pondeli = [0..4]
+	/*
+				 def pondeli = [4]
 				 def saly = []
 
 				 for (cinestar in cinestary) {
@@ -165,18 +226,27 @@ class BootStrap {
 										 p.set(2008, 4, 7+i, 10+h*2, 0, 0)
 										 p = p.getTime()
                                                                                  pondeli[j]=p 
-                                                                                 pondeli[j] 
+                                                                                 println pondeli[j]
 										 j++
+                                                                                 println j
+                                                                                 println pondeli[j]
 									}
 									new Akce(nazev:"Matrix 4", zacatek_akce:pondeli[0], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()
-									new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:pondeli[1], popis:"musíte vidět", vstupne_min:50, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:sal, kategorie:promitani, poradatel:sayid).save()
+									new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:pondeli[0], popis:"musíte vidět", vstupne_min:50, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:sal, kategorie:promitani, poradatel:sayid).save()
 									new Akce(nazev:"Shrek 8", zacatek_akce:pondeli[2], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni3, rozmisteni:sal, kategorie:promitani, poradatel:john).save()
 									new Akce(nazev:"Life of Brian", zacatek_akce:pondeli[3], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:sal, kategorie:promitani, poradatel:caesar).save()
 									new Akce(nazev:"Rocky 9", zacatek_akce:pondeli[4], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()
 							 }
 
 						}
-				 }
+				 }*/
+                                 
+            
+            
+            
+            
+            
+            
         } catch (Exception e) {
 						print "aaa, probleeem: " + e.toString()
         }
