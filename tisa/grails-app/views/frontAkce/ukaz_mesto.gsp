@@ -14,13 +14,14 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
+            <g:if test="${akceList.size() != 0}">
             <div class="list">
                 <table>
                     <thead>
                         <tr>                        
                    	    <g:sortableColumn property="nazev" title="Název" />
                             <g:sortableColumn property="kategorie" title="Kategorie" />
-		                   	    <th>Místo konání</th>
+                            <th>Místo konání</th>
                             <g:sortableColumn property="zacatek_akce" title="Začátek akce" />
                             <g:sortableColumn property="vstupne_max" title="Max. vstupné" />
                             <g:sortableColumn property="vstupne_min" title="Min. vstupné" />
@@ -43,6 +44,12 @@
             <div class="paginateButtons">
                 <g:paginate total="${akceList.count()}" />
             </div>
+
+            </g:if>
+            <g:else>
+                <div class="message"><g:message code="tisa.akce.notfound_mesto"/></div>
+            </g:else>
+            
         </div>
     </body>
 </html>
