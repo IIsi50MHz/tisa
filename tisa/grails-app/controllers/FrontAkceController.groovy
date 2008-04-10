@@ -49,11 +49,24 @@ class FrontAkceController {
     
     def ukaz_mesto = {
         def list
+        def akcemista
+        def poleakci = []
+        int i = 0
         if(params.id) {
             def mesto = Mesto.get(params.id);
-            def misto = mesto.misto;
-            if (misto) {
-                list = misto.akce;
+            def mista = mesto.misto;
+            if (mista) {
+                printf("kuku - mame mista\n")
+                for(m in mista){
+                    akcemista = m.akce
+                    printf("kuku - for vnejsi a ve akcemista je %d polozek\n",akcemista.count())
+                  for(a in akcemista){
+                    poleakci[i]=a;
+                    i++
+                    printf("kuku - for vnitrni a i je %d\n",i)
+                  }//for vnitrni  
+                }//for vnejsi
+              list = poleakci  
             } else {
                 flash.message = message(code:"tisa.controllers.notfound", args:["Misto", "${params.id}"]) 
                 redirect(action:this.list)
@@ -76,65 +89,4 @@ class FrontAkceController {
         else { return [ akce : akce ] }
     }
 
-    def delete = {
-        def akce = Akce.get( params.id )
-        if(akce) {
-            akce.delete()
-            flash.message = message(code:"tisa.controllers.deleted", args:["${where}", "${params.id}"]) 
-            redirect(action:list)
-        }
-        else {
-            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
-            redirect(action:list)
-        }
-    }
-
-    def edit = {
-        def akce = Akce.get( params.id )
-
-        if(!akce) {
-            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
-            redirect(action:list)
-        }
-        else {
-            return [ akce : akce ]
-        }
-    }
-
-    def update = {
-        def akce = Akce.get( params.id )
-        if(akce) {
-            akce.properties = params
-            if(!akce.hasErrors() && akce.save()) {
-                flash.message = message(code:"tisa.controllers.updated", args:["${where}", "${params.id}"]) 
-                redirect(action:show,id:akce.id)
-            }
-            else {
-                render(view:'edit',model:[akce:akce])
-            }
-        }
-        else {
-            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
-            redirect(action:edit,id:params.id)
-        }
-    }
-
-    def create = {
-        def akce = new Akce()
-        akce.properties = params
-        return ['akce':akce]
-    }
-
-    def save = {
-        def akce = new Akce(params)
-        if(!akce.hasErrors() && akce.save()) {
-            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
-            redirect(action:show,id:akce.id)
-        }
-        else {
-            render(view:'create',model:[akce:akce])
-        }
-    }
-    
-    
 }
