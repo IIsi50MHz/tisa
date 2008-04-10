@@ -24,10 +24,13 @@
                         </tr>
                         
                         <tr class="prop">
+                            <td valign="top" class="name">Konání</td>
+                            <td valign="top" class="value"><g:link id="${akce.rozmisteni.misto.id}" action="show" controller="frontMisto">${akce.rozmisteni.misto}</g:link></td>
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name">Kategorie:</td>
-                            
                             <td valign="top" class="value">${akce.kategorie}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
@@ -60,13 +63,12 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name">Začátek akce</td>
-                            
                             <td valign="top" class="value">${akce.zacatek_akce}</td>
-                            
                         </tr>
                         
                         <tr class="prop">
-                          <td><g:link action="list" controller="frontAkce">zpět na Seznam akcí</g:link></td>
+                            <td valign="top" class="name">&nbsp;</td>
+                            <td valign="top" class="value"><g:link action="rezervovat" id="${akce.id}"><g:message code="tisa.rezervace.reserve"/></g:link></td>
                         </tr>
                     
                     </tbody>
