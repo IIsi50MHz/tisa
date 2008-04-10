@@ -8,7 +8,7 @@ class Rozmisteni {
     
     static constraints = {
         nazev(blank:false)
-        plan_salu() //TODO blank:false
+        plan_salu(size:0..10000)
         misto(blank:false)
         
     }
