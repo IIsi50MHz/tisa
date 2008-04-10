@@ -1,3 +1,5 @@
+import grails.converters.JSON
+
 class Rozmisteni {
     String nazev
     String plan_salu = ""
@@ -15,5 +17,14 @@ class Rozmisteni {
 		
 		String toString() {
         return this.nazev
+    }
+		
+		def plan_salu_to_a = {
+				try{ 
+				grails.converters.JSON.parse(plan_salu)
+				} catch (Exception e) {
+						//if not valid json return 2D empty array
+						return [[]]
+        }
     }
 }

@@ -1,7 +1,7 @@
 class FrontAkceController {
 
-		//def defaultAction = "list"
-		def index = { redirect(action:list,params:params) }
+		def defaultAction = "list"
+		//def index = { redirect(action:list,params:params) }
 
 
     // the delete, save and update actions only accept POST requests
@@ -93,7 +93,8 @@ class FrontAkceController {
 		        return [ rezervace: rezervace ]
         } else {
 						flash.message = "Prosím, přihlašte se než vytvoříte rezrvaci."
-            redirect(action:list)
+						session.after_login_redirect = [controller:"frontAkce", action:"rezervovat", id:params.id]
+            redirect(controller:"frontUzivatel", action:"login")
         }
     }    
 
