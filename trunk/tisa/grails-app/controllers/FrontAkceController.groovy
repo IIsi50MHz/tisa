@@ -69,6 +69,26 @@ class FrontAkceController {
         if(!params.max) params.max = 10
         [ mesto:mesto, akceList: list ]
     }
+    
+    def ukaz_misto = {
+        def list = []
+        def misto
+        if(params.id) {
+            printf("id mame")
+            misto = Misto.get(params.id);
+            def i = 0
+            
+		for(rozmisteni in misto.rozmisteni){
+                  for(akce in rozmisteni.akce) {
+                    list[i++] = akce;
+                  }
+            }
+        }
+        if(!params.max) params.max = 10
+        [ misto:misto, akceList: list ]
+            
+    }			
+    
 
     def show = {
         def akce = Akce.get( params.id )

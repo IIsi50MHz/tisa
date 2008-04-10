@@ -2,6 +2,7 @@ class UrlMappings {
     static mappings = {
 			"/" (controller:"frontAkce", action:"list")
 			"/akce/kategorie/$id?" (controller:"frontAkce")
+                        "/akce/misto/$id?" (controller:"frontAkce")
                         "/akce/mesto/$id?" (controller:"frontAkce") 
                         "/akce/$action?/$id?" (controller:"frontAkce")
 			"/mista/$action?/$id?" (controller:"frontMisto")
