@@ -12,10 +12,10 @@
             </g:if>
 
             <br />
-            <h4>Registrace proběhla úspěšně</h4>
-            
+
+            <!-- TODO: automaticke prihlaseni uzivatele -->
             Přihlaste se, prosím...
-           
+                      
         </div>
     </body>
 </html>

@@ -31,8 +31,9 @@ class FrontAkceController {
     
     def ukaz_kategorii = {
         def list
+        def kategorie
         if(params.id) {
-            def kategorie = KategorieAkci.get(params.id);
+            kategorie = KategorieAkci.get(params.id);
             if (kategorie) {
                 list = kategorie.akce;
             } else {
@@ -44,7 +45,7 @@ class FrontAkceController {
         }
                 
         if(!params.max) params.max = 10
-        [ akceList: list ]
+        [ kategorie:kategorie, akceList: list ]
     }
     
     def ukaz_mesto = {

@@ -107,7 +107,7 @@ class FrontUzivatelController {
     def save = {
         def uzivatel = new Uzivatel(params)
         if(!uzivatel.hasErrors() && uzivatel.save()) {
-            flash.message = message(code:"tisa.controllers.created", args:["${where}", "${params.id}"]) 
+            flash.message = message(code:"tisa.user.success_registration") 
             redirect(action:list)
          }
         else {
