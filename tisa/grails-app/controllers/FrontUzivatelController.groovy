@@ -5,17 +5,17 @@ class FrontUzivatelController {
     
     def logout = {
         session.user = null
-	redirect(controller:"frontUzivatel", action:uzivatel_login)
+				redirect(controller:"frontUzivatel", action:login)
 		}
     
     
-    def uzivatel_login = {
+    def login = {
 				def u = new Uzivatel()
-				login(u)
+				_login(u)
 				[uzivatel:u]
     }
 		
-    def login(UserStub u) {
+    def _login(UserStub u) {
 				if (params.email=='' || params.heslo=='') {
 						flash.message = message(code:"tisa.controllers.insert_email_and_pass")
         }
@@ -27,6 +27,12 @@ class FrontUzivatelController {
             } else {
 								if (u.authenticate(params.heslo)) {
 										session.user = u
+										if (session.after_login_redirect) {
+												def direction = session.after_login_redirect
+												session.after_login_redirect = null
+												redirect(direction)
+												return
+                    }
 										redirect(controller:"frontAkce", action:"list")
 								} else {
 										flash.message = message(code:"tisa.controllers.incorrect_email_and_pass")

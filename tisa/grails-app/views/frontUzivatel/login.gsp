@@ -15,7 +15,7 @@
                 <g:renderErrors bean="${front_end}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="uzivatel_login" method="post" >
+            <g:form action="login" method="post" >
                 <div class="dialog">
                     <table>
                         <tbody>

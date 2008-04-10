@@ -19,7 +19,7 @@
                                                                 </g:else>
 						</g:if>
 						<g:else>
-								<g:message code="tisa.user.not_logged" />, <g:link action="uzivatel_login" controller="frontUzivatel"><g:message code="tisa.user.login"/></g:link>,  
+								<g:message code="tisa.user.not_logged" />, <g:link action="login" controller="frontUzivatel"><g:message code="tisa.user.login"/></g:link>,  
                                                                 <g:link action="create" controller="frontUzivatel"><g:message code="tisa.user.go_registration"/></g:link>
                                                                  nebo
 						</g:else>

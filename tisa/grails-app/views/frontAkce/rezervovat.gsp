@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="admin" />
+        <meta name="layout" content="front_end" />
         <title><g:message code="tisa.rezervace.rezervovat"/></title>
     </head>
     <body>
@@ -25,7 +25,13 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name">Mista:</td>
-                            <td valign="top" class="value">${rezervace.akce.rozmisteni}</td>
+                            <td valign="top" class="value">
+																<g:each var="row" in="${rezervace.akce.rozmisteni.plan_salu_to_a()}">
+																		<g:each var="cell" in="${row}">
+																				${cell}																				
+																		</g:each>
+																</g:each>
+														</td>
                         </tr>
                     </tbody>
                 </table>
