@@ -14,6 +14,7 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
+            <g:if test="${akceList.size() != 0}">
             <div class="list">
                 <table>
                     <thead>
@@ -61,6 +62,10 @@
             <div class="paginateButtons">
                 <g:paginate total="${akceList.count()}" />
             </div>
+             </g:if>
+            <g:else>
+                <div class="message"><g:message code="tisa.akce.notfound_kategorie"/></div>
+            </g:else>
         </div>
     </body>
 </html>
