@@ -25,7 +25,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Jmeno:</td>
+                            <td valign="top" class="name">Jméno:</td>
                             
                             <td valign="top" class="value">${mesto.jmeno}</td>
                             

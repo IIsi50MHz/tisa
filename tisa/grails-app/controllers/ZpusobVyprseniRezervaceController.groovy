@@ -69,9 +69,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
     }
 
     def create = {
-        def vyprseni = new ZpusobVyprseniRezervace()
-        vyprseni.properties = params
-        return ['zpusobVyprseniRezervace':vyprseni]
+        redirect(action:list)
     }
 
     def save = {

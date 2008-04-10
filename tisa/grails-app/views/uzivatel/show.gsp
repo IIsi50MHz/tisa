@@ -23,14 +23,14 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Celejmeno:</td>
+                            <td valign="top" class="name">Celé jméno:</td>
                             
                             <td valign="top" class="value">${uzivatel.cele_jmeno}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Email:</td>
+                            <td valign="top" class="name">E-mail:</td>
                             
                             <td valign="top" class="value">${uzivatel.email}</td>
                             

@@ -22,7 +22,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="cele_jmeno">Celejmeno:</label>
+                                    <label for="cele_jmeno">Celé jméno:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:uzivatel,field:'cele_jmeno','errors')}">
                                     <input type="text" id="cele_jmeno" name="cele_jmeno" value="${fieldValue(bean:uzivatel,field:'cele_jmeno')}"/>
@@ -31,7 +31,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="email">Email:</label>
+                                    <label for="email">E-mail:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:uzivatel,field:'email','errors')}">
                                     <input type="text" id="email" name="email" value="${fieldValue(bean:uzivatel,field:'email')}"/>
@@ -49,7 +49,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="sul">Sul:</label>
+                                    <label for="sul">Sůl:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:uzivatel,field:'sul','errors')}">
                                     <input type="text" id="sul" name="sul" value="${fieldValue(bean:uzivatel,field:'sul')}"/>

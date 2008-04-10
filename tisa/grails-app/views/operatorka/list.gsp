@@ -15,11 +15,11 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="cele_jmeno" title="Celejmeno" />
+                   	        <g:sortableColumn property="cele_jmeno" title="Celé jméno" />
                         
                    	        <g:sortableColumn property="vsechny_mista" title="Všechny místa" />
                         
-                   	        <g:sortableColumn property="email" title="Email" />
+                   	        <g:sortableColumn property="email" title="E-mail" />
                         
                         
                         </tr>
