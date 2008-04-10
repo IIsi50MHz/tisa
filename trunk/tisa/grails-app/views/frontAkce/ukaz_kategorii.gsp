@@ -9,7 +9,7 @@
     <body>
         <div class="body">
 
-            <h1><g:message code="tisa.frakce.list"/></h1>
+            <h1><g:message code="tisa.frakce.list"/> - ${kategorie}</h1>
 
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
