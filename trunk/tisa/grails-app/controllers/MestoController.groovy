@@ -9,7 +9,7 @@ class MestoController extends AdminController {
     def where = "Mesto"
     
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ mestoList: Mesto.list( params ) ]
     }
 

@@ -9,7 +9,7 @@ class UzivatelController extends AdminController {
     def where = "Uzivatel"
     
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ uzivatelList: Uzivatel.list( params ) ]
     }
 

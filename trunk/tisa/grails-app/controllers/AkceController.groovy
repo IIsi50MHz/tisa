@@ -9,7 +9,7 @@ class AkceController extends AdminController {
     def where = "Akce"
     
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ akceList: Akce.list( params ) ]
     }
 

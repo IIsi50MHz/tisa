@@ -24,6 +24,12 @@ class Akce {
         poradatel()
         kategorie()
     }
+    
+    
+String toString() {
+        return this.nazev
+    }
+    
 }
 
 
