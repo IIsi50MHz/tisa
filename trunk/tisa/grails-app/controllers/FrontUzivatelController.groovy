@@ -2,7 +2,12 @@
 class FrontUzivatelController {
     
     def index = { redirect(action:list,params:params) }
-       
+    
+    def logout = {
+        session.user = null
+	redirect(controller:"frontUzivatel", action:uzivatel_login)
+		}
+    
     
     def uzivatel_login = {
 				def u = new Uzivatel()

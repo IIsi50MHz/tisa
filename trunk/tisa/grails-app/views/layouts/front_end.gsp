@@ -11,7 +11,12 @@
 						<g:if test="${session.user}">								
 								${ session.user.cele_jmeno } 
 								(<g:message code="tisa.${ session.user.class.getName().toLowerCase() }.name.sg" />),
-								<g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> | 
+                                                                <g:if test="${session.user.class.getName().toLowerCase() == 'uzivatel'}">
+                                                                    <g:link controller="frontUzivatel" action="logout"><g:message code="tisa.user.logout" /></g:link> |
+                                                                </g:if>
+                                                                <g:else>
+                                                                    <g:link controller="admin" action="logout"><g:message code="tisa.user.logout" /></g:link> |
+                                                                </g:else>
 						</g:if>
 						<g:else>
 								<g:message code="tisa.user.not_logged" />, <g:link action="uzivatel_login" controller="frontUzivatel"><g:message code="tisa.user.login"/></g:link>,  
