@@ -25,7 +25,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nazev">Nazev:</label>
+                                    <label for="nazev">Název:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'nazev','errors')}">
                                     <input type="text" id="nazev" name="nazev" value="${fieldValue(bean:misto,field:'nazev')}"/>
@@ -43,7 +43,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="odkaz_mapa">Odkazmapa:</label>
+                                    <label for="odkaz_mapa">Odkaz na mapu:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'odkaz_mapa','errors')}">
                                     <input type="text" id="odkaz_mapa" name="odkaz_mapa" value="${fieldValue(bean:misto,field:'odkaz_mapa')}"/>
@@ -52,7 +52,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="mesto">Mesto:</label>
+                                    <label for="mesto">Město:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'mesto','errors')}">
                                     <g:select optionKey="id" from="${Mesto.list()}" name="mesto.id" value="${misto?.mesto?.id}" ></g:select>
@@ -86,7 +86,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="spravce">Spravce:</label>
+                                    <label for="spravce">Správce:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'spravce','errors')}">
                                     <g:select optionKey="id" from="${Spravce.list()}" name="spravce.id" value="${misto?.spravce?.id}" ></g:select>

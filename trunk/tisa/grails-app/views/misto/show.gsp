@@ -25,7 +25,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Nazev:</td>
+                            <td valign="top" class="name">Název:</td>
                             
                             <td valign="top" class="value">${misto.nazev}</td>
                             
@@ -39,14 +39,14 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Odkazmapa:</td>
+                            <td valign="top" class="name">Odkaz na mapu:</td>
                             
                             <td valign="top" class="value">${misto.odkaz_mapa}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Mesto:</td>
+                            <td valign="top" class="name">Město:</td>
                             
                             <td valign="top" class="value"><g:link controller="mesto" action="show" id="${misto?.mesto?.id}">${misto?.mesto}</g:link></td>
                             
@@ -73,7 +73,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Rozmisteni:</td>
+                            <td valign="top" class="name">Rozmístění:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
@@ -86,7 +86,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Spravce:</td>
+                            <td valign="top" class="name">Správce:</td>
                             
                             <td valign="top" class="value"><g:link controller="spravce" action="show" id="${misto?.spravce?.id}">${misto?.spravce.cele_jmeno}</g:link></td>
                             

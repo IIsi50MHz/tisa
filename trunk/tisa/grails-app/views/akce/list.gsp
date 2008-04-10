@@ -17,21 +17,21 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="nazev" title="Nazev" />
+                   	        <g:sortableColumn property="nazev" title="Název" />
                         
                    	        <g:sortableColumn property="kategorie" title="Kategorie" />
 
-                                <g:sortableColumn property="zacatek_akce" title="Zacatek akce" />
+                                <g:sortableColumn property="zacatek_akce" title="Začátek akce" />
 
-                                <g:sortableColumn property="vstupne_min" title="Vstupne min" />
+                                <g:sortableColumn property="vstupne_min" title="Min. vstupné" />
 
-                                <g:sortableColumn property="vstupne_max" title="Vstupne max" />
+                                <g:sortableColumn property="vstupne_max" title="Max. vstupné" />
                    	    
                    	        <g:sortableColumn property="odkaz" title="Odkaz" />
                         
                    	        <g:sortableColumn property="popis" title="Popis" />
                         
-                   	        <g:sortableColumn property="poradatel" title="Poradatel" />
+                   	        <g:sortableColumn property="poradatel" title="Pořadatel" />
 
                                 
                    	    

@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="jmeno" title="Jmeno" />
+                   	        <g:sortableColumn property="jmeno" title="Jméno" />
                         
                    	        <g:sortableColumn property="mapa" title="Mapa" />
                         

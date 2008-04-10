@@ -103,7 +103,8 @@
                         <tr class="prop">
                             <td valign="top" class="name">Zpusob Vyprseni Rezervace:</td>
                             
-                            <td valign="top" class="value"><g:link controller="zpusobVyprseniRezervace" action="edit" id="${akce?.zpusobVyprseniRezervace?.id}">${akce?.zpusobVyprseniRezervace}</g:link></td>
+
+                            <td valign="top" class="value">${akce?.zpusobVyprseniRezervace}</td>
                             
                         </tr>
                     

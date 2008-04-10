@@ -24,7 +24,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="jmeno">Jmeno:</label>
+                                    <label for="jmeno">Jméno:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:mesto,field:'jmeno','errors')}">
                                     <input type="text" id="jmeno" name="jmeno" value="${fieldValue(bean:mesto,field:'jmeno')}"/>

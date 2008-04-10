@@ -22,7 +22,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="misto">Misto:</label>
+                                    <label for="misto">Místo:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'misto','errors')}">
                                     <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${operatorka?.misto?.id}" ></g:select>
@@ -31,7 +31,7 @@
 												
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="vsechny_mista">Vsechnymista:</label>
+                                    <label for="vsechny_mista">Všechny místa:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:operatorka,field:'vsechny_mista','errors')}">
                                     <input type="text" id="vsechny_mista" name="vsechny_mista" value="${fieldValue(bean:operatorka,field:'vsechny_mista')}"/>
@@ -40,7 +40,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="cele_jmeno">Celejmeno:</label>
+                                    <label for="cele_jmeno">Celé jméno:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:operatorka,field:'cele_jmeno','errors')}">
                                     <input type="text" id="cele_jmeno" name="cele_jmeno" value="${fieldValue(bean:operatorka,field:'cele_jmeno')}"/>
@@ -49,7 +49,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="email">Email:</label>
+                                    <label for="email">E-mail:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:operatorka,field:'email','errors')}">
                                     <input type="text" id="email" name="email" value="${fieldValue(bean:operatorka,field:'email')}"/>
@@ -67,7 +67,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="sul">Sul:</label>
+                                    <label for="sul">Sůl:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:operatorka,field:'sul','errors')}">
                                     <input type="text" id="sul" name="sul" value="${fieldValue(bean:operatorka,field:'sul')}"/>

@@ -18,15 +18,15 @@
                         <tr>
                         
                         
-                   	        <g:sortableColumn property="nazev" title="Nazev" />
+                   	        <g:sortableColumn property="nazev" title="Název" />
                         
                    	        <g:sortableColumn property="popis" title="Popis" />
                         
-                   	        <g:sortableColumn property="odkaz_mapa" title="Odkazmapa" />
+                   	        <g:sortableColumn property="odkaz_mapa" title="Odkaz na mapu" />
                         
-                   	        <g:sortableColumn property="mesto" title="Mesto" />
+                   	        <g:sortableColumn property="mesto" title="Město" />
 
-                                <g:sortableColumn property="spravce" title="Spravce" />
+                                <g:sortableColumn property="spravce" title="Správce" />
                    	    
                    	        <g:sortableColumn property="kategorie" title="Kategorie" />
 

@@ -23,7 +23,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="cas">Cas:</label>
+                                    <label for="cas">Čas:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:zpusobVyprseniRezervace,field:'cas','errors')}">
                                     <g:select valueMessagePrefix="tisa.zpusobVyprseniRezervace.casy" from="${zpusobVyprseniRezervace.casy}" name="cas" value="${fieldValue(bean:zpusobVyprseniRezervace,field:'cas')}"></g:select>

@@ -33,7 +33,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nazev">Nazev:</label>
+                                    <label for="nazev">Název:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'nazev','errors')}">
                                     <input type="text" id="nazev" name="nazev" value="${fieldValue(bean:akce,field:'nazev')}"/>
@@ -60,7 +60,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="poradatel">Poradatel:</label>
+                                    <label for="poradatel">Pořadatel:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
                                     <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
@@ -69,7 +69,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="rozmisteni">Rozmisteni:</label>
+                                    <label for="rozmisteni">Rozmístěni:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'rozmisteni','errors')}">
                                     <g:select optionKey="id" from="${Rozmisteni.list()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
@@ -78,7 +78,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="vstupne_max">Vstupnemax:</label>
+                                    <label for="vstupne_max">Maximální vstupné:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'vstupne_max','errors')}">
                                     <input type="text" id="vstupne_max" name="vstupne_max" value="${fieldValue(bean:akce,field:'vstupne_max')}" />
@@ -87,7 +87,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="vstupne_min">Vstupnemin:</label>
+                                    <label for="vstupne_min">Minimální vstupné</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'vstupne_min','errors')}">
                                     <input type="text" id="vstupne_min" name="vstupne_min" value="${fieldValue(bean:akce,field:'vstupne_min')}" />
@@ -96,7 +96,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="zacatek_akce">Zacatekakce:</label>
+                                    <label for="zacatek_akce">Začátek akce:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'zacatek_akce','errors')}">
                                     <g:datePicker name="zacatek_akce" value="${akce?.zacatek_akce}" ></g:datePicker>
@@ -105,7 +105,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="zpusobVyprseniRezervace">Zpusob Vyprseni Rezervace:</label>
+                                    <label for="zpusobVyprseniRezervace">Způsob vypršení rezervace:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'zpusobVyprseniRezervace','errors')}">
                                     <g:select optionKey="id" from="${ZpusobVyprseniRezervace.list()}" name="zpusobVyprseniRezervace.id" value="${akce?.zpusobVyprseniRezervace?.id}" ></g:select>

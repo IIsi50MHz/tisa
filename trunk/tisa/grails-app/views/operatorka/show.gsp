@@ -23,21 +23,21 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Vsechnymista:</td>
+                            <td valign="top" class="name">Všechny místa:</td>
                             
                             <td valign="top" class="value"><g:message code="tisa.user.allrights.${operatorka.vsechny_mista}" /></td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Celejmeno:</td>
+                            <td valign="top" class="name">Celé jméno:</td>
                             
                             <td valign="top" class="value">${operatorka.cele_jmeno}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Email:</td>
+                            <td valign="top" class="name">E-mail:</td>
                             
                             <td valign="top" class="value">${operatorka.email}</td>
                             

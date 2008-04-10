@@ -15,7 +15,7 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="cas" title="Cas" />
+                   	        <g:sortableColumn property="cas" title="Čas" />
                         
                    	        <g:sortableColumn property="druh" title="Druh" />
                         

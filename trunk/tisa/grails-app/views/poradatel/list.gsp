@@ -15,9 +15,9 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="cele_jmeno" title="Celejmeno" />
+                   	        <g:sortableColumn property="cele_jmeno" title="Celé jméno" />
                         
-                   	        <g:sortableColumn property="email" title="Email" />
+                   	        <g:sortableColumn property="email" title="E-mail" />
                         
                    	        <g:sortableColumn property="telefon" title="Telefon" />
 
