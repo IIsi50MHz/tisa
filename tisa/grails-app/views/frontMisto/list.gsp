@@ -38,7 +38,7 @@
                             <td>${misto.mesto?.encodeAsHTML()}</td>
                                                
                             <td>
-                                  <g:link action="list" controller="frontAkce" id="${misto.id}" >ukázat akce &raquo;</g:link>
+                                  <g:link controller="frontAkce" action="ukaz_misto" id="${misto.id}" >ukázat akce &raquo;</g:link>
                             </td>
 
                         </tr>

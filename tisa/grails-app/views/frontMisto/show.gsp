@@ -55,10 +55,6 @@
                             <td valign="top" class="value">${misto?.spravce?.cele_jmeno}</td>
                             
                         </tr>
-
-                        <tr class="prop">
-                          <td><g:link action="list" controller="frontMisto">zpět na Seznam míst</g:link></td>
-                        </tr>
                     
                     </tbody>
                 </table>
