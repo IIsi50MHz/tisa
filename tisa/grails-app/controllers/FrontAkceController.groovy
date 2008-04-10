@@ -24,7 +24,7 @@ class FrontAkceController {
         }
         //params.max ?: 10
         //[ akceList: list ]
-        
+				
         if(!params.max) params.max = 10
         [ akceList: Akce.list( params ) ]
     }
@@ -48,35 +48,25 @@ class FrontAkceController {
     }
     
     def ukaz_mesto = {
-        def list
-        def akcemista
-        def poleakci = []
-        int i = 0
+				def mesto 
         if(params.id) {
-            def mesto = Mesto.get(params.id);
-            def mista = mesto.misto;
-            if (mista) {
-                printf("kuku - mame mista\n")
-                for(m in mista){
-                    akcemista = m.akce
-                    printf("kuku - for vnejsi a ve akcemista je %d polozek\n",akcemista.count())
-                  for(a in akcemista){
-                    poleakci[i]=a;
-                    i++
-                    printf("kuku - for vnitrni a i je %d\n",i)
-                  }//for vnitrni  
-                }//for vnejsi
-              list = poleakci  
-            } else {
-                flash.message = message(code:"tisa.controllers.notfound", args:["Misto", "${params.id}"]) 
-                redirect(action:this.list)
-            }
-        } else {
-            list = Akce.list( params )
+            mesto = Mesto.get(params.id);
+				}
+				if (!mesto) {
+						flash.message = message(code:"tisa.controllers.notfound", args:["Misto", "${params.id}"]) 
+						redirect(action:this.list)
         }
-                
+        def i = 0
+        def list = []
+        for(misto in mesto.misto){
+						for(rozmisteni in misto.rozmisteni){
+								for(akce in rozmisteni.akce) {
+										list[i++] = akce;
+								}
+            }
+        }
         if(!params.max) params.max = 10
-        [ akceList: list ]
+        [ mesto:mesto, akceList: list ]
     }
 
     def show = {
@@ -88,5 +78,22 @@ class FrontAkceController {
         }
         else { return [ akce : akce ] }
     }
+
+    def rezervovat = {
+        def akce = Akce.get( params.id )
+        if(!akce) {
+            flash.message = message(code:"tisa.controllers.notfound", args:["${where}", "${params.id}"]) 
+            redirect(action:list)
+						return
+        }
+				def user = session.user
+				if (user && user.class.getName() == "Uzivatel") {
+				    def rezervace = new Rezervace(akce: akce, uzivatel: user)
+		        return [ rezervace: rezervace ]
+        } else {
+						flash.message = "Prosím, přihlašte se než vytvoříte rezrvaci."
+            redirect(action:list)
+        }
+    }    
 
 }

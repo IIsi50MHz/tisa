@@ -2,6 +2,7 @@ class Rozmisteni {
     String nazev
     String plan_salu = ""
     def belongsTo = Misto
+		def hasMany = [akce: Akce]
     Misto misto
     
     
