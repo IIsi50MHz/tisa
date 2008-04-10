@@ -20,7 +20,6 @@
                         <tr>                        
                    	        <g:sortableColumn property="nazev" title="Název" />
                             <g:sortableColumn property="kategorie" title="Kategorie" />
-														<g:sortableColumn property="rozmisteni" title="Kategorie" />
 		                   	    <th>Místo konání</th>
                             <g:sortableColumn property="zacatek_akce" title="Začátek akce" />
                             <g:sortableColumn property="vstupne_max" title="Max. vstupné" />
