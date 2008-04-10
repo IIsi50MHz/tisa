@@ -25,6 +25,7 @@
                             <g:sortableColumn property="zacatek_akce" title="Začátek akce" />
                             <g:sortableColumn property="vstupne_max" title="Max. vstupné" />
                             <g:sortableColumn property="vstupne_min" title="Min. vstupné" />
+                            <th> </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +37,7 @@
                             <td>${akce.zacatek_akce?.encodeAsHTML()}</td>
                             <td>${akce.vstupne_max?.encodeAsHTML()}</td>
                             <td>${akce.vstupne_min?.encodeAsHTML()}</td>
+                            <td><g:link action="show" controller="frontAkce" id="${akce.id}">detaily &raquo;</g:link></td>
                         </tr>
                     </g:each>
                     </tbody>

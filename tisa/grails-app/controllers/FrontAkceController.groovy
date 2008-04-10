@@ -25,7 +25,7 @@ class FrontAkceController {
         //params.max ?: 10
         //[ akceList: list ]
 				
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ akceList: Akce.list( params ) ]
     }
     
@@ -74,7 +74,6 @@ class FrontAkceController {
         def list = []
         def misto
         if(params.id) {
-            printf("id mame")
             misto = Misto.get(params.id);
             def i = 0
             
