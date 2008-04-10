@@ -13,4 +13,9 @@ class Poradatel {
 				telefon()
 				adresa()
 		}
+                
+   String toString() {
+        return this.cele_jmeno
+    }
+    
 }

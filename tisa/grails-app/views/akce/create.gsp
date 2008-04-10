@@ -63,7 +63,7 @@
                                     <label for="poradatel">Poradatel:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'poradatel','errors')}">
-                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.cele_jmeno}" ></g:select>
+                                    <g:select optionKey="id" from="${Poradatel.list()}" name="poradatel.id" value="${akce?.poradatel?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

@@ -11,7 +11,7 @@ class RezervaceController extends AdminController {
     def where = "Rezervace"
     
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ rezervaceList: Rezervace.list( params ) ]
     }
 

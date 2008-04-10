@@ -126,12 +126,12 @@ class BootStrap {
             
                       //ZpusobVyprseniRezervace 
                       println "ZpusobVyprseniRezervace"
-                                def vyprseni0 = new ZpusobVyprseniRezervace(cas:3600, druh:"before_action_begin", misto: cezarena).save()
-                                def vyprseni1 = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin", misto: cezarena).save()
-				def vyprseni2 = new ZpusobVyprseniRezervace(cas:14400, druh:"before_action_begin", misto: dkvitkovic).save()
-                                def vyprseni3 = new ZpusobVyprseniRezervace(cas:2105600, druh:"before_action_begin", misto: kinoluna).save()
-                                def vyprseni4 = new ZpusobVyprseniRezervace(cas:37600, druh:"after_reservation_taken", misto: stadionskslezka).save()
-				def vyprseni5 = new ZpusobVyprseniRezervace(cas:1800, druh:"after_reservation_taken", misto: sazkaarena).save()
+                                def vyprseni0 = new ZpusobVyprseniRezervace(cas: "půl hodiny", druh:"před začátkem akce", misto: cezarena).save()
+                                def vyprseni1 = new ZpusobVyprseniRezervace(cas:"24 hodin", druh:"před začátkem akce", misto: cezarena).save()
+				def vyprseni2 = new ZpusobVyprseniRezervace(cas:"týden", druh:"před začátkem akce", misto: dkvitkovic).save()
+                                def vyprseni3 = new ZpusobVyprseniRezervace(cas:"4 týdny", druh:"před začátkem akce", misto: kinoluna).save()
+                                def vyprseni4 = new ZpusobVyprseniRezervace(cas:"48 hodin", druh:"po rezervaci", misto: stadionskslezka).save()
+				def vyprseni5 = new ZpusobVyprseniRezervace(cas:"4 týdny", druh:"po rezervaci", misto: sazkaarena).save()
             
             
                     //rozmisteni

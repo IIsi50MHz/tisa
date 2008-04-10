@@ -9,7 +9,7 @@ class KategorieAkciController extends AdminController {
     def where = "KategorieAkci"
       
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ kategorieAkciList: KategorieAkci.list( params ) ]
     }
 

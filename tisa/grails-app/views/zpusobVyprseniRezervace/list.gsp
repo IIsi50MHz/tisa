@@ -24,10 +24,10 @@
                     <tbody>
                     <g:each in="${zpusobVyprseniRezervaceList}" status="i" var="zpusobVyprseniRezervace">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+                            
+                            <td><g:link action="edit" id="${zpusobVyprseniRezervace.id}">${zpusobVyprseniRezervace.cas?.encodeAsHTML()}</g:link></td>                        
                         
-                            <td><g:link action="edit" id="${zpusobVyprseniRezervace.id}"><g:message code="tisa.zpusobVyprseniRezervace.casy.${zpusobVyprseniRezervace.cas}" /></g:link></td>
-                        
-                            <td><g:message code="tisa.zpusobVyprseniRezervace.druhy.${zpusobVyprseniRezervace.druh}" /></td>
+                            <td>${zpusobVyprseniRezervace.druh?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>

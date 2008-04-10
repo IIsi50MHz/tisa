@@ -11,7 +11,7 @@ class ZpusobVyprseniRezervaceController extends AdminController {
     def where = "ZpusobVyprseniRezervace"
 
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ zpusobVyprseniRezervaceList: ZpusobVyprseniRezervace.list( params ) ]
     }
 

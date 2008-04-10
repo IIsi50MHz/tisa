@@ -9,7 +9,7 @@ class OperatorkaController extends AdminController {
     def where = "Operatorka"
     
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ operatorkaList: Operatorka.list( params ) ]
     }
 

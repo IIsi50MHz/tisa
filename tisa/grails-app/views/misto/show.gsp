@@ -64,8 +64,8 @@
                             
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
-                                <g:each var="a" in="${misto.akce}">
-                                    <li><g:link controller="akce" action="show" id="${a.id}">${a.nazev}</g:link></li>
+                                <g:each var="a" in="${misto.rozmisteni}">
+                                    <li><g:link controller="akce" action="show" id="${a.akce.id}">${a.akce.nazev}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>

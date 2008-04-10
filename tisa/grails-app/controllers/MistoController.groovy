@@ -9,7 +9,7 @@ class MistoController extends AdminController {
     def where = "Misto"
     
     def list = {
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ mistoList: Misto.list( params ) ]
     }
 

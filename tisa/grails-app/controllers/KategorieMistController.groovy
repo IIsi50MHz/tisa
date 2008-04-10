@@ -10,7 +10,7 @@ class KategorieMistController extends AdminController {
     
     def list = {
 
-        if(!params.max) params.max = 10
+        if(!params.max) params.max = 20
         [ kategorieMistList: KategorieMist.list( params ) ]
     }
 
