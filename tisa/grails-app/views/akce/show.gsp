@@ -32,7 +32,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Nazev:</td>
+                            <td valign="top" class="name">Název:</td>
                             
                             <td valign="top" class="value">${akce.nazev}</td>
                             
@@ -53,7 +53,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Poradatel:</td>
+                            <td valign="top" class="name">Pořadatel:</td>
                             
                             <td valign="top" class="value"><g:link controller="poradatel" action="show" id="${akce?.poradatel?.id}">${akce?.poradatel?.cele_jmeno}</g:link></td>
                             
@@ -73,35 +73,35 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Rozmisteni:</td>
+                            <td valign="top" class="name">Rozmístění:</td>
                             
                             <td valign="top" class="value"><g:link controller="rozmisteni" action="show" id="${akce?.rozmisteni?.id}">${akce?.rozmisteni}</g:link></td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Vstupnemax:</td>
+                            <td valign="top" class="name">Maximální vstupné:</td>
                             
                             <td valign="top" class="value">${akce.vstupne_max}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Vstupnemin:</td>
+                            <td valign="top" class="name">Minimální vstupné:</td>
                             
                             <td valign="top" class="value">${akce.vstupne_min}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Zacatekakce:</td>
+                            <td valign="top" class="name">Začátek akce:</td>
                             
                             <td valign="top" class="value">${akce.zacatek_akce}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Zpusob Vyprseni Rezervace:</td>
+                            <td valign="top" class="name">Způsob vypršení rezervace:</td>
                             
 
                             <td valign="top" class="value">${akce?.zpusobVyprseniRezervace}</td>
@@ -114,7 +114,7 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${akce?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="${message(code:'tisa.edit')}" /></span>
+                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code:'tisa.edit')}" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
                 </g:form>
             </div>

@@ -23,21 +23,21 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Nazev:</td>
+                            <td valign="top" class="name">Název:</td>
                             
                             <td valign="top" class="value">${rozmisteni.nazev}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Plansalu:</td>
+                            <td valign="top" class="name">Plán sálu:</td>
                             
                             <td valign="top" class="value">${rozmisteni.plan_salu}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Misto:</td>
+                            <td valign="top" class="name">Místo:</td>
                             
                             <td valign="top" class="value"><g:link controller="misto" action="show" id="${rozmisteni?.misto?.id}">${rozmisteni?.misto}</g:link></td>
                             

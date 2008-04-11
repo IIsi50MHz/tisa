@@ -22,7 +22,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nazev">Nazev:</label>
+                                    <label for="nazev">Název:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:kategorieMist,field:'nazev','errors')}">
                                     <input type="text" id="nazev" name="nazev" value="${fieldValue(bean:kategorieMist,field:'nazev')}"/>

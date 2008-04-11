@@ -15,15 +15,15 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="mista" title="Mista" />
+                   	        <g:sortableColumn property="mista" title="Místa" />
                         
                    	        <g:sortableColumn property="akce" title="Akce" />
 
-                                <g:sortableColumn property="uzivatel" title="Uzivatel" />
+                                <g:sortableColumn property="uzivatel" title="Uživatel" />
                             
-                   	        <g:sortableColumn property="rezervovano" title="Rezervovano" />
+                   	        <g:sortableColumn property="rezervovano" title="Rezervováno" />
                         
-                   	        <g:sortableColumn property="prodano" title="Prodano" />
+                   	        <g:sortableColumn property="prodano" title="Prodáno" />
                         
                         </tr>
                     </thead>

@@ -25,7 +25,7 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Nazev:</td>
+                            <td valign="top" class="name">Název:</td>
                             
                             <td valign="top" class="value">${kategorieMist.nazev}</td>
                             
@@ -49,7 +49,7 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${kategorieMist?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="${message(code:'tisa.edit')}" /></span>
+                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code:'tisa.edit')}" /></span>
 <span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
                 </g:form>
             </div>

@@ -21,12 +21,12 @@
                     <table>
                         <tbody>
                         
-                            <tr class="prop">
+                        <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="vsechny_mista">Všechny místa:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:operatorka,field:'vsechny_mista','errors')}">
-                                    <input type="text" id="vsechny_mista" name="vsechny_mista" value="${fieldValue(bean:operatorka,field:'vsechny_mista')}"/>
+                                    <g:checkBox name="vsechny_mista" value="${operatorka?.vsechny_mista}" ></g:checkBox>
                                 </td>
                             </tr> 
                         

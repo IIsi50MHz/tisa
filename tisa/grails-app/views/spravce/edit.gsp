@@ -77,7 +77,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="vsechna_prava">Vsechnaprava:</label>
+                                    <label for="vsechna_prava">Všechna práva:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:spravce,field:'vsechna_prava','errors')}">
                                     <g:checkBox name="vsechna_prava" value="${spravce?.vsechna_prava}" ></g:checkBox>
