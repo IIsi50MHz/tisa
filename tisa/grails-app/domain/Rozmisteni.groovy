@@ -1,3 +1,4 @@
+import org.codehaus.groovy.grails.web.json.JSONObject
 
 class Rozmisteni {
     String nazev
@@ -17,5 +18,23 @@ class Rozmisteni {
 		String toString() {
         return this.nazev
     }
+		
+		def plan_array = {
+				jsonToArray(new JSONObject(plan_salu))
+    }
+		
+		private jsonToArray(json) {
+			def array = []
+			def val
+			for (key in json.keys()) {
+					val = json.get(key)
+					if (val instanceof JSONObject) {
+							val = jsonToArray(val)
+          }
+					array[Integer.parseInt(key)] = val
+			}
+			array
+    }
+
 
 }

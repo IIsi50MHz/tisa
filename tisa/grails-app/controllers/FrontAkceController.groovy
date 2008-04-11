@@ -1,5 +1,3 @@
-import org.codehaus.groovy.grails.web.json.JSONObject
-
 class FrontAkceController {
 
 		def defaultAction = "list"
@@ -108,33 +106,38 @@ class FrontAkceController {
             redirect(action:list)
 						return
         }
+				
 				def user = session.user
-				if (user && user.class.getName() == "Uzivatel") {
-				    def rezervace = new Rezervace(akce: akce, uzivatel: user)
-						def map = [[]]
-						def r = 0
-						def row = []
-						def json = new JSONObject(akce.rozmisteni.plan_salu)
-						println "plan: "+akce.rozmisteni.plan_salu
-						println "json: "+ json
-						map = jsonToArray(json)
-		        return [ plan:map, rezervace: rezervace ]
-        } else {
+				if (!user || user.class.getName() != "Uzivatel") {
 						flash.message = "Prosím, přihlašte se než vytvoříte rezrvaci."
 						session.after_login_redirect = [controller:"frontAkce", action:"rezervovat", id:params.id]
             redirect(controller:"frontUzivatel", action:"login")
+						return
         }
+				
+		    def rezervace = new Rezervace(akce: akce, uzivatel: user)
+				def map = akce.rozmisteni.plan_array()
+				
+				def post = false
+				println params
+				map.eachWithIndex() { row, r ->
+						row.eachWithIndex() { col, c ->
+								if (params['seat['+r+'_'+c+']']) {
+										post = true;
+										rezervace.addMisto([r, c])
+                }
+						}
+        }
+				if (post) {
+						if (rezervace.save()) {
+								flash.message = message(code:"tisa.rezervace.thank_you")
+								redirect(action:"list")
+						} else {
+								flash.message = message(code:"tisa.rezervace.problem")
+            }
+        }
+        return [ plan:map, rezervace: rezervace ]
     }
-		
-		def jsonToArray(json) {
-			def array = []
-			println json
-			for (key in json.keys()) {
-				//println key
-				//value 
-				array[Integer.parseInt(key)] = json.get(key)//jsonToArray()
-			}
-			array
-    }
+
 
 }
