@@ -18,6 +18,8 @@
                    	        <g:sortableColumn property="cele_jmeno" title="Celé jméno" />
                         
                    	        <g:sortableColumn property="vsechny_mista" title="Všechny místa" />
+
+                                <g:sortableColumn property="vsechny_mista" title="Příslušnost" />
                         
                    	        <g:sortableColumn property="email" title="E-mail" />
                         
@@ -31,6 +33,8 @@
                             <td><g:link action="show" id="${operatorka.id}">${operatorka.cele_jmeno?.encodeAsHTML()}</g:link></td>
                         
                             <td><g:message code="tisa.user.allrights.${operatorka.vsechny_mista}" /></td>
+
+                            <td>${operatorka.misto?.encodeAsHTML()}</td>
 
                             <td>${operatorka.email?.encodeAsHTML()}</td>
                         

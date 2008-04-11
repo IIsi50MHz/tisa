@@ -65,7 +65,7 @@
                 </table>
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${Akce.count()}" />
+                <g:paginate total="${akceList.count()}" />
             </div>
         </div>
     </body>
