@@ -5,6 +5,23 @@ class Spravce extends UserStub {
 		def hasMany = [mista:Misto]		
 
 
+                def listAkce() {
+                  def list = []  
+                    if (vsechna_prava){
+                          list = Akce.list() 
+                    } else {
+                          def i = 0
+                          for(misto in listMisto()){
+                            for(rozmisteni in misto.rozmisteni){
+                              for(akce in rozmisteni.akce) {
+                                list[i++] = akce;
+                              }
+                            }
+                          }
+                    } 
+                    
+               return list
+    }
 				
 		def listMisto() {
 				return Misto.findBySpravce(this)
@@ -17,6 +34,8 @@ class Spravce extends UserStub {
         }
 				return vyprseni
     }
+    
+              
     
     String toString() {
         return this.cele_jmeno

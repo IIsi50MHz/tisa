@@ -10,7 +10,7 @@ class AkceController extends AdminController {
     
     def list = {
         if(!params.max) params.max = 20
-        [ akceList: Akce.list( params ) ]
+        [ akceList: session.user.listAkce() ]
     }
 
     def show = {
