@@ -60,5 +60,22 @@ class FrontUzivatelController {
         }
         else { return [ uzivatel : uzivatel ] }
     }
+    
+    def create = {
+        def uzivatel = new Uzivatel()
+        uzivatel.properties = params
+        return ['uzivatel':uzivatel]
+    }
+    
+    def save = {
+        def uzivatel = new Uzivatel(params)
+        if(!uzivatel.hasErrors() && uzivatel.save()) {
+            flash.message = message(code:"tisa.user.success_registration") 
+            redirect(action:list)
+        }
+        else {
+            render(view:'create',model:[uzivatel:uzivatel])
+        }
+    }
 
  }
