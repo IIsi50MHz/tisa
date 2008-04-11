@@ -26,7 +26,7 @@
                                     <label for="kategorie">Kategorie:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'kategorie','errors')}">
-                                    <g:select optionKey="id" from="${Kategorie_akci.list()}" name="kategorie.id" value="${akce?.kategorie?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${KategorieAkci.list()}" name="kategorie.id" value="${akce?.kategorie?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

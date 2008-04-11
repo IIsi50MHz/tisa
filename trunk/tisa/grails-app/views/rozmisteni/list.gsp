@@ -14,8 +14,8 @@
                 <table>
                     <thead>
                         <tr>
-                   	        <g:sortableColumn property="nazev" title="Nazev" />
-                   	        <g:sortableColumn property="misto" title="Misto" />
+                   	        <g:sortableColumn property="nazev" title="Název" />
+                   	        <g:sortableColumn property="misto" title="Místo" />
                         </tr>
                     </thead>
                     <tbody>

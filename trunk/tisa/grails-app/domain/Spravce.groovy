@@ -17,4 +17,8 @@ class Spravce extends UserStub {
         }
 				return vyprseni
     }
+    
+    String toString() {
+        return this.cele_jmeno
+    }
 }

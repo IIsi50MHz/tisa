@@ -33,7 +33,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="mista">Mista:</label>
+                                    <label for="mista">Místa:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rezervace,field:'mista','errors')}">
                                     <input type="text" id="mista" name="mista" value="${fieldValue(bean:rezervace,field:'mista')}"/>
@@ -42,7 +42,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="rezervovano">Rezervovano:</label>
+                                    <label for="rezervovano">Rezervováno:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rezervace,field:'rezervovano','errors')}">
                                     <g:datePicker name="rezervovano" value="${rezervace?.rezervovano}" ></g:datePicker>
@@ -51,7 +51,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="prodano">Prodano:</label>
+                                    <label for="prodano">Prodáno:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rezervace,field:'prodano','errors')}">
                                     <g:checkBox name="prodano" value="${rezervace?.prodano}" ></g:checkBox>

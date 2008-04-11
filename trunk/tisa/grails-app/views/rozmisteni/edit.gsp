@@ -45,7 +45,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nazev">Nazev:</label>
+                                    <label for="nazev">Název:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'nazev','errors')}">
                                     <input type="text" id="nazev" name="nazev" value="${fieldValue(bean:rozmisteni,field:'nazev')}"/>
@@ -54,7 +54,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="plan_salu">Plansalu:</label>
+                                    <label for="plan_salu">Plán sálu:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'plan_salu','errors')}">
                                     <!--input type="hidden" value="${fieldValue(bean:rozmisteni,field:'plan_salu')}"/-->
@@ -67,7 +67,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="misto">Misto:</label>
+                                    <label for="misto">Místo:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'misto','errors')}">
                                     <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${rozmisteni?.misto?.id}" ></g:select>

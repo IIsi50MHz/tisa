@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                         
-                   	      <g:sortableColumn property="nazev" title="Nazev" />
+                   	      <g:sortableColumn property="nazev" title="Název" />
                         
                         </tr>
                     </thead>

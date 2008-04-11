@@ -64,7 +64,7 @@
                                     <label for="kategorie">Kategorie:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'kategorie','errors')}">
-                                    <g:select optionKey="id" from="${Kategorie_mist.list()}" name="kategorie.id" value="${misto?.kategorie?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${KategorieMist.list()}" name="kategorie.id" value="${misto?.kategorie?.id}" ></g:select>
                                 </td>
                             </tr> 
                         
@@ -75,7 +75,7 @@
                                 <td valign="top" class="value ${hasErrors(bean:misto,field:'akce','errors')}">
                                     
 <ul>
-<g:each var="a" in="${misto?.akce?}">
+<g:each var="a" in="${misto?.rozmisteni?.akce?}">
     <li><g:link controller="akce" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>
