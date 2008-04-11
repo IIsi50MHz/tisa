@@ -4,12 +4,22 @@
         <meta name="layout" content="front_end" />
         <title><g:message code="tisa.rezervace.rezervovat"/></title>
 				<style>
-					.plan_salu input, .plan_salu div {
+					.plan_salu {
+						line-height:0;
+					}
+					.plan_salu div, .plan_salu input {
 						display:block;
 						float:left;
 						background-color:#ddd;
-						width:1.3em;
-						height:1.3em;
+						width:1.5em;
+						height:1.5em;
+						margin:1px;
+					}
+					.plan_salu .stage {
+							background-color:red;
+					}
+					.plan_salu .door {
+							background-color:blue;
 					}
 				</style>
     </head>
@@ -19,12 +29,20 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
+            <g:hasErrors bean="${rezervace}">
+            <div class="errors">
+                <g:renderErrors bean="${rezervace}" as="list" />
+            </div>
+            </g:hasErrors>
+            <g:form action="rezervovat" controller="frontAkce" id="${rezervace?.akce?.id}">
             <div class="dialog">
                 <table>
                     <tbody>
                         <tr class="prop">
                             <td valign="top" class="name">Akce:</td>
-                            <td valign="top" class="value"><g:link controller="akce" action="show" id="${rezervace?.akce?.id}">${rezervace?.akce?.nazev}</g:link></td>
+                            <td valign="top" class="value">
+																<g:link controller="akce" action="show" id="${rezervace?.akce?.id}">${rezervace?.akce?.nazev}</g:link>
+														</td>
                         </tr>
                         
                         <tr class="prop">
@@ -36,11 +54,10 @@
                             <td valign="top" class="name">Mista:</td>
                             <td valign="top" class="value">
 																<div class="plan_salu">
-																<g:each var="row" in="${plan}">
-																		<g:each var="cell" in="${row}">
-																				${cell}
+																<g:each var="row" status="r" in="${plan}">
+																		<g:each var="cell" status="c" in="${row}">
 																				<g:if test="${cell=='seat'}">
-																						<input type="checkbox" name="seat" />
+																						<input type="checkbox" name="seat[${r}_${c}]" />
 																				</g:if>
 																				<g:else>
 																					<g:if test="${cell!='e'}">
@@ -60,7 +77,6 @@
                 </table>
             </div>
             <div class="buttons">
-                <g:form>
                     <input type="hidden" name="id" value="${rezervace?.id}" />
                     <span class="button"><g:actionSubmit class="save" value="${message(code:'tisa.rezervace.reserve')}" /></span>
                 </g:form>
