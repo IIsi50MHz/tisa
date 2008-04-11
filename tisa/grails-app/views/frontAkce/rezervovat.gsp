@@ -3,6 +3,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="front_end" />
         <title><g:message code="tisa.rezervace.rezervovat"/></title>
+				<style>
+					.plan_salu input, .plan_salu div {
+						display:block;
+						float:left;
+						background-color:#ddd;
+						width:1.3em;
+						height:1.3em;
+					}
+				</style>
     </head>
     <body>
         <div class="body">
@@ -26,11 +35,25 @@
                         <tr class="prop">
                             <td valign="top" class="name">Mista:</td>
                             <td valign="top" class="value">
-																<g:each var="row" in="${rezervace.akce.rozmisteni.plan_salu_to_a()}">
+																<div class="plan_salu">
+																<g:each var="row" in="${plan}">
 																		<g:each var="cell" in="${row}">
-																				${cell}																				
+																				${cell}
+																				<g:if test="${cell=='seat'}">
+																						<input type="checkbox" name="seat" />
+																				</g:if>
+																				<g:else>
+																					<g:if test="${cell!='e'}">
+																						<div class="${cell}"></div>
+																					</g:if>
+																					<g:else>
+																						<div></div>
+																					</g:else>
+																				</g:else>
 																		</g:each>
+																		<br style="clear:both"/>
 																</g:each>
+																</div>
 														</td>
                         </tr>
                     </tbody>
