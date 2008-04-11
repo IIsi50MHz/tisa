@@ -1,3 +1,5 @@
+import org.codehaus.groovy.grails.web.json.JSONObject
+
 class FrontAkceController {
 
 		def defaultAction = "list"
@@ -109,12 +111,30 @@ class FrontAkceController {
 				def user = session.user
 				if (user && user.class.getName() == "Uzivatel") {
 				    def rezervace = new Rezervace(akce: akce, uzivatel: user)
-		        return [ rezervace: rezervace ]
+						def map = [[]]
+						def r = 0
+						def row = []
+						def json = new JSONObject(akce.rozmisteni.plan_salu)
+						println "plan: "+akce.rozmisteni.plan_salu
+						println "json: "+ json
+						map = jsonToArray(json)
+		        return [ plan:map, rezervace: rezervace ]
         } else {
 						flash.message = "Prosím, přihlašte se než vytvoříte rezrvaci."
 						session.after_login_redirect = [controller:"frontAkce", action:"rezervovat", id:params.id]
             redirect(controller:"frontUzivatel", action:"login")
         }
-    }    
+    }
+		
+		def jsonToArray(json) {
+			def array = []
+			println json
+			for (key in json.keys()) {
+				//println key
+				//value 
+				array[Integer.parseInt(key)] = json.get(key)//jsonToArray()
+			}
+			array
+    }
 
 }

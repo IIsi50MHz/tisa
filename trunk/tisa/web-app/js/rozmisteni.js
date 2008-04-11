@@ -98,11 +98,11 @@ function Rozmisteni(rootElement, rows, cols) {return {
 		map = {};
 		for (r = 0; r < this.rows; r++) {
 			row = {};
-			for (c = 1; c < this.cols; c++) {
+			for (c = 0; c < this.cols; c++) {
 				val = this.map[r][c];
 				if (val != undefined && val != '') {
 					row[c] = val;
-				} //else row[c] = ' ';
+				} else row[c] = 'e';
 			}
 			if (row != {}) {
 				map[r] = row
