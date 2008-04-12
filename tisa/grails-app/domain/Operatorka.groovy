@@ -40,7 +40,7 @@ class Operatorka extends UserStub {
                          return list
                          }
                          
-    def listRozmisteni() {
+            def listRozmisteni() {
                  def list = []  
                     if (vsechny_mista){
                         list = Rozmisteni.list()
@@ -56,7 +56,7 @@ class Operatorka extends UserStub {
                  return list
                 }
 				
-    def listRezervace() {
+            def listRezervace() {
                  def list = []  
                     if (vsechny_mista){
                         list = Rezervace.list()
@@ -69,6 +69,16 @@ class Operatorka extends UserStub {
                           }
                     }
                  
+                 return list
+                }
+                
+             def listSpravce() {
+                 def list = []  
+                    if (vsechny_mista){
+                        list = Spravce.list()
+                    } else {
+                        list = Spravce.list() //TODO jenom sve spravce
+                    }
                  return list
                 }
     
