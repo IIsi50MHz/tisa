@@ -8,7 +8,7 @@ class RozmisteniController {
 
     def list = {
         if(!params.max) params.max = 20
-        [ rozmisteniList: Rozmisteni.list( params ) ]
+        [ rozmisteniList: session.user.listRozmisteni() ]
     }
 
     def show = {

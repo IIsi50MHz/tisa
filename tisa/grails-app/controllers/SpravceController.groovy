@@ -10,7 +10,7 @@ class SpravceController extends AdminController {
     
     def list = {
         if(!params.max) params.max = 20
-        [ spravceList: Spravce.list( params ) ]
+        [ spravceList: session.user.listSpravce() ]
     }
 
     def show = {

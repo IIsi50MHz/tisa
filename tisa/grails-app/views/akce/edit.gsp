@@ -87,7 +87,7 @@
                                     <label for="rozmisteni">Rozmístění:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:akce,field:'rozmisteni','errors')}">
-                                    <g:select optionKey="id" from="${Rozmisteni.list()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${session.user.listRozmisteni()}" name="rozmisteni.id" value="${akce?.rozmisteni?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

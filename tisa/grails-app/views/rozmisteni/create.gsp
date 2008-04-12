@@ -28,7 +28,7 @@
     </head>
     <body>
         <div class="body">
-            <h1><g:message code="tisa.rozmisteni.edit"/></h1>
+            <h1><g:message code="tisa.rozmisteni.create"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -70,7 +70,7 @@
                                     <label for="misto">Místo:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'misto','errors')}">
-                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${rozmisteni?.misto?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${session.user.listMista()}" name="misto.id" value="${rozmisteni?.misto?.id}" ></g:select>
                                 </td>
                             </tr> 
                         
@@ -78,7 +78,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="${message(code:'tisa.update')}" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="${message(code:'tisa.create')}" /></span>
                 </div>
             </g:form>
         </div>
