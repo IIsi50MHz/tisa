@@ -22,6 +22,17 @@ class Spravce extends UserStub {
                     
                return list
     }
+    
+                def listMista() {
+                  def list = []  
+                    if (vsechna_prava){
+                          list = Misto.list() 
+                    } else {
+                          list = listMisto()
+                    }
+              
+              return list
+    }
 				
 		def listMisto() {
 				return Misto.findBySpravce(this)

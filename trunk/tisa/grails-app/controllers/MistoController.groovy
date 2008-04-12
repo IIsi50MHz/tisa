@@ -10,7 +10,7 @@ class MistoController extends AdminController {
     
     def list = {
         if(!params.max) params.max = 20
-        [ mistoList: Misto.list( params ) ]
+        [ mistoList: session.user.listMista() ]
     }
 
     def show = {
