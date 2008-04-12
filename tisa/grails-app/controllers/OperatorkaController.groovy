@@ -10,7 +10,8 @@ class OperatorkaController extends AdminController {
     
     def list = {
         if(!params.max) params.max = 20
-        [ operatorkaList: Operatorka.list( params ) ]
+        //[ operatorkaList: Operatorka.list( params ) ]
+        [ operatorkaList: session.user.listOperatorka( ) ]
     }
 
     def show = {

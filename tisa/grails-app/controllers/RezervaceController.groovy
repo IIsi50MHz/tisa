@@ -12,7 +12,8 @@ class RezervaceController extends AdminController {
     
     def list = {
         if(!params.max) params.max = 20
-        [ rezervaceList: Rezervace.list( params ) ]
+      //  [ rezervaceList: Rezervace.list( params ) ]
+          [ rezervaceList: session.user.listRezervace( ) ]
     }
 
     def show = {
