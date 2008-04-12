@@ -64,7 +64,12 @@
 																				</g:if>
 																				<g:else>
 																					<g:if test="${cell!='e'}">
-																						<div class="${cell}"></div>
+																						<g:if test="${cell=='checked'}">
+																								<input type="checkbox" name="seat[${r}_${c}]" checked="checked" />
+																						</g:if>
+																						<g:else>
+																								<div class="${cell}"></div>
+																						</g:else>
 																					</g:if>
 																					<g:else>
 																						<div></div>
