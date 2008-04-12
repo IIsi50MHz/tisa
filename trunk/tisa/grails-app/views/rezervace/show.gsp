@@ -53,7 +53,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Prodano:</td>
                             
-                            <td valign="top" class="value">${rezervace.prodano}</td>
+                            <td valign="top" class="value"><g:message code="tisa.user.allrights.${rezervace.prodano}" /></td>
                             
                         </tr>
                     
@@ -63,7 +63,7 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${rezervace?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="${message(code:'tisa.edit')}" /></span>
+                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code:'tisa.edit')}" /></span>
 <span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
                 </g:form>
             </div>

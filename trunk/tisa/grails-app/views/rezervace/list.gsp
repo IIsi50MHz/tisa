@@ -39,8 +39,8 @@
                         
                             <td>${rezervace.rezervovano?.encodeAsHTML()}</td>
                         
-                            <td>${rezervace.prodano?.encodeAsHTML()}</td>
-                        
+                            <td><g:message code="tisa.user.allrights.${rezervace.prodano}" /></td>
+                            
                         </tr>
                     </g:each>
                     </tbody>
