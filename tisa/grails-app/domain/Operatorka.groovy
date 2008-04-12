@@ -39,6 +39,22 @@ class Operatorka extends UserStub {
               
                          return list
                          }
+                         
+    def listRozmisteni() {
+                 def list = []  
+                    if (vsechny_mista){
+                        list = Rozmisteni.list()
+                    } else {
+                        def i = 0
+                         
+                            for(rozmisteni in Rozmisteni.findByMisto(misto)){
+                                list[i++] = rozmisteni
+                            }
+                          
+                    }
+                 
+                 return list
+                }
 				
     def listRezervace() {
                  def list = []  
