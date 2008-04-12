@@ -114,30 +114,37 @@ class FrontAkceController {
             redirect(controller:"frontUzivatel", action:"login")
 						return
         }
-				
-		    def rezervace = new Rezervace(akce: akce, uzivatel: user)
+				def rezervace
+				rezervace = Rezervace.findByUzivatelAndAkce(user, akce)
+				if (!rezervace) {
+						rezervace = new Rezervace(akce: akce, uzivatel: user)
+				}
+
+				def seat_class = ""
 				def map = akce.rozmisteni.plan_array()
-				for (r in akce.rezervace) {
-						for (seat in r.mista.split(' ')) {
-								def pos = seat.split('_')
-								map[Integer.parseInt(pos[0])][Integer.parseInt(pos[1])] = "taken"
-            }
-        }
-				
+
 				def post = false
 				//println params
 				map.eachWithIndex() { row, r ->
 						row.eachWithIndex() { col, c ->
 								if (params['seat['+r+'_'+c+']']) {
+										if (post == false) {
+												rezervace.mista = ""
+												rezervace.mista_count = 0
+										}
 										post = true;
 										rezervace.addMisto([r, c])
                 }
 						}
         }
+
+				map = markMap(akce.rezervace, map, "taken")
+				map = markMap([rezervace], map, "checked")
+
 				if (post) {
 						if (rezervace.save()) {
 								flash.message = message(code:"tisa.rezervace.thank_you")
-								redirect(action:"list")
+								redirect(action:"rezervovat", id:params.id)
 						} else {
 								flash.message = message(code:"tisa.rezervace.problem")
             }
@@ -145,5 +152,17 @@ class FrontAkceController {
         return [ plan:map, rezervace: rezervace ]
     }
 
+		private markMap(rezervace, map, class_name) {
+				for (r in rezervace) {
+						for (seat in r.mista.split(' ')) {
+								def pos = seat.split('_')
+								println pos
+								if (pos.length == 2) {
+										map[Integer.parseInt(pos[0])][Integer.parseInt(pos[1])] = class_name
+								}
+						}
+        }
+				map
+    }
 
 }
