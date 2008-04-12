@@ -18,8 +18,10 @@ class Operatorka extends UserStub {
 											list = Akce.list() 
 								} else {
 											def i = 0
-											for(akce in misto.rozmisteni.akce) {
-												list[i++] = akce;
+											for (rozmisteni in Rozmisteni.findByMisto(misto)) {
+												for(akce in Akce.findByRozmisteni(rozmisteni)) {
+														list[i++] = akce;
+												}
 											}
 								}
 				 return list
