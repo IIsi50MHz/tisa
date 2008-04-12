@@ -70,7 +70,7 @@
                                     <label for="misto">Místo:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:rozmisteni,field:'misto','errors')}">
-                                    <g:select optionKey="id" from="${Misto.list()}" name="misto.id" value="${rozmisteni?.misto?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${session.user.listMista()}" name="misto.id" value="${rozmisteni?.misto?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

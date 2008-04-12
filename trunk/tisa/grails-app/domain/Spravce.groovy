@@ -20,8 +20,35 @@ class Spravce extends UserStub {
                           }
                     } 
                     
-               return list
-    }
+                  return list
+                }
+                
+                def listRozmisteni() {
+                 def list = []  
+                    if (vsechna_prava){
+                        list = Rozmisteni.list()
+                    } else {
+                        def i = 0
+                          for(misto in listMisto()){
+                            for(rozmisteni in misto.rozmisteni){
+                                list[i++] = rozmisteni
+                            }
+                          }
+                    }
+                 
+                 return list
+                }
+                
+                def listSpravce() {
+                 def list = []  
+                    if (vsechna_prava){
+                        list = Spravce.list()
+                    } else {
+                        list = this;
+                    }
+                 
+                 return list
+                }
     
                 def listMista() {
                   def list = []  
@@ -31,24 +58,24 @@ class Spravce extends UserStub {
                           list = listMisto()
                     }
               
-              return list
-    }
+                  return list
+                }
 				
 		def listMisto() {
-				return Misto.findBySpravce(this)
-    }
+                  return Misto.findBySpravce(this)
+                }
 				
 		def listVyprseni(UserStub user) {
 				vyprseni = []
 				for (misto in listMisto()) {
 						vyprseni += misto.zpusobyVyprseniRezervaci
-        }
+                                }
 				return vyprseni
-    }
+                }
     
               
     
-    String toString() {
-        return this.cele_jmeno
-    }
+                String toString() {
+                  return this.cele_jmeno
+                }
 }
