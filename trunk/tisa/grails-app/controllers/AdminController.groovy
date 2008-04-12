@@ -9,9 +9,9 @@ class AdminController {
 						redirect(controller:"admin", action:spravce_login)
             return false
         } else {
-						session.controllers = ['akce', 'poradatel', 'rezervace']
+						session.controllers = ['akce', 'poradatel', 'rezervace', 'misto']
 						if (session.user.class.getName() == 'Spravce') {
-								session.controllers += ['misto', 'mesto', 'operatorka', 'rozmisteni', 'zpusobVyprseniRezervace']
+								session.controllers += [ 'mesto', 'operatorka', 'rozmisteni', 'zpusobVyprseniRezervace']
 								if (session.user.vsechna_prava) {
 										session.controllers += ['spravce', 'uzivatel', 'kategorieAkci', 'kategorieMist' ]
 								}

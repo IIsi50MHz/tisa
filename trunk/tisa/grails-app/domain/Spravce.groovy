@@ -49,13 +49,17 @@ class Spravce extends UserStub {
                  
                  return list
                 }
-    
+    //TODO: asi nefacha nejlepepe - najde jen jedno misto
                 def listMista() {
                   def list = []  
                     if (vsechna_prava){
                           list = Misto.list() 
                     } else {
-                          list = listMisto()
+                         // list = listMisto()
+                         def i = 0
+                         for(misto in Misto.findBySpravce(this)){
+                             list[i++] = misto
+                         }
                     }
               
                   return list
@@ -65,6 +69,40 @@ class Spravce extends UserStub {
                   return Misto.findBySpravce(this)
                 }
 				
+    
+              //TODO: nefacha nejlepepe - najde jen jedno misto (spravce:ostrava),
+               def listOperatorka() {
+                 def list = []  
+                    if (vsechna_prava){
+                        list = Operatorka.list()
+                    } else {
+                        def i = 0
+                          for(misto in Misto.findBySpravce(this)){
+                           for(operatorka in Operatorka.findByMisto(misto))
+                                 list[i++]= operatorka
+                          }
+                    }
+                 
+                 return list
+                }
+    
+    
+                def listRezervace() {
+                 def list = []  
+                    if (vsechna_prava){
+                        list = Rezervace.list()
+                    } else {
+                        def i = 0
+                          for(akce in listAkce()){
+                            for(rezervace in akce.rezervace){
+                                list[i++] = rezervace
+                            }
+                          }
+                    }
+                 
+                 return list
+                }
+    
 		def listVyprseni(UserStub user) {
 				vyprseni = []
 				for (misto in listMisto()) {

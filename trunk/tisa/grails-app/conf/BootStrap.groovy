@@ -79,11 +79,11 @@ class BootStrap {
 			//uzivatele			
                         println "uzivatele"
 
-				new Uzivatel(cele_jmeno:"Pepa Novák", email:"pepa@tisa.cz", heslo:"pepa").save()
-    				new Uzivatel(cele_jmeno:"Honza Hloupý", email:"honza@tisa.cz", heslo:"honza").save()
-    				new Uzivatel(cele_jmeno:"Karkulka Červená", email:"karkulka@tisa.cz", heslo:"karkulka").save()
-    				new Uzivatel(cele_jmeno:"Čestmír Létající", email:"cestmir@tisa.cz", heslo:"cestmir").save()
-    				new Uzivatel(cele_jmeno:"Karel Gott", email:"karel@tisa.cz", heslo:"karel").save()
+				def pepa = new Uzivatel(cele_jmeno:"Pepa Novák", email:"pepa@tisa.cz", heslo:"pepa").save()
+    				def honza = new Uzivatel(cele_jmeno:"Honza Hloupý", email:"honza@tisa.cz", heslo:"honza").save()
+    				def karkulka = new Uzivatel(cele_jmeno:"Karkulka Červená", email:"karkulka@tisa.cz", heslo:"karkulka").save()
+    				def cestmir = new Uzivatel(cele_jmeno:"Čestmír Létající", email:"cestmir@tisa.cz", heslo:"cestmir").save()
+    				def gott = new Uzivatel(cele_jmeno:"Karel Gott", email:"karel@tisa.cz", heslo:"karel").save()
     				new Uzivatel(cele_jmeno:"Vladimír Čech", email:"vladimir@tisa.cz", heslo:"vladimir").save()
     				new Uzivatel(cele_jmeno:"Ignác Neslaný", email:"ignac@tisa.cz", heslo:"ignac").save()
     				new Uzivatel(cele_jmeno:"Ferdinand Nemastný", email:"ferdinand@tisa.cz", heslo:"ferdinand").save()
@@ -181,16 +181,16 @@ class BootStrap {
                             new Akce(nazev:"Rocky 9           ", zacatek_akce:den[i], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[4], kategorie:promitani, poradatel:karel).save()
                       }
                     
-            
+                      def cervena = new Akce(nazev:"Červená Karkulka", zacatek_akce:den[3], popis:"tentokrát ještě červenější (horor)", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[5], kategorie:promitani, poradatel:john).save()
                       //akce
                       println "akce"
                       
-                      new Akce(nazev:"Kabát", zacatek_akce:den[3], popis:"to bude jízda!", vstupne_min:300, vstupne_max:350, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
+                      def kabat = new Akce(nazev:"Kabát", zacatek_akce:den[3], popis:"to bude jízda!", vstupne_min:300, vstupne_max:350, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
                       new Akce(nazev:"Kabát", zacatek_akce:den[6], popis:"to bude jízda!", vstupne_min:300, vstupne_max:350, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
                       new Akce(nazev:"Horkýže slíže", zacatek_akce:den[5], popis:"to su naši hoši zo Slovenska", vstupne_min:200, vstupne_max:250, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
                       new Akce(nazev:"Horkýže slíže", zacatek_akce:den[7], popis:"to su naši hoši zo Slovenska", vstupne_min:200, vstupne_max:250, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:saly[6], kategorie:koncert, poradatel:jack).save()
                       
-                      new Akce(nazev:"Výstava exotických zvířat", zacatek_akce:den[0], popis:"pavouk kam se podíváš", vstupne_min:20, vstupne_max:50, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
+                      def exotic = new Akce(nazev:"Výstava exotických zvířat", zacatek_akce:den[0], popis:"pavouk kam se podíváš", vstupne_min:20, vstupne_max:50, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
                       new Akce(nazev:"Výstava okrasných rostlin", zacatek_akce:den[2], popis:"květina kam se podíváš", vstupne_min:20, vstupne_max:50, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
                       new Akce(nazev:"Výstava okrasných rostlin", zacatek_akce:den[4], popis:"květina kam se podíváš", vstupne_min:30, vstupne_max:60, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:kate).save()
                       new Akce(nazev:"Výstava psů", zacatek_akce:den[6], popis:"Pes - nejlepší přítel člověka", vstupne_min:50, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[7], kategorie:vystava, poradatel:jack).save()
@@ -198,14 +198,14 @@ class BootStrap {
                       new Akce(nazev:"Gladiatorské zápasy", zacatek_akce:den[8], popis:"buuude booolet", vstupne_min:2000, vstupne_max:5000, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[8], kategorie:sport, poradatel:caesar).save()
                       new Akce(nazev:"Gladiatorské zápasy", zacatek_akce:den[9], popis:"buuude booolet - finále", vstupne_min:3000, vstupne_max:6000, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[8], kategorie:sport, poradatel:caesar).save()
                       
-                      new Akce(nazev:"Banik-Sparta", zacatek_akce:den[1], popis:"naši hoši ukaží pražským Pepíkům, zač je toho loket", vstupne_min:200, vstupne_max:500, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[9], kategorie:sport, poradatel:sayid).save()
+                      def sparta = new Akce(nazev:"Banik-Sparta", zacatek_akce:den[1], popis:"naši hoši ukaží pražským Pepíkům, zač je toho loket", vstupne_min:200, vstupne_max:500, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[9], kategorie:sport, poradatel:sayid).save()
                       new Akce(nazev:"Banik-Slavia", zacatek_akce:den[9], popis:"naši hoši ukaží pražským Pepíkům, zač je toho loket", vstupne_min:200, vstupne_max:500, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[9], kategorie:sport, poradatel:sayid).save()
                       
                       new Akce(nazev:"Hasičský ples", zacatek_akce:den[5], popis:"Ples nejen pro všechny hasiče", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[10], kategorie:ples, poradatel:kwon).save()
-                      new Akce(nazev:"Erotický ples", zacatek_akce:den[6], popis:"To jste ještě nezažili", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[11], kategorie:ples, poradatel:karel).save()
+                      def erotic = new Akce(nazev:"Erotický ples", zacatek_akce:den[6], popis:"To jste ještě nezažili", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[11], kategorie:ples, poradatel:karel).save()
                     
-                      new Akce(nazev:"Záskok", zacatek_akce:den[0], popis:"Cimrmanova hra o nešťastné premiéře hry Vlasta", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[13], kategorie:divadelnihra, poradatel:kwon).save()
-                      new Akce(nazev:"Afrika", zacatek_akce:den[1], popis:"aneb Češi mezi lidožravci", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[14], kategorie:divadelnihra, poradatel:kwon).save()
+                      def zaskok = new Akce(nazev:"Záskok", zacatek_akce:den[0], popis:"Cimrmanova hra o nešťastné premiéře hry Vlasta", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:saly[13], kategorie:divadelnihra, poradatel:kwon).save()
+                      def afrika = new Akce(nazev:"Afrika", zacatek_akce:den[1], popis:"aneb Češi mezi lidožravci", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[14], kategorie:divadelnihra, poradatel:kwon).save()
                       new Akce(nazev:"Dobytí severního pólu", zacatek_akce:den[4], popis:"Čechem Karlem Němcem 5. dubna 1909 - severské drama", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[13], kategorie:divadelnihra, poradatel:kwon).save()
                       new Akce(nazev:"Blaník", zacatek_akce:den[3], popis:"jevištní podoba českého mýtu", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[14], kategorie:divadelnihra, poradatel:kwon).save()
                       new Akce(nazev:"Vyšetřování ztráty třídní knihy", zacatek_akce:den[5], popis:"činohra", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:saly[12], kategorie:divadelnihra, poradatel:kwon).save()
@@ -214,58 +214,25 @@ class BootStrap {
                     
                       new Akce(nazev:"Je tadyyyy Maska!", zacatek_akce:den[8], popis:"soutěž o nejoriginálnější masku", vstupne_min:100, vstupne_max:100, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:saly[15], kategorie:maskarnibal, poradatel:caesar).save()
                              
-                      
-	/*
-				 def pondeli = [4]
-				 def saly = []
-
-				 for (cinestar in cinestary) {
-					//	def vyprseni = new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin")
-					//	vyprseni.misto = cinestar
-					//	vyprseni.save()
-					new ZpusobVyprseniRezervace(cas:1800, druh:"before_action_begin", misto:cinestar).save()
-					
-
-						saly[0] = new Rozmisteni(nazev:"Sál A", misto:cinestar).save()
-						saly[1] = new Rozmisteni(nazev:"Sál B", misto:cinestar).save()
-						saly[2] = new Rozmisteni(nazev:"Sál C", misto:cinestar).save()
-						saly[3] = new Rozmisteni(nazev:"Sál D", misto:cinestar).save()
-						saly[4] = new Rozmisteni(nazev:"Sál E", misto:cinestar).save()
-						saly[5] = new Rozmisteni(nazev:"Sál F", misto:cinestar).save()
-
-						for (sal in saly) {
-							 def i = 0
-                                                         def j = 0
-                                                         def h = 0
-							 for ( i=0; i<7; i++) {
-									j = 0
-                                                                        h++
-									for (p in pondeli) {
-                                                                            
-										 p = Calendar.getInstance()
-										 p.set(2008, 4, 7+i, 10+h*2, 0, 0)
-										 p = p.getTime()
-                                                                                 pondeli[j]=p 
-                                                                                 println pondeli[j]
-										 j++
-                                                                                 println j
-                                                                                 println pondeli[j]
-									}
-									new Akce(nazev:"Matrix 4", zacatek_akce:pondeli[0], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni1, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()
-									new Akce(nazev:"Alenka za zrcadlem", zacatek_akce:pondeli[0], popis:"musíte vidět", vstupne_min:50, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni2, rozmisteni:sal, kategorie:promitani, poradatel:sayid).save()
-									new Akce(nazev:"Shrek 8", zacatek_akce:pondeli[2], popis:"musíte vidět", vstupne_min:150, vstupne_max:150, odkaz:"", zpusobVyprseniRezervace:vyprseni3, rozmisteni:sal, kategorie:promitani, poradatel:john).save()
-									new Akce(nazev:"Life of Brian", zacatek_akce:pondeli[3], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni4, rozmisteni:sal, kategorie:promitani, poradatel:caesar).save()
-									new Akce(nazev:"Rocky 9", zacatek_akce:pondeli[4], popis:"musíte vidět", vstupne_min:70, vstupne_max:70, odkaz:"", zpusobVyprseniRezervace:vyprseni5, rozmisteni:sal, kategorie:promitani, poradatel:karel).save()
-							 }
-
-						}
-				 }*/
-                                 
+            //rezervace
+            println "rezervace"   
             
-            
-            
-            
-            
+	new Rezervace(akce:exotic, uzivatel: pepa, mista:"1_8 4_6", prodano: false, mista_count:2).save()                             
+        new Rezervace(akce:cervena, uzivatel: honza, mista:"2_2 2_8", prodano: false, mista_count:2).save()                             
+        new Rezervace(akce:kabat, uzivatel: cestmir, mista:"1_4", prodano: false, mista_count:1).save()                              
+        new Rezervace(akce:exotic, uzivatel: karkulka, mista:"2_8", prodano: false, mista_count:1).save()                              
+        new Rezervace(akce:cervena, uzivatel: gott, mista:"3_4", prodano: true, mista_count:1).save()                               
+        new Rezervace(akce:kabat, uzivatel: gott, mista:"3_6", prodano: true, mista_count:1).save()                               
+        new Rezervace(akce:cervena, uzivatel: pepa, mista:"6_7 7_4", prodano: false, mista_count:2).save()                             
+        new Rezervace(akce:zaskok, uzivatel: honza, mista:"4_2 2_1", prodano: false, mista_count:2).save()                             
+        new Rezervace(akce:kabat, uzivatel: cestmir, mista:"3_3", prodano: false, mista_count:1).save()                              
+        new Rezervace(akce:sparta, uzivatel: karkulka, mista:"4_3", prodano: false, mista_count:1).save()                              
+        new Rezervace(akce:sparta, uzivatel: gott, mista:"3_6", prodano: true, mista_count:1).save()                               
+        new Rezervace(akce:erotic, uzivatel: gott, mista:"6_9", prodano: true, mista_count:1).save()                               
+        new Rezervace(akce:afrika, uzivatel: gott, mista:"1_1", prodano: true, mista_count:1).save()                               
+        
+        
+             
             
         } catch (Exception e) {
 						print "aaa, probleeem: " + e.toString()

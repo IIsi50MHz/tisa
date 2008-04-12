@@ -11,7 +11,7 @@ class Operatorka extends UserStub {
 					vsechny_mista()
       }
 		
-			 //TODO: nefacha 
+			
 			 def listAkce() {
 							def list = []  
 								if (vsechny_mista){
@@ -26,5 +26,41 @@ class Operatorka extends UserStub {
 								}
 				 return list
 			 }
+                         
+    
+                         def listMista() {
+                             def list = []  
+                              if (vsechny_mista){
+                                   list = Misto.list() 
+                                  //list = Spravce.listMista()
+                              } else {
+                                   list = listMisto()
+                              }
+              
+                         return list
+                         }
+				
+    def listRezervace() {
+                 def list = []  
+                    if (vsechny_mista){
+                        list = Rezervace.list()
+                    } else {
+                        def i = 0
+                          for(akce in listAkce()){
+                            for(rezervace in akce.rezervace){
+                                list[i++] = rezervace
+                            }
+                          }
+                    }
+                 
+                 return list
+                }
+    
+    
+		def listMisto() {
+                  def list = this
+                  return list.misto
+                }
+                
 
 }
