@@ -5,6 +5,7 @@ class Rezervace {
     def belongsTo = [Akce, Uzivatel]
     Akce akce
     Uzivatel uzivatel
+		Integer mista_count = 0
     
     static constraints = {
         akce()
@@ -12,6 +13,9 @@ class Rezervace {
         mista()
         rezervovano(nullable:true)
         prodano()
+				mista_count(validator: {
+					if (it > 6) return ['too_much']
+				})
     }
 		
 		def beforeInsert = {
@@ -20,6 +24,7 @@ class Rezervace {
 
 		
 		def addMisto(position) {
+				mista_count++
 				mista += position[0]+"_"+position[1]+" "
     }
 				

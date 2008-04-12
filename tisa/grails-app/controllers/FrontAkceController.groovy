@@ -117,9 +117,15 @@ class FrontAkceController {
 				
 		    def rezervace = new Rezervace(akce: akce, uzivatel: user)
 				def map = akce.rozmisteni.plan_array()
+				for (r in akce.rezervace) {
+						for (seat in r.mista.split(' ')) {
+								def pos = seat.split('_')
+								map[Integer.parseInt(pos[0])][Integer.parseInt(pos[1])] = "taken"
+            }
+        }
 				
 				def post = false
-				println params
+				//println params
 				map.eachWithIndex() { row, r ->
 						row.eachWithIndex() { col, c ->
 								if (params['seat['+r+'_'+c+']']) {
