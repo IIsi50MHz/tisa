@@ -15,6 +15,9 @@
 						height:1.5em;
 						margin:1px;
 					}
+					.plan_salu .taken {
+							background-color:orange;
+					}
 					.plan_salu .stage {
 							background-color:red;
 					}
