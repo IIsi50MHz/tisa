@@ -230,6 +230,7 @@ class BootStrap {
         new Rezervace(akce:sparta, uzivatel: gott, mista:"3_6", prodano: true, mista_count:1).save()                               
         new Rezervace(akce:erotic, uzivatel: gott, mista:"6_9", prodano: true, mista_count:1).save()                               
         new Rezervace(akce:afrika, uzivatel: gott, mista:"1_1", prodano: true, mista_count:1).save()                               
+        new Rezervace(akce:afrika, uzivatel: pepa, mista:"1_2", prodano: false, mista_count:1).save()                               
         
         
              
