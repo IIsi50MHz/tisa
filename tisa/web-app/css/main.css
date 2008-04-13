@@ -17,7 +17,38 @@ html * {
 		padding:1em;
 }
 
+.plan_salu {
+		line-height:0;
+}
+.plan_salu div, .plan_salu input {
+		display:block;
+		float:left;
+		background: #ddd url(../images/skin/shadow.jpg) bottom repeat-x;
+		width:1.5em;
+		height:1.5em;
+		margin:1px;
+}
+.plan_salu .taken {
+		background:orange;
+}
+.plan_salu .stage {
+		background:#0e0;
+}
+.plan_salu .door {
+		background:#00f;
+}
 
+.plan_salu .vysvetlivky {
+		line-height:1.8em;
+		padding-bottom:1em;
+}
+.plan_salu .vysvetlivky span {
+		width:1.5em;
+		height:1.5em;
+		display:block;
+		float:left;
+		margin-right:0.5em;
+}
 
 
 

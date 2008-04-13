@@ -3,28 +3,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="front_end" />
         <title><g:message code="tisa.rezervace.rezervovat"/></title>
-				<style>
-					.plan_salu {
-						line-height:0;
-					}
-					.plan_salu div, .plan_salu input {
-						display:block;
-						float:left;
-						background-color:#ddd;
-						width:1.5em;
-						height:1.5em;
-						margin:1px;
-					}
-					.plan_salu .taken {
-							background-color:orange;
-					}
-					.plan_salu .stage {
-							background-color:red;
-					}
-					.plan_salu .door {
-							background-color:blue;
-					}
-				</style>
     </head>
     <body>
         <div class="body">
@@ -57,6 +35,12 @@
                             <td valign="top" class="name">Mista:</td>
                             <td valign="top" class="value">
 																<div class="plan_salu">
+																<p class="vysvetlivky">
+																		<span class="taken"></span> zabrané místo, <br style="clear:both"/>
+																		<span class="door"></span> dveře, <br style="clear:both"/>
+																		<span class="stage"></span> jeviště/plátno
+																</p>
+																<br style="clear:both"/>
 																<g:each var="row" status="r" in="${plan}">
 																		<g:each var="cell" status="c" in="${row}">
 																				<g:if test="${cell=='seat'}">
