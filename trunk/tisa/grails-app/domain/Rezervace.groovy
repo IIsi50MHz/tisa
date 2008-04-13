@@ -9,7 +9,7 @@ class Rezervace {
     
     static constraints = {
         akce()
-        uzivatel()
+        uzivatel(nullable:true)
         mista()
         rezervovano(nullable:true)
         prodano()
@@ -28,5 +28,9 @@ class Rezervace {
 				mista += position[0]+"_"+position[1]+" "
     }
 				
+		String toString() {
+        return this.uzivatel.toString()
+    }
+		
 
 }

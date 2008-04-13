@@ -17,7 +17,7 @@
                 <g:renderErrors bean="${rezervace}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="save" method="post" >
+            <g:form action="edit" method="post" >
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -30,16 +30,7 @@
                                     <g:select optionKey="id" from="${Akce.list()}" name="akce.id" value="${rezervace?.akce?.id}" ></g:select>
                                 </td>
                             </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="mista">Místa:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:rezervace,field:'mista','errors')}">
-                                    <input type="text" id="mista" name="mista" value="${fieldValue(bean:rezervace,field:'mista')}"/>
-                                </td>
-                            </tr> 
-                        
+														
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="rezervovano">Rezervováno:</label>

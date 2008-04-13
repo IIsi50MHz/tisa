@@ -15,7 +15,7 @@
                 <g:renderErrors bean="${rezervace}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post" >
+            <g:form method="post" action="edit" >
                 <input type="hidden" name="id" value="${rezervace?.id}" />
                 <div class="dialog">
                     <table>
@@ -30,14 +30,42 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="mista">Mista:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:rezervace,field:'mista','errors')}">
-                                    <input type="text" id="mista" name="mista" value="${fieldValue(bean:rezervace,field:'mista')}"/>
-                                </td>
-                            </tr> 
+												<g:if test="${rezervace?.akce?.id}">
+                        <tr class="prop">
+                            <td valign="top" class="name">Místa:</td>
+                            <td valign="top" class="value">
+																<div class="plan_salu">
+																<p class="vysvetlivky">
+																		<span class="taken"></span> zabrané místo, <br style="clear:both"/>
+																		<span class="door"></span> dveře, <br style="clear:both"/>
+																		<span class="stage"></span> jeviště/plátno
+																</p>
+																<br style="clear:both"/>
+																<g:each var="row" status="r" in="${plan}">
+																		<g:each var="cell" status="c" in="${row}">
+																				<g:if test="${cell=='seat'}">
+																						<input type="checkbox" name="seat[${r}_${c}]" />
+																				</g:if>
+																				<g:else>
+																					<g:if test="${cell!='e'}">
+																						<g:if test="${cell=='checked'}">
+																								<input type="checkbox" name="seat[${r}_${c}]" checked="checked" />
+																						</g:if>
+																						<g:else>
+																								<div class="${cell}"></div>
+																						</g:else>
+																					</g:if>
+																					<g:else>
+																						<div></div>
+																					</g:else>
+																				</g:else>
+																		</g:each>
+																		<br style="clear:both"/>
+																</g:each>
+																</div>
+														</td>
+                        </tr>
+												</g:if>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -61,7 +89,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="${message(code:'tisa.update')}" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="${message(code:'tisa.save')}" /></span>
 <span class="button"><g:actionSubmit class="delete" onclick="return confirm('${message(code:'tisa.are_you_sure')}');" value="${message(code:'tisa.delete')}" /></span>
                 </div>
             </g:form>
