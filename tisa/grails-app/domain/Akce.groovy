@@ -26,8 +26,8 @@ class Akce {
     }
     
     
-String toString() {
-        return this.nazev
+		String toString() {
+        return this.zacatek_akce.toString() + " " +this.rozmisteni.misto.toString() + " " + this.nazev
     }
     
 }
