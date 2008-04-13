@@ -57,8 +57,9 @@ class Spravce extends UserStub {
                     } else {
                          // list = listMisto()
                          def i = 0
-                         for(misto in Misto.findBySpravce(this)){
-                             list[i++] = misto
+                         for(misto in Misto.findAllBySpravce(this)){
+                             //list[i++] = misto
+                               list[i++] = misto
                          }
                     }
               
@@ -77,9 +78,10 @@ class Spravce extends UserStub {
                         list = Operatorka.list()
                     } else {
                         def i = 0
-                          for(misto in Misto.findBySpravce(this)){
-                           for(operatorka in Operatorka.findByMisto(misto))
+                          for(misto in Misto.findAllBySpravce(this)){
+                           for(operatorka in Operatorka.findAllByMisto(misto)){
                                  list[i++]= operatorka
+                          }
                           }
                     }
                  
