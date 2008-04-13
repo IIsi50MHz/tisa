@@ -156,7 +156,7 @@ class FrontAkceController {
 				for (r in rezervace) {
 						for (seat in r.mista.split(' ')) {
 								def pos = seat.split('_')
-								println pos
+								//println pos
 								if (pos.length == 2) {
 										map[Integer.parseInt(pos[0])][Integer.parseInt(pos[1])] = class_name
 								}
