@@ -5,7 +5,7 @@ class AdminController {
 		
 		def authenticate = {
 				session.controllers =[]
-        if(session.user == null || session.user.class != Spravce && session.user.class != Operatorka) {
+        if(session.user == null || (session.user.class != Spravce && session.user.class != Operatorka)) {
 						redirect(controller:"admin", action:spravce_login)
             return false
         } else {

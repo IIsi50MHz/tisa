@@ -1,4 +1,4 @@
-﻿Ext.onReady(function() {
+Ext.onReady(function() {
 	r = Ext.get('plan_salu_editor');
 	Rozmisteni(r, 20, 20);
 });
@@ -18,6 +18,10 @@ function Rozmisteni(rootElement, rows, cols) {return {
 				if (source.dom.value!='') {
 					this.original_map = Ext.util.JSON.decode(source.dom.value);
 					this.map = this.original_map;
+					this.rows = 0
+					for (i in this.map) this.rows++
+					this.cols = 0;
+					for (i in this.map[0]) this.cols++
   			}
 		}
 		this.root.dom.innerHTML = this.renderHTML();
@@ -104,9 +108,7 @@ function Rozmisteni(rootElement, rows, cols) {return {
 					row[c] = val;
 				} else row[c] = 'e';
 			}
-			if (row != {}) {
-				map[r] = row
-			}
+			map[r] = row
 		}
 		this.form_output.dom.innerHTML = Ext.util.JSON.encode(map);
 	},
