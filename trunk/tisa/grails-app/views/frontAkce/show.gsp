@@ -17,15 +17,14 @@
                     <tbody>
             
                         <tr class="prop">
-                            <td valign="top" class="name">Název:</td>
-                            
+                            <td valign="top" class="name">Název:</td>                            
                             <td valign="top" class="value">${akce.nazev}</td>
                             
                         </tr>
                         
                         <tr class="prop">
                             <td valign="top" class="name">Konání</td>
-                            <td valign="top" class="value"><g:link id="${akce.rozmisteni.misto.id}" action="show" controller="frontMisto">${akce.rozmisteni.misto}</g:link></td>
+                            <td valign="top" class="value"><g:link id="${akce.rozmisteni.misto.id}" action="show" controller="frontMisto">${akce.rozmisteni.misto}</g:link> - ${akce.rozmisteni}</td>
                         </tr>
                     
                         <tr class="prop">
