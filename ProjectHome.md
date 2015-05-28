@@ -1,0 +1,1 @@
+A school project aiming to build a simple ticket reservation app.
